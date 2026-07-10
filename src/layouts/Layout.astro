@@ -1,0 +1,94 @@
+---
+import '../styles/global.css';
+import { Navigation } from '../components/Navigation';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const { 
+  title = "Sunjana Banwait | Personal Portfolio", 
+  description = "Welcome to Sunjana Banwait's personal portfolio. Santa Clara University Computer Science and Engineering student." 
+} = Astro.props;
+
+const currentPath = Astro.url.pathname;
+const currentYear = new Date().getFullYear();
+---
+
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- Favicon & Icons -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" />
+    
+    <!-- Meta tags for SEO -->
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="generator" content={Astro.generator} />
+    
+    <!-- Google Fonts Preconnect and Links -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet" />
+
+    <!-- Open Graph / Social sharing (SEO best practice) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={Astro.url} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+  </head>
+  <body class="bg-warm text-ink min-h-screen flex flex-col antialiased selection:bg-coral/30 selection:text-plum pb-32 md:pb-0">
+    
+    <!-- Timeline Navigation (Vertical Sidebar on Desktop, Horizontal Bottom Dock on Mobile) -->
+    <Navigation client:load currentPath={currentPath} />
+
+    {/* Right-Side Page Container (Offset on desktop for sidebar width) */}
+    <div class="flex-grow w-full md:pl-[320px] flex flex-col">
+      
+      {/* Main Content Area */}
+      <main class="flex-grow w-full focus:outline-none" id="main-content">
+        <slot />
+      </main>
+
+      {/* Botanical-themed Minimalist Footer */}
+      <footer class="w-full border-t border-plum/10 py-12 px-6 md:px-12 mt-auto bg-bg-warm z-10">
+        <div class="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+          
+          <!-- Left: Branding & Message -->
+          <div class="flex flex-col items-center md:items-start text-center md:text-left">
+            <p class="font-serif text-lg font-bold text-plum tracking-wide">sunjana.b</p>
+            <p class="text-xs text-ink/60 mt-1 max-w-xs font-light">
+              Crafting minimal, aesthetic, and functional digital experiences. Inspired by nature and clean design.
+            </p>
+          </div>
+
+          {/* Middle: Links */}
+          <div class="flex items-center space-x-6 text-sm text-ink/75 font-medium">
+            <a href="#hero" class="hover:text-plum transition-colors duration-300">Home</a>
+            <a href="#work" class="hover:text-plum transition-colors duration-300">Work</a>
+            <a href="#about" class="hover:text-plum transition-colors duration-300">About</a>
+            <a href="#resume" class="hover:text-plum transition-colors duration-300">Resume</a>
+          </div>
+
+          <!-- Right: Copyright & Year -->
+          <div class="text-center md:text-right">
+            <p class="text-xs text-ink/50">
+              &copy; {currentYear} Sunjana Banwait. All rights reserved.
+            </p>
+            <div class="flex justify-center md:justify-end space-x-3 mt-2 text-ink/40">
+              <span class="text-xs italic tracking-widest font-serif text-ochre">botanical-minimalist</span>
+            </div>
+          </div>
+
+        </div>
+      </footer>
+
+    </div>
+
+  </body>
+</html>

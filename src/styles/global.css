@@ -1,0 +1,98 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg-warm: #FDF9F1;
+  --color-plum: #8C315B;
+  --color-ochre: #D19024;
+  --color-coral: #F28972;
+  --color-ink: #332D2B;
+
+  --font-sans: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-serif: "Playfair Display", Georgia, Cambria, "Times New Roman", Times, serif;
+}
+
+@utility bg-warm {
+  background-color: var(--color-bg-warm);
+}
+
+@utility text-ink {
+  color: var(--color-ink);
+}
+
+@utility text-plum {
+  color: var(--color-plum);
+}
+
+@utility bg-plum {
+  background-color: var(--color-plum);
+}
+
+@utility border-plum {
+  border-color: var(--color-plum);
+}
+
+@utility text-ochre {
+  color: var(--color-ochre);
+}
+
+@utility bg-ochre {
+  background-color: var(--color-ochre);
+}
+
+@utility text-coral {
+  color: var(--color-coral);
+}
+
+@utility bg-coral {
+  background-color: var(--color-coral);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px; /* Offset for the sticky header */
+  }
+
+  html, body {
+    background-color: var(--color-bg-warm);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-serif);
+    color: var(--color-plum);
+    font-weight: 700;
+  }
+
+  /* Custom styling for focus ring to match theme color */
+  a:focus-visible, button:focus-visible {
+    outline: 2px solid var(--color-plum);
+    outline-offset: 4px;
+  }
+
+  /* Custom scrollbar matching editorial plum & coral theme */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: var(--color-bg-warm);
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-plum);
+    border-radius: 9999px;
+    border: 2px solid var(--color-bg-warm);
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--color-coral);
+  }
+}
+
