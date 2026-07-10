@@ -1,7 +1,11 @@
 import React from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
+import portrait from '../assets/sunjanab.png';
 
 export const Hero: React.FC = () => {
+  // Resolve image source safely (handles string or object imports)
+  const portraitSrc = typeof portrait === 'string' ? portrait : (portrait as any).src;
+
   // Parallax scroll transforms
   const { scrollY } = useScroll();
   const yText = useTransform(scrollY, [0, 500], [0, 60]);
@@ -77,7 +81,7 @@ export const Hero: React.FC = () => {
         >
           <div className="relative w-64 h-64 sm:w-72 sm:h-72 lg:w-80 lg:h-80 aspect-square">
             <img
-              src="/assets/sunjanab.png"
+              src={portraitSrc}
               alt="Sunjana Banwait Portrait"
               className="w-full h-full object-cover rounded-full border-[8px] border-plum shadow-2xl"
               id="hero-portrait"
