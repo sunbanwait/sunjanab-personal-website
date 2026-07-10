@@ -44,11 +44,11 @@ const currentYear = new Date().getFullYear();
   </head>
   <body class="bg-warm text-ink min-h-screen flex flex-col antialiased selection:bg-coral/30 selection:text-plum pb-32 md:pb-0">
     
-    <!-- Timeline Navigation (Vertical Sidebar on Desktop, Horizontal Bottom Dock on Mobile) -->
+    <!-- Timeline Navigation (Thinned Sidebar on Desktop, Horizontal Bottom Dock on Mobile) -->
     <Navigation client:load currentPath={currentPath} />
 
-    {/* Right-Side Page Container (Offset on desktop for sidebar width) */}
-    <div class="flex-grow w-full md:pl-[320px] flex flex-col">
+    {/* Right-Side Page Container (Offset on desktop for thinned sidebar width) */}
+    <div class="flex-grow w-full md:pl-[90px] flex flex-col">
       
       {/* Main Content Area */}
       <main class="flex-grow w-full focus:outline-none" id="main-content">
