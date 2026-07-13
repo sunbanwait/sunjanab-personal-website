@@ -8,6 +8,7 @@ const projects = [
     description: "A full-stack Chrome extension that detects fast-fashion websites in real-time and recommends sustainable, eco-friendly clothing alternatives using a unique database to create a matching system.",
     tech: ["React", "Python", "Firebase", "JavaScript", "Chrome Extension"],
     tag: "Chrome Extension",
+    link: "https://github.com/sunbanwait",
     accent: "rgba(242, 137, 114, 0.6)" // coral outline
   },
   {
@@ -16,6 +17,7 @@ const projects = [
     description: "A hands-free mouse control interface using computer vision to assist students with motor impairments in navigating Camino, Santa Clara University's portal.",
     tech: ["Python", "Computer Vision", "UI Navigation", "OpenCV"],
     tag: "Assistive Tech",
+    link: "https://github.com/sunbanwait",
     accent: "rgba(209, 144, 36, 0.6)" // ochre outline
   },
   {
@@ -24,6 +26,7 @@ const projects = [
     description: "A collaborative web platform for non-profits to track and manage student engagement. Led front-end development, optimizing the admin dashboard layout.",
     tech: ["React", "JavaScript", "HTML5"],
     tag: "Web Platform",
+    link: "https://github.com/sunbanwait",
     accent: "rgba(242, 137, 114, 0.6)"
   },
   {
@@ -32,6 +35,7 @@ const projects = [
     description: "Developed a Convolutional Neural Network (CNN) to detect ocular diseases, achieving 85% accuracy and 87% sensitivity over 3,000+ retinal images.",
     tech: ["Python", "TensorFlow", "Pandas", "CNN Models"],
     tag: "AI & Data Science",
+    link: "https://github.com/sunbanwait",
     accent: "rgba(209, 144, 36, 0.6)"
   }
 ];
@@ -63,25 +67,29 @@ export const Work: React.FC = () => {
 
   return (
     <section 
-      className="w-full min-h-screen bg-plum text-bg-warm flex items-center relative py-16 border-y border-plum/20" 
+      className="w-full min-h-screen bg-plum text-bg-warm flex items-center relative py-20 border-y border-plum/20" 
       id="work"
     >
-      <div className="w-full max-w-6xl mx-auto px-6 md:px-12 flex flex-col justify-center space-y-10">
+      <div className="w-full max-w-6xl mx-auto px-6 md:px-12 flex flex-col justify-center space-y-12">
         
-        {/* Section Header */}
+        {/* Centered Section Header */}
         <motion.div 
-          className="border-b border-bg-warm/15 pb-4"
-          initial={{ opacity: 0, x: -30 }}
-          whileInView={{ opacity: 1, x: 0 }}
+          className="text-center flex flex-col items-center space-y-3"
+          initial={{ opacity: 0, y: -20 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          <h2 className="text-4xl md:text-6xl font-serif text-bg-warm tracking-tight">Projects</h2>
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif text-bg-warm tracking-tight">Projects</h2>
+          <p className="text-sm md:text-base text-bg-warm/75 font-sans font-normal tracking-wide">
+            Building solutions that make a difference
+          </p>
+          <div className="w-12 h-1 bg-coral rounded-full mt-2" />
         </motion.div>
 
-        {/* Projects Cards List (One per row, thinner and compact) */}
+        {/* 2-Column Grid Layout of Premium Cards */}
         <motion.div 
-          className="flex flex-col gap-5"
+          className="grid grid-cols-1 md:grid-cols-2 gap-8"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
@@ -90,61 +98,73 @@ export const Work: React.FC = () => {
           {projects.map((project) => (
             <motion.div
               key={project.title}
-              className="group border rounded-3xl p-5 md:p-6 bg-bg-warm/5 border-bg-warm/10"
+              className="group border rounded-[2rem] p-8 bg-bg-warm text-plum border-plum/10 shadow-xl flex flex-col justify-between min-h-[420px]"
               variants={cardVariants}
               whileHover={{ 
-                y: -3, 
-                backgroundColor: "rgba(253, 249, 241, 0.07)",
+                y: -6, 
+                boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.15), 0 10px 10px -5px rgba(0, 0, 0, 0.15)",
                 borderColor: project.accent,
                 transition: { duration: 0.3 }
               }}
             >
-              <div className="space-y-3.5">
-                
-                {/* Top Row: Meta Subtitles (Larger and highly readable) */}
-                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1 sm:gap-4">
-                  <span className="font-serif text-xs md:text-sm italic text-coral tracking-wider font-bold">
-                    {project.tag}
+              {/* Card top: GitHub logo icon */}
+              <div className="flex justify-center items-center py-6 text-plum/30 group-hover:text-coral transition-colors duration-300">
+                <svg className="w-12 h-12" fill="currentColor" viewBox="0 0 24 24">
+                  <path fillRule="evenodd" clipRule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.9-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0012 2z" />
+                </svg>
+              </div>
+
+              {/* Card middle: Text info */}
+              <div className="space-y-3.5 flex-grow text-left">
+                <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1">
+                  <h3 className="text-2xl font-serif font-black text-plum group-hover:text-coral transition-colors duration-300">
+                    {project.title}
+                  </h3>
+                  <span className="text-xs font-sans uppercase tracking-wider text-ochre font-semibold">
+                    {project.award}
                   </span>
-                  {project.award && (
-                    <span className="text-xs md:text-sm font-sans uppercase tracking-wider text-ochre font-semibold">
-                      {project.award}
-                    </span>
-                  )}
                 </div>
 
-                {/* Title */}
-                <h3 className="text-2xl md:text-3xl font-serif text-bg-warm group-hover:text-coral transition-colors duration-300">
-                  {project.title}
-                </h3>
-
-                {/* Description */}
-                <p className="text-sm md:text-base font-sans font-normal leading-relaxed opacity-95">
+                <p className="text-sm font-sans font-normal text-ink/80 leading-relaxed">
                   {project.description}
                 </p>
 
-                {/* Tech Stack Badges */}
-                <div className="pt-1.5">
-                  <div className="flex flex-wrap gap-2">
+                <div className="pt-2">
+                  <div className="flex flex-wrap gap-1.5">
                     {project.tech.map((t) => (
                       <span 
                         key={t}
-                        className="px-2.5 py-0.5 bg-bg-warm/10 text-bg-warm/90 text-xs font-sans font-normal rounded-full border border-bg-warm/5"
+                        className="px-2.5 py-0.5 bg-plum/5 text-plum text-xs font-sans font-normal rounded-full border border-plum/5"
                       >
                         {t}
                       </span>
                     ))}
                   </div>
                 </div>
-
               </div>
+
+              {/* Card bottom: View Project Link Button */}
+              <div className="mt-6 pt-4 border-t border-plum/5">
+                <a 
+                  href={project.link} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="w-full py-2.5 border border-plum/10 rounded-xl hover:bg-plum hover:text-bg-warm transition-all duration-300 flex items-center justify-center space-x-2 text-sm font-sans font-semibold text-plum bg-plum/[0.02]"
+                >
+                  <span>View Project</span>
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                  </svg>
+                </a>
+              </div>
+
             </motion.div>
           ))}
         </motion.div>
 
         {/* Skills Section */}
         <div className="pt-10 border-t border-bg-warm/15">
-          <h3 className="text-2xl md:text-3xl font-serif text-bg-warm mb-6">Technical Toolkit</h3>
+          <h3 className="text-2xl md:text-3xl font-serif text-bg-warm mb-6 text-center">Technical Toolkit</h3>
           
           <motion.div 
             className="grid grid-cols-1 md:grid-cols-3 gap-6"
