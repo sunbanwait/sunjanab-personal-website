@@ -30,7 +30,7 @@ export const Hero: React.FC = () => {
       className="w-full min-h-screen bg-bg-warm flex flex-col justify-center relative py-16 md:py-24 overflow-hidden"
       id="hero"
     >
-      <div className="w-full max-w-5xl mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-16 items-center flex-grow z-10">
+      <div className="w-full max-w-5xl mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-10 items-center flex-grow z-10">
 
         {/* Left Column (Text): Large, Bold Serif Bio in Plum */}
         <motion.div
@@ -44,16 +44,16 @@ export const Hero: React.FC = () => {
             variants={elementVariants}
             className="text-4xl md:text-5xl lg:text-6xl font-serif font-black tracking-tight text-plum leading-tight"
           >
-            Helloo! <br />
+            Hello! <br />
             I am Sunjana Banwait.
           </motion.h1>
 
           <motion.p
             custom={1}
             variants={elementVariants}
-            className="text-lg md:text-xl lg:text-2xl font-serif font-bold text-plum/90 leading-relaxed max-w-xl"
+            className="text-base md:text-lg lg:text-xl font-sans font-light text-ink leading-relaxed max-w-xl"
           >
-            I am a Computer Science and Engineering student at Santa Clara University. I am passionate about building impactful technology, from accessible tools to ethical AI, constantly exploring how software engineering can better serve our communities.
+            I am a Computer Science and Engineering student at Santa Clara University with a minor in Political Science. I am passionate about building impactful technology, from accessible tools to ethical AI, constantly exploring how software engineering can better serve our communities.
           </motion.p>
 
           <motion.div
@@ -63,7 +63,7 @@ export const Hero: React.FC = () => {
           >
             <a
               href="#work"
-              className="px-6 py-3 bg-plum text-bg-warm font-sans font-medium text-xs tracking-widest uppercase hover:bg-plum/90 hover:scale-105 active:scale-95 transition-all duration-300 rounded-sm shadow-md"
+              className="px-6 py-3 border border-plum text-plum bg-transparent font-sans font-medium text-xs tracking-widest uppercase hover:bg-plum hover:text-bg-warm transition-all duration-300 rounded-sm"
               id="hero-btn-work"
             >
               Explore Portfolio
@@ -83,7 +83,7 @@ export const Hero: React.FC = () => {
             <img
               src={portraitSrc}
               alt="Sunjana Banwait Portrait"
-              className="w-full h-full object-cover rounded-full border-[8px] border-plum shadow-2xl"
+              className="w-full h-full object-cover rounded-full border-[8px] border-plum"
               id="hero-portrait"
             />
           </div>
