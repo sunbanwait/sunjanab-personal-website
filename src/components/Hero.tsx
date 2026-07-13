@@ -8,7 +8,7 @@ export const Hero: React.FC = () => {
   const [line2, setLine2] = useState("");
   const [showCursor, setShowCursor] = useState(true);
 
-  const text1 = "Hello!";
+  const text1 = "Helloo!";
   const text2 = "I am Sunjana Banwait.";
 
   useEffect(() => {
@@ -67,7 +67,7 @@ export const Hero: React.FC = () => {
 
         {/* Left Column (Text): Large, Bold Serif Bio in Plum */}
         <motion.div
-          className="md:col-span-7 space-y-6 text-left"
+          className="md:col-span-8 space-y-6 text-left"
           style={{ y: yText }}
           initial="hidden"
           animate="visible"
@@ -126,7 +126,7 @@ export const Hero: React.FC = () => {
 
         {/* Right Column (Image): Circular Portrait with border & parallax */}
         <motion.div
-          className="md:col-span-5 flex justify-center items-center"
+          className="md:col-span-4 flex justify-center items-center"
           style={{ y: yImage }}
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
