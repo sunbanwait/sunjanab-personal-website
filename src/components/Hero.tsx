@@ -73,15 +73,12 @@ export const Hero: React.FC = () => {
           animate="visible"
         >
           <h1
-            className="text-4xl md:text-5xl lg:text-6xl font-serif font-black tracking-tight text-plum leading-tight min-h-[6.5rem] md:min-h-[9rem] flex flex-col justify-end"
+            className="text-4xl md:text-5xl lg:text-6xl font-serif font-black tracking-tight text-plum leading-tight min-h-[6.5rem] md:min-h-[9rem]"
           >
-            <div>
-              {line1}
-            </div>
-            <div className="flex items-center">
-              {line2}
-              <span className={`inline-block w-1.5 h-9 md:h-12 ml-1.5 bg-plum align-middle transition-opacity duration-150 ${showCursor ? 'opacity-100' : 'opacity-0'}`} />
-            </div>
+            {line1}
+            {line1 && <br />}
+            {line2}
+            <span className={`inline-block w-1.5 h-8 md:h-12 ml-2 bg-plum align-middle transition-opacity duration-150 ${showCursor ? 'opacity-100' : 'opacity-0'}`} />
           </h1>
 
           <motion.p
