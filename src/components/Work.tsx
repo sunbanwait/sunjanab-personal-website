@@ -5,42 +5,34 @@ const projects = [
   {
     title: "EcoScout",
     award: "Hack for Humanity 2026",
-    description: "A full-stack Chrome extension that detects fast-fashion websites in real-time and recommends sustainable, eco-friendly clothing alternatives using a smart matching engine.",
-    tech: ["React", "Python", "Firebase", "Chrome Extension API"],
+    description: "A full stack Chrome extension that detects fast-fashion websites in real-time and reccomends sustainable, eco-friendly clothing alternatives using a unique data base to create a matching system.",
+    tech: ["react", "python", "firebase", "javascript", "chrome extension"],
     tag: "Chrome Extension",
     accent: "rgba(242, 137, 114, 0.6)" // coral outline
   },
   {
     title: "FaceNav",
     award: "ACM Winter Challenge – 2nd Place",
-    description: "A hands-free mouse control interface using computer vision to assist students with motor impairments in navigating Camino, SCU's university portal.",
+    description: "A hands-free mouse control interface using computer vision to assist students with motor impairments in navigating Camino, Santa Clara University's portal.",
     tech: ["Python", "Computer Vision", "UI Navigation", "OpenCV"],
     tag: "Assistive Tech",
     accent: "rgba(209, 144, 36, 0.6)" // ochre outline
   },
   {
-    title: "InnerWeather",
-    award: "Published Web Store Extension",
-    description: "A cozy, privacy-first mood-tracking Chrome extension featuring a custom calendar interface, mood cycling tracker, and local storage architecture.",
-    tech: ["React", "CSS Custom Properties", "Chrome Web Store API"],
-    tag: "Chrome Extension",
-    accent: "rgba(242, 137, 114, 0.6)"
-  },
-  {
     title: "HighView Portal",
     award: "AWS INRIX Hackathon 2025",
     description: "A collaborative web platform for non-profits to track and manage student engagement. Led front-end development, optimizing the admin dashboard layout.",
-    tech: ["React", "JavaScript", "HTML5", "CSS3", "AWS"],
+    tech: ["React", "JavaScript", "HTML5"],
     tag: "Web Platform",
-    accent: "rgba(209, 144, 36, 0.6)"
+    accent: "rgba(242, 137, 114, 0.6)"
   },
   {
     title: "Ocular Disease Detection",
-    award: "Data Science Capstone",
+    award: "Honors Data Science Capstone",
     description: "Developed a Convolutional Neural Network (CNN) to detect ocular diseases, achieving 85% accuracy and 87% sensitivity over 3,000+ retinal images.",
     tech: ["Python", "TensorFlow", "Pandas", "CNN Models"],
     tag: "AI & Data Science",
-    accent: "rgba(242, 137, 114, 0.6)"
+    accent: "rgba(209, 144, 36, 0.6)"
   }
 ];
 
@@ -61,39 +53,36 @@ export const Work: React.FC = () => {
   };
 
   const cardVariants = {
-    hidden: { y: 40, opacity: 0 },
+    hidden: { y: 30, opacity: 0 },
     visible: {
       y: 0,
       opacity: 1,
-      transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] },
+      transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] },
     },
   };
 
   return (
     <section 
-      className="w-full min-h-screen bg-plum text-bg-warm flex items-center relative py-24 border-y border-plum/20" 
+      className="w-full min-h-screen bg-plum text-bg-warm flex items-center relative py-16 border-y border-plum/20" 
       id="work"
     >
-      <div className="w-full max-w-6xl mx-auto px-6 md:px-12 flex flex-col justify-center space-y-16">
+      <div className="w-full max-w-6xl mx-auto px-6 md:px-12 flex flex-col justify-center space-y-12">
         
         {/* Section Header */}
         <motion.div 
-          className="space-y-4 border-b border-bg-warm/15 pb-8"
+          className="space-y-2 border-b border-bg-warm/15 pb-6"
           initial={{ opacity: 0, x: -30 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
           <span className="font-serif text-sm italic text-coral tracking-widest uppercase">01 • portfolio</span>
-          <h2 className="text-5xl md:text-8xl font-serif text-bg-warm tracking-tight">Work</h2>
-          <p className="text-sm md:text-base text-ink/70 font-sans font-normal max-w-md leading-relaxed md:mb-2">
-            A precise record of developer extensions and assistive computing tools built for hackathons and challenges.
-          </p>
+          <h2 className="text-4xl md:text-6xl font-serif text-bg-warm tracking-tight">projects!</h2>
         </motion.div>
 
-        {/* Projects Cards Grid */}
+        {/* Projects Cards List (One per row, compact layout) */}
         <motion.div 
-          className="grid grid-cols-1 md:grid-cols-2 gap-8"
+          className="flex flex-col gap-6"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
@@ -102,58 +91,73 @@ export const Work: React.FC = () => {
           {projects.map((project) => (
             <motion.div
               key={project.title}
-              className="group flex flex-col justify-between border rounded-3xl p-8 bg-bg-warm/5 border-bg-warm/15"
+              className="group border rounded-3xl p-6 md:p-8 bg-bg-warm/5 border-bg-warm/10"
               variants={cardVariants}
               whileHover={{ 
-                y: -8, 
+                y: -4, 
                 backgroundColor: "rgba(253, 249, 241, 0.07)",
                 borderColor: project.accent,
                 transition: { duration: 0.3 }
               }}
             >
-              <div className="space-y-4">
-                <div className="flex items-center justify-between">
-                  <span className="font-serif text-xs italic text-coral tracking-wider font-semibold">
-                    {project.tag}
-                  </span>
-                  {project.award && (
-                    <span className="text-[10px] font-sans uppercase tracking-widest text-ochre font-medium">
-                      {project.award}
+              <div className="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-8 items-center">
+                
+                {/* Left: Project details */}
+                <div className="md:col-span-7 space-y-4">
+                  <div className="flex items-center justify-between">
+                    <span className="font-serif text-xs italic text-coral tracking-wider font-semibold">
+                      {project.tag}
                     </span>
-                  )}
+                    {project.award && (
+                      <span className="text-[10px] font-sans uppercase tracking-widest text-ochre font-medium">
+                        {project.award}
+                      </span>
+                    )}
+                  </div>
+
+                  <h3 className="text-2xl md:text-3xl font-serif text-bg-warm group-hover:text-coral transition-colors duration-300">
+                    {project.title}
+                  </h3>
+
+                  <p className="text-sm md:text-base font-sans font-normal leading-relaxed opacity-95">
+                    {project.description}
+                  </p>
+
+                  <div className="pt-2">
+                    <div className="flex flex-wrap gap-2">
+                      {project.tech.map((t) => (
+                        <span 
+                          key={t}
+                          className="px-2.5 py-0.5 bg-bg-warm/10 text-bg-warm/90 text-xs font-sans font-normal rounded-full border border-bg-warm/5"
+                        >
+                          {t}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
                 </div>
 
-                <h3 className="text-3xl font-serif text-bg-warm group-hover:text-coral transition-colors duration-300">
-                  {project.title}
-                </h3>
-
-                <p className="text-sm font-sans font-normal leading-relaxed opacity-95">
-                  {project.description}
-                </p>
-              </div>
-
-              <div className="mt-8 pt-4 border-t border-bg-warm/10">
-                <div className="flex flex-wrap gap-2">
-                  {project.tech.map((t) => (
-                    <span 
-                      key={t}
-                      className="px-2.5 py-0.5 bg-bg-warm/10 text-bg-warm/90 text-xs font-sans font-normal rounded-full"
-                    >
-                      {t}
-                    </span>
-                  ))}
+                {/* Right: Compact placeholder area for demo videos */}
+                <div className="md:col-span-5 h-48 md:h-56">
+                  <div className="w-full h-full border border-dashed border-bg-warm/20 rounded-2xl flex flex-col items-center justify-center bg-bg-warm/[0.02] hover:bg-bg-warm/[0.05] hover:border-bg-warm/30 transition-all duration-300 group-hover:border-coral/30">
+                    <svg className="w-8 h-8 text-bg-warm/30 mb-2 group-hover:text-coral/50 transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 00-2 2z" />
+                    </svg>
+                    <span className="text-[10px] font-sans tracking-widest text-bg-warm/40 uppercase group-hover:text-coral/60 transition-colors duration-300">Demo Video Coming Soon</span>
+                  </div>
                 </div>
+
               </div>
             </motion.div>
           ))}
         </motion.div>
- 
+
         {/* Skills Section */}
-        <div className="pt-16 border-t border-bg-warm/15">
-          <h3 className="text-3xl font-serif text-bg-warm mb-8">Technical Toolkit</h3>
+        <div className="pt-12 border-t border-bg-warm/15">
+          <h3 className="text-2xl md:text-3xl font-serif text-bg-warm mb-6">Technical Toolkit</h3>
           
           <motion.div 
-            className="grid grid-cols-1 md:grid-cols-3 gap-8"
+            className="grid grid-cols-1 md:grid-cols-3 gap-6"
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
@@ -162,7 +166,7 @@ export const Work: React.FC = () => {
             {skills.map((skillGroup) => (
               <motion.div 
                 key={skillGroup.category}
-                className="space-y-4 p-6 rounded-2xl bg-bg-warm/5 border border-bg-warm/10"
+                className="space-y-4 p-5 rounded-2xl bg-bg-warm/5 border border-bg-warm/10"
                 variants={cardVariants}
               >
                 <h4 className="text-xs font-serif text-ochre uppercase tracking-widest font-semibold">
