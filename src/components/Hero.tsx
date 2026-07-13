@@ -75,10 +75,30 @@ export const Hero: React.FC = () => {
           <h1
             className="text-4xl md:text-5xl lg:text-6xl font-serif font-black tracking-tight text-plum leading-tight min-h-[6.5rem] md:min-h-[9rem]"
           >
-            {line1}
-            {line1 && <br />}
-            {line2}
-            <span className={`inline-block w-1.5 h-8 md:h-12 ml-2 bg-plum align-middle transition-opacity duration-150 ${showCursor ? 'opacity-100' : 'opacity-0'}`} />
+            {line1.length < text1.length ? (
+              <span className="whitespace-nowrap">
+                {line1}
+                <span className={`inline-block w-1.5 h-8 md:h-12 ml-1 bg-plum align-middle transition-opacity duration-150 ${showCursor ? 'opacity-100' : 'opacity-0'}`} />
+              </span>
+            ) : (
+              <>
+                {line1}
+                <br />
+                {line2.length > 0 ? (
+                  <>
+                    {line2.slice(0, -1)}
+                    <span className="whitespace-nowrap">
+                      {line2.slice(-1)}
+                      <span className={`inline-block w-1.5 h-8 md:h-12 ml-1 bg-plum align-middle transition-opacity duration-150 ${showCursor ? 'opacity-100' : 'opacity-0'}`} />
+                    </span>
+                  </>
+                ) : (
+                  <span className="whitespace-nowrap">
+                    <span className={`inline-block w-1.5 h-8 md:h-12 bg-plum align-middle transition-opacity duration-150 ${showCursor ? 'opacity-100' : 'opacity-0'}`} />
+                  </span>
+                )}
+              </>
+            )}
           </h1>
 
           <motion.p
