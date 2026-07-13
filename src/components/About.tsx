@@ -48,7 +48,7 @@ export const About: React.FC = () => {
       className="w-full min-h-screen bg-coral text-plum flex items-center relative py-24" 
       id="about"
     >
-      <div className="w-full max-w-5xl mx-auto px-6 md:px-12 grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+      <div className="w-full max-w-6xl mx-auto px-6 md:px-12 grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
         
         {/* Left Side: Bio */}
         <motion.div 

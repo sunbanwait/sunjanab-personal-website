@@ -63,7 +63,7 @@ export const Hero: React.FC = () => {
       className="w-full min-h-screen bg-bg-warm flex flex-col justify-center relative py-16 md:py-24 overflow-hidden"
       id="hero"
     >
-      <div className="w-full max-w-5xl mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-10 items-center flex-grow z-10">
+      <div className="w-full max-w-6xl mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-10 items-center flex-grow z-10">
 
         {/* Left Column (Text): Large, Bold Serif Bio in Plum */}
         <motion.div
