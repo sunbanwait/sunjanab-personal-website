@@ -93,7 +93,7 @@ export const Resume: React.FC = () => {
         >
           <span className="font-serif text-sm italic text-plum/70 tracking-widest uppercase">03 • credentials</span>
           <h2 className="text-5xl md:text-8xl font-serif text-plum tracking-tight">Resume</h2>
-          <p className="text-lg text-plum/85 font-sans font-light max-w-xl">
+          <p className="text-lg text-plum/85 font-sans font-normal max-w-xl">
             A background in engineering, design, athletic coaching, and music instruction.
           </p>
         </motion.div>
@@ -116,7 +116,7 @@ export const Resume: React.FC = () => {
                   <span className="text-xs font-sans font-medium text-plum/80 whitespace-nowrap">{edu.period}</span>
                 </div>
                 <p className="text-sm font-sans font-semibold text-plum/90">{edu.degree}</p>
-                <p className="text-xs md:text-sm text-plum/80 font-sans font-light leading-relaxed">{edu.details}</p>
+                <p className="text-xs md:text-sm text-plum/80 font-sans font-normal leading-relaxed">{edu.details}</p>
               </motion.div>
             ))}
           </div>
@@ -158,7 +158,7 @@ export const Resume: React.FC = () => {
                     </span>
                   </div>
 
-                  <ul className="list-disc pl-4 space-y-2 text-xs md:text-sm text-plum/95 font-sans font-light leading-relaxed marker:text-coral">
+                  <ul className="list-disc pl-4 space-y-2 text-xs md:text-sm text-plum/95 font-sans font-normal leading-relaxed marker:text-coral">
                     {exp.bullets.map((bullet, idx) => (
                       <li key={idx}>{bullet}</li>
                     ))}

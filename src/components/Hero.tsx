@@ -1,8 +1,41 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import portrait from '../assets/sunjanab.png';
 
 export const Hero: React.FC = () => {
+  // Typewriter effect state
+  const [line1, setLine1] = useState("");
+  const [line2, setLine2] = useState("");
+  const [showCursor, setShowCursor] = useState(true);
+
+  const text1 = "Hello!";
+  const text2 = "I am Sunjana Banwait.";
+
+  useEffect(() => {
+    let i = 0;
+    let j = 0;
+    const timer = setInterval(() => {
+      if (i < text1.length) {
+        setLine1(text1.substring(0, i + 1));
+        i++;
+      } else if (j < text2.length) {
+        setLine2(text2.substring(0, j + 1));
+        j++;
+      } else {
+        clearInterval(timer);
+      }
+    }, 120);
+    return () => clearInterval(timer);
+  }, []);
+
+  // Blinking cursor
+  useEffect(() => {
+    const cursorTimer = setInterval(() => {
+      setShowCursor((prev) => !prev);
+    }, 500);
+    return () => clearInterval(cursorTimer);
+  }, []);
+
   // Resolve image source safely (handles string or object imports)
   const portraitSrc = typeof portrait === 'string' ? portrait : (portrait as any).src;
 
@@ -11,7 +44,7 @@ export const Hero: React.FC = () => {
   const yText = useTransform(scrollY, [0, 500], [0, 60]);
   const yImage = useTransform(scrollY, [0, 500], [0, -30]);
 
-  // Initial load transition variants
+  // Initial load transition variants (used for elements other than typed H1)
   const elementVariants = {
     hidden: { opacity: 0, y: 20 },
     visible: (custom: number) => ({
@@ -39,19 +72,22 @@ export const Hero: React.FC = () => {
           initial="hidden"
           animate="visible"
         >
-          <motion.h1
-            custom={0}
-            variants={elementVariants}
-            className="text-4xl md:text-5xl lg:text-6xl font-serif font-black tracking-tight text-plum leading-tight"
+          <h1
+            className="text-4xl md:text-5xl lg:text-6xl font-serif font-black tracking-tight text-plum leading-tight min-h-[6.5rem] md:min-h-[9rem] flex flex-col justify-end"
           >
-            Hello! <br />
-            I am Sunjana Banwait.
-          </motion.h1>
+            <div>
+              {line1}
+            </div>
+            <div className="flex items-center">
+              {line2}
+              <span className={`inline-block w-1.5 h-9 md:h-12 ml-1.5 bg-plum align-middle transition-opacity duration-150 ${showCursor ? 'opacity-100' : 'opacity-0'}`} />
+            </div>
+          </h1>
 
           <motion.p
             custom={1}
             variants={elementVariants}
-            className="text-base md:text-lg lg:text-xl font-sans font-light text-ink leading-relaxed max-w-xl"
+            className="text-base md:text-lg lg:text-xl font-sans font-normal text-ink leading-relaxed max-w-xl"
           >
             I am a Computer Science and Engineering student at Santa Clara University with a minor in Political Science. I am passionate about building impactful technology, from accessible tools to ethical AI, constantly exploring how software engineering can better serve our communities.
           </motion.p>

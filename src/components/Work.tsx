@@ -86,8 +86,8 @@ export const Work: React.FC = () => {
         >
           <span className="font-serif text-sm italic text-coral tracking-widest uppercase">01 • portfolio</span>
           <h2 className="text-5xl md:text-8xl font-serif text-bg-warm tracking-tight">Work</h2>
-          <p className="text-lg text-bg-warm/75 font-sans font-light max-w-xl">
-            A listing of hacks, published extensions, and AI projects built during winter challenges and hackathons.
+          <p className="text-sm md:text-base text-ink/70 font-sans font-normal max-w-md leading-relaxed md:mb-2">
+            A precise record of developer extensions and assistive computing tools built for hackathons and challenges.
           </p>
         </motion.div>
 
@@ -127,7 +127,7 @@ export const Work: React.FC = () => {
                   {project.title}
                 </h3>
 
-                <p className="text-sm text-bg-warm/80 font-sans font-light leading-relaxed">
+                <p className="text-sm font-sans font-normal leading-relaxed opacity-95">
                   {project.description}
                 </p>
               </div>
@@ -137,7 +137,7 @@ export const Work: React.FC = () => {
                   {project.tech.map((t) => (
                     <span 
                       key={t}
-                      className="px-2.5 py-0.5 bg-bg-warm/10 text-bg-warm/90 text-xs font-sans font-light rounded-full"
+                      className="px-2.5 py-0.5 bg-bg-warm/10 text-bg-warm/90 text-xs font-sans font-normal rounded-full"
                     >
                       {t}
                     </span>
@@ -147,7 +147,7 @@ export const Work: React.FC = () => {
             </motion.div>
           ))}
         </motion.div>
-
+ 
         {/* Skills Section */}
         <div className="pt-16 border-t border-bg-warm/15">
           <h3 className="text-3xl font-serif text-bg-warm mb-8">Technical Toolkit</h3>
@@ -172,7 +172,7 @@ export const Work: React.FC = () => {
                   {skillGroup.items.map((item) => (
                     <span 
                       key={item}
-                      className="px-3 py-1 bg-plum/30 text-bg-warm text-xs rounded-full border border-bg-warm/10 hover:border-coral transition-colors duration-300 font-light"
+                      className="px-3 py-1 bg-plum/30 text-bg-warm text-xs rounded-full border border-bg-warm/10 hover:border-coral transition-colors duration-300 font-normal"
                     >
                       {item}
                     </span>

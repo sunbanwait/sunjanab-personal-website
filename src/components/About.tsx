@@ -62,11 +62,11 @@ export const About: React.FC = () => {
           <h2 className="text-5xl md:text-8xl font-serif leading-none tracking-tight text-plum">
             Grounded in community, driven by engineering.
           </h2>
-          <p className="text-lg text-plum/90 font-sans font-light leading-relaxed max-w-md">
+          <p className="text-lg text-plum/90 font-sans font-normal leading-relaxed max-w-md">
             Beyond coding, I spend my time teaching piano, coaching volleyball, and organizing tech outreach activities at Santa Clara University. I believe that engineering is at its best when it connects and uplifts people.
           </p>
         </motion.div>
-
+ 
         {/* Right Side: Fun Facts Grid */}
         <motion.div 
           className="lg:col-span-6 grid grid-cols-1 sm:grid-cols-2 gap-6"
@@ -88,7 +88,7 @@ export const About: React.FC = () => {
             >
               <div className="text-3xl">{fact.icon}</div>
               <h3 className="text-xl font-serif text-plum">{fact.title}</h3>
-              <p className="text-xs md:text-sm text-ink/80 font-sans font-light leading-relaxed">
+              <p className="text-xs md:text-sm text-ink/80 font-sans font-normal leading-relaxed">
                 {fact.text}
               </p>
             </motion.div>
