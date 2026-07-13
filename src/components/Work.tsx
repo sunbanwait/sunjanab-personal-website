@@ -8,7 +8,10 @@ const projects = [
     description: "A full-stack Chrome extension that detects fast-fashion websites in real-time and recommends sustainable, eco-friendly clothing alternatives using a unique database to create a matching system.",
     tech: ["React", "Python", "Firebase", "JavaScript", "Chrome Extension"],
     tag: "Chrome Extension",
-    link: "https://github.com/sunbanwait",
+    links: [
+      { label: "GitHub", url: "https://github.com/sunbanwait/Eco-scout", type: "github" },
+      { label: "Devpost", url: "https://devpost.com/software/eco-scout", type: "external" }
+    ],
     accent: "rgba(242, 137, 114, 0.6)" // coral outline
   },
   {
@@ -17,8 +20,22 @@ const projects = [
     description: "A hands-free mouse control interface using computer vision to assist students with motor impairments in navigating Camino, Santa Clara University's portal.",
     tech: ["Python", "Computer Vision", "UI Navigation", "OpenCV"],
     tag: "Assistive Tech",
-    link: "https://github.com/sunbanwait",
+    links: [
+      { label: "GitHub", url: "https://github.com/sunbanwait/ACM-Winter-Challenge2025", type: "github" },
+      { label: "Video Demo", url: "https://www.youtube.com/watch?v=QPXTKLSdJy0", type: "youtube" }
+    ],
     accent: "rgba(209, 144, 36, 0.6)" // ochre outline
+  },
+  {
+    title: "InnerWeather",
+    award: "Published Web Store Extension",
+    description: "A cozy, privacy-first mood-tracking and mini-journaling Chrome extension built on front-end architectures featuring custom calendar grids and mood cycle logs.",
+    tech: ["React", "JavaScript", "CSS Custom Properties", "Chrome Extension API"],
+    tag: "Chrome Extension",
+    links: [
+      { label: "Chrome Web Store", url: "https://chromewebstore.google.com/detail/innerweather/idemjjieojpapobgibfaabepklenafhg", type: "webstore" }
+    ],
+    accent: "rgba(242, 137, 114, 0.6)"
   },
   {
     title: "HighView Portal",
@@ -26,17 +43,11 @@ const projects = [
     description: "A collaborative web platform for non-profits to track and manage student engagement. Led front-end development, optimizing the admin dashboard layout.",
     tech: ["React", "JavaScript", "HTML5"],
     tag: "Web Platform",
-    link: "https://github.com/sunbanwait",
+    links: [
+      { label: "GitHub", url: "https://github.com/sunbanwait/AWSxINRIX-Hack-2025", type: "github" },
+      { label: "Devpost", url: "https://devpost.com/software/highview-portal", type: "external" }
+    ],
     accent: "rgba(242, 137, 114, 0.6)"
-  },
-  {
-    title: "Ocular Disease Detection",
-    award: "Honors Data Science Capstone",
-    description: "Developed a Convolutional Neural Network (CNN) to detect ocular diseases, achieving 85% accuracy and 87% sensitivity over 3,000+ retinal images.",
-    tech: ["Python", "TensorFlow", "Pandas", "CNN Models"],
-    tag: "AI & Data Science",
-    link: "https://github.com/sunbanwait",
-    accent: "rgba(209, 144, 36, 0.6)"
   }
 ];
 
@@ -63,6 +74,35 @@ export const Work: React.FC = () => {
       opacity: 1,
       transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] },
     },
+  };
+
+  const renderIcon = (type: string) => {
+    switch (type) {
+      case 'github':
+        return (
+          <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+            <path fillRule="evenodd" clipRule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.9-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0012 2z" />
+          </svg>
+        );
+      case 'youtube':
+        return (
+          <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M23.498 6.163a3.003 3.003 0 0 0-2.11-2.11C19.518 3.545 12 3.545 12 3.545s-7.518 0-9.388.508a3.003 3.003 0 0 0-2.11 2.11C0 8.033 0 12 0 12s0 3.967.502 5.837a3.003 3.003 0 0 0 2.11 2.11c1.87.508 9.388.508 9.388.508s7.518 0 9.388-.508a3.003 3.003 0 0 0 2.11-2.11C24 15.967 24 12 24 12s0-3.967-.502-5.837zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+          </svg>
+        );
+      case 'webstore':
+        return (
+          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+          </svg>
+        );
+      default:
+        return (
+          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+          </svg>
+        );
+    }
   };
 
   return (
@@ -98,7 +138,7 @@ export const Work: React.FC = () => {
           {projects.map((project) => (
             <motion.div
               key={project.title}
-              className="group border rounded-[2rem] p-8 bg-bg-warm text-plum border-plum/10 shadow-xl flex flex-col justify-between min-h-[420px]"
+              className="group border rounded-[2rem] p-8 bg-bg-warm text-plum border-plum/10 shadow-xl flex flex-col justify-between min-h-[440px]"
               variants={cardVariants}
               whileHover={{ 
                 y: -6, 
@@ -143,19 +183,22 @@ export const Work: React.FC = () => {
                 </div>
               </div>
 
-              {/* Card bottom: View Project Link Button */}
+              {/* Card bottom: Dynamic Link Buttons */}
               <div className="mt-6 pt-4 border-t border-plum/5">
-                <a 
-                  href={project.link} 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="w-full py-2.5 border border-plum/10 rounded-xl hover:bg-plum hover:text-bg-warm transition-all duration-300 flex items-center justify-center space-x-2 text-sm font-sans font-semibold text-plum bg-plum/[0.02]"
-                >
-                  <span>View Project</span>
-                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                  </svg>
-                </a>
+                <div className={project.links.length === 2 ? "grid grid-cols-2 gap-3" : "w-full"}>
+                  {project.links.map((link) => (
+                    <a 
+                      key={link.label}
+                      href={link.url} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="py-2.5 border border-plum/10 rounded-xl hover:bg-plum hover:text-bg-warm transition-all duration-300 flex items-center justify-center space-x-2 text-sm font-sans font-semibold text-plum bg-plum/[0.02]"
+                    >
+                      {renderIcon(link.type)}
+                      <span>{link.label}</span>
+                    </a>
+                  ))}
+                </div>
               </div>
 
             </motion.div>
