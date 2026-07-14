@@ -54,7 +54,8 @@ const projects = [
 const skills = [
   { category: "Languages", items: ["Python", "Java", "JavaScript", "C", "HTML", "CSS", "PHP"] },
   { category: "Applications & Tech", items: ["React.js", "Node.js", "Pandas", "TensorFlow", "GitHub", "VS Code"] },
-  { category: "Operating Systems", items: ["macOS", "Linux"] }
+  { category: "Operating Systems", items: ["macOS", "Linux"] },
+  { category: "Soft Skills", items: ["Leadership", "Public Speaking", "Mentorship", "Cross-functional Collaboration"] }
 ];
 
 export const Work: React.FC = () => {
@@ -202,12 +203,12 @@ export const Work: React.FC = () => {
           ))}
         </motion.div>
 
-        {/* Skills Section (with responsive horizontal scroll on mobile/tablet) */}
+        {/* Skills Section (with horizontal scroll on all viewports) */}
         <div className="pt-10 border-t border-bg-warm/15">
           <h3 className="text-2xl md:text-3xl font-serif text-bg-warm mb-6 text-center">Technical Toolkit</h3>
           
           <motion.div 
-            className="flex overflow-x-auto md:grid md:grid-cols-3 gap-6 pb-4 snap-x snap-mandatory no-scrollbar scroll-smooth"
+            className="flex overflow-x-auto gap-6 pb-6 snap-x snap-mandatory no-scrollbar scroll-smooth w-full"
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
@@ -216,8 +217,13 @@ export const Work: React.FC = () => {
             {skills.map((skillGroup) => (
               <motion.div 
                 key={skillGroup.category}
-                className="space-y-4 p-5 rounded-2xl bg-bg-warm/5 border border-bg-warm/10 flex-shrink-0 w-[290px] sm:w-[330px] md:w-auto snap-align-start hover:border-coral transition-colors duration-300"
+                className="space-y-4 p-5 rounded-2xl bg-plum border border-bg-warm/15 flex-shrink-0 w-[280px] sm:w-[320px] md:w-[340px] snap-align-start transition-all duration-300"
                 variants={cardVariants}
+                whileHover={{ 
+                  y: -6, 
+                  boxShadow: "0 15px 25px -5px rgba(0, 0, 0, 0.25), 0 8px 10px -6px rgba(0, 0, 0, 0.25)",
+                  borderColor: "var(--color-coral)"
+                }}
               >
                 <h4 className="text-xs font-serif text-ochre uppercase tracking-widest font-semibold">
                   {skillGroup.category}
