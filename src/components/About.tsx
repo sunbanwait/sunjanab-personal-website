@@ -134,14 +134,14 @@ export const About: React.FC = () => {
         
         {/* Large White Polka Dot Checkerboard Background Pattern */}
         <div 
-          className="absolute inset-0 opacity-25 z-0 pointer-events-none"
+          className="absolute inset-0 opacity-30 z-0 pointer-events-none"
           style={{
             backgroundImage: `
-              radial-gradient(rgba(255, 255, 255, 0.12) 20%, transparent 21%),
-              radial-gradient(rgba(255, 255, 255, 0.12) 20%, transparent 21%)
+              radial-gradient(rgba(255, 255, 255, 0.85) 28%, transparent 29%),
+              radial-gradient(rgba(255, 255, 255, 0.85) 28%, transparent 29%)
             `,
-            backgroundSize: '80px 80px',
-            backgroundPosition: '0 0, 40px 40px'
+            backgroundSize: '100px 100px',
+            backgroundPosition: '0 0, 50px 50px'
           }}
         />
 
