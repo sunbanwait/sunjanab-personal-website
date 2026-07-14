@@ -145,16 +145,16 @@ export const About: React.FC = () => {
           }}
         />
 
-        <div className="w-full max-w-6xl mx-auto px-6 md:px-12 flex flex-col items-center text-center relative z-10">
+        <div className="w-full max-w-6xl mx-auto px-6 md:px-12 flex flex-col items-center justify-center relative z-10">
           
-          {/* Main call to action heading */}
-          <div className="space-y-6 max-w-3xl">
-            <h2 className="text-3xl md:text-5xl lg:text-6xl font-serif text-bg-warm tracking-tight leading-tight">
+          {/* Solid Linen Card for high text legibility over polka dots */}
+          <div className="p-10 md:p-16 rounded-[2.5rem] bg-bg-warm border border-plum/10 shadow-2xl max-w-3xl w-full text-center space-y-8">
+            <h2 className="text-3xl md:text-5xl lg:text-6xl font-serif text-plum tracking-tight leading-tight">
               Let's build something impactful together.
             </h2>
             
             {/* Interactive Email Button */}
-            <div className="pt-4">
+            <div className="pt-2">
               <a 
                 href="mailto:sbanwait@scu.edu" 
                 className="inline-flex items-center space-x-3 px-8 py-4 bg-ochre text-ink font-sans font-extrabold text-xs uppercase tracking-widest rounded-full shadow-lg hover:scale-105 active:scale-95 hover:bg-ochre/95 transition-all duration-300"
