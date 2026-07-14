@@ -47,7 +47,8 @@ const work = [
     period: "Jun 2025 – Sep 2025",
     category: "ENGINEERING & BRAND",
     summary: "Rebuilt and optimized the company website to improve performance, navigation, and UI/UX. Translated business and client needs into responsive web features while leading digital marketing, video editing, and social media content creation.",
-    pills: ["Web Development", "UI/UX", "Digital Marketing", "Brand Strategy"]
+    pills: ["Web Development", "UI/UX", "Digital Marketing", "Brand Strategy"],
+    link: "https://surrasa.com/"
   },
   {
     role: "Coding Camp Instructor & Curriculum Developer",
@@ -147,7 +148,23 @@ export const Resume: React.FC = () => {
                 </div>
 
                 <div className="space-y-1 mb-3">
-                  <h4 className="text-xl font-serif font-black text-plum leading-tight">{exp.company}</h4>
+                  <h4 className="text-xl font-serif font-black text-plum leading-tight">
+                    {exp.link ? (
+                      <a 
+                        href={exp.link} 
+                        target="_blank" 
+                        rel="noopener noreferrer" 
+                        className="hover:text-coral-bright transition-colors duration-300 inline-flex items-center gap-1.5"
+                      >
+                        <span>{exp.company}</span>
+                        <svg className="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                        </svg>
+                      </a>
+                    ) : (
+                      exp.company
+                    )}
+                  </h4>
                   <p className="text-sm font-sans font-bold text-ink">{exp.role}</p>
                 </div>
 
