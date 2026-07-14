@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
 
 const projects = [
@@ -59,47 +59,6 @@ const skills = [
 ];
 
 export const Work: React.FC = () => {
-  const scrollRef = useRef<HTMLDivElement>(null);
-
-  // Autoplay auto-scroll effect for the Toolkit horizontal scroll container
-  useEffect(() => {
-    const container = scrollRef.current;
-    if (!container) return;
-
-    let timer: NodeJS.Timeout;
-
-    const startAutoScroll = () => {
-      timer = setInterval(() => {
-        const { scrollLeft, scrollWidth, clientWidth } = container;
-        
-        // Wrap back to the beginning if we reached the end
-        if (scrollLeft + clientWidth >= scrollWidth - 15) {
-          container.scrollTo({ left: 0, behavior: 'smooth' });
-        } else {
-          // Scroll right by the width of one card + the gap (24px)
-          const firstCard = container.firstElementChild as HTMLElement;
-          const cardWidth = firstCard ? firstCard.getBoundingClientRect().width : 340;
-          container.scrollTo({ left: scrollLeft + cardWidth + 24, behavior: 'smooth' });
-        }
-      }, 3500);
-    };
-
-    startAutoScroll();
-
-    // Pause scroll on hover, resume on leave
-    const handleMouseEnter = () => clearInterval(timer);
-    const handleMouseLeave = () => startAutoScroll();
-
-    container.addEventListener('mouseenter', handleMouseEnter);
-    container.addEventListener('mouseleave', handleMouseLeave);
-
-    return () => {
-      clearInterval(timer);
-      container.removeEventListener('mouseenter', handleMouseEnter);
-      container.removeEventListener('mouseleave', handleMouseLeave);
-    };
-  }, []);
-
   const containerVariants = {
     hidden: {},
     visible: {
@@ -146,6 +105,9 @@ export const Work: React.FC = () => {
         );
     }
   };
+
+  // Duplicate the skills array for a seamless infinite loop in the marquee DOM
+  const doubledSkills = [...skills, ...skills];
 
   return (
     <section 
@@ -244,45 +206,34 @@ export const Work: React.FC = () => {
           ))}
         </motion.div>
 
-        {/* Skills Section (with horizontal scroll on all viewports) */}
+        {/* Skills Section (with CSS Infinite Marquee Loop) */}
         <div className="pt-10 border-t border-bg-warm/15">
           <h3 className="text-2xl md:text-3xl font-serif text-bg-warm mb-6 text-center">Technical Toolkit</h3>
           
-          <motion.div 
-            ref={scrollRef}
-            className="flex overflow-x-auto gap-6 pb-6 snap-x snap-mandatory no-scrollbar scroll-smooth w-full"
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.2 }}
-          >
-            {skills.map((skillGroup) => (
-              <motion.div 
-                key={skillGroup.category}
-                className="space-y-4 p-5 rounded-2xl bg-plum border border-bg-warm/15 flex-shrink-0 w-[280px] sm:w-[320px] md:w-[340px] snap-align-start transition-all duration-300"
-                variants={cardVariants}
-                whileHover={{ 
-                  y: -6, 
-                  boxShadow: "0 15px 25px -5px rgba(0, 0, 0, 0.25), 0 8px 10px -6px rgba(0, 0, 0, 0.25)",
-                  borderColor: "var(--color-coral)"
-                }}
-              >
-                <h4 className="text-xs font-serif text-ochre uppercase tracking-widest font-semibold">
-                  {skillGroup.category}
-                </h4>
-                <div className="flex flex-wrap gap-2">
-                  {skillGroup.items.map((item) => (
-                    <span 
-                      key={item}
-                      className="px-3 py-1 bg-plum/30 text-bg-warm text-xs rounded-full border border-bg-warm/10 hover:border-coral transition-colors duration-300 font-normal"
-                    >
-                      {item}
-                    </span>
-                  ))}
+          <div className="w-full overflow-hidden py-4 relative">
+            <div className="flex gap-6 animate-marquee flex-nowrap hover:[animation-play-state:paused] cursor-pointer w-max">
+              {doubledSkills.map((skillGroup, idx) => (
+                <div 
+                  key={`${skillGroup.category}-${idx}`}
+                  className="space-y-4 p-5 rounded-2xl bg-plum border border-bg-warm/15 flex-shrink-0 w-[280px] sm:w-[320px] md:w-[340px] transition-all duration-300 hover:border-coral hover:-translate-y-1.5 hover:shadow-2xl"
+                >
+                  <h4 className="text-xs font-serif text-ochre uppercase tracking-widest font-semibold">
+                    {skillGroup.category}
+                  </h4>
+                  <div className="flex flex-wrap gap-2">
+                    {skillGroup.items.map((item) => (
+                      <span 
+                        key={item}
+                        className="px-3 py-1 bg-plum/30 text-bg-warm text-xs rounded-full border border-bg-warm/10 hover:border-coral transition-colors duration-300 font-normal"
+                      >
+                        {item}
+                      </span>
+                    ))}
+                  </div>
                 </div>
-              </motion.div>
-            ))}
-          </motion.div>
+              ))}
+            </div>
+          </div>
         </div>
 
       </div>
