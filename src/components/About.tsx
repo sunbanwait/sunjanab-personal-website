@@ -137,11 +137,11 @@ export const About: React.FC = () => {
           className="absolute inset-0 opacity-100 z-0 pointer-events-none"
           style={{
             backgroundImage: `
-              radial-gradient(rgba(255, 255, 255, 1) 15%, transparent 16%),
-              radial-gradient(rgba(255, 255, 255, 1) 15%, transparent 16%)
+              radial-gradient(rgba(255, 255, 255, 1) 18%, transparent 19%),
+              radial-gradient(rgba(255, 255, 255, 1) 18%, transparent 19%)
             `,
-            backgroundSize: '240px 240px',
-            backgroundPosition: '0 0, 120px 120px'
+            backgroundSize: '180px 180px',
+            backgroundPosition: '0 0, 90px 90px'
           }}
         />
 
