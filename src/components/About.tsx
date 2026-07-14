@@ -1,26 +1,38 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 
-const funFacts = [
+const bentoItems = [
   {
-    icon: "🎹",
-    title: "Piano Instructor",
-    text: "Operating a private music teaching business since 2021. I love breaking down complex musical theory into intuitive, accessible lessons for kids."
+    id: "music",
+    title: "Classical Keys",
+    text: "I've been playing piano for years and love arranging duets and teaching beginner students.",
+    image: "/assets/music.jpg",
+    className: "md:col-span-2 md:row-span-1",
+    fallbackBg: "bg-plum/10"
   },
   {
-    icon: "🏐",
-    title: "Volleyball Coach",
-    text: "Coaching summer camps and youth teams at North Coast Volleyball Club. Teaching strategic setups, sportsmanship, and quick-reflex coordination."
+    id: "trails",
+    title: "Trail Seeker",
+    text: "Always happiest outdoors exploring national parks, going on hikes, and finding new trails.",
+    image: "/assets/trails.jpg",
+    className: "md:col-span-1 md:row-span-2 h-full",
+    fallbackBg: "bg-ochre/10"
   },
   {
-    icon: "💻",
-    title: "Cozy extension developer",
-    text: "Creator of extensions like InnerWeather. I specialize in designing cozy, user-friendly UI/UX layouts paired with clean, privacy-first local storage."
+    id: "volleyball",
+    title: "On the Court",
+    text: "From varsity captain to intramural player and youth coach, volleyball is my go-to energy reset.",
+    image: null, // Colored fallback block
+    className: "md:col-span-1 md:row-span-1",
+    fallbackBg: "bg-coral-bright/20"
   },
   {
-    icon: "🎙️",
-    title: "KSCU Radio Host",
-    text: "Actively involved in SCU campus life as SWE PR Chair, ACM Outreach Coordinator, and spin tracks/hosts shows on KSCU student campus radio."
+    id: "maker",
+    title: "Maker Mindset",
+    text: "I love hands-on building, whether it's intricate Lego architecture or analogue radio setups.",
+    image: "/assets/maker.jpg",
+    className: "md:col-span-1 md:row-span-1",
+    fallbackBg: "bg-plum/20"
   }
 ];
 
@@ -34,68 +46,139 @@ export const About: React.FC = () => {
     },
   };
 
-  const slideInVariants = {
-    hidden: { x: 40, opacity: 0 },
+  const cardVariants = {
+    hidden: { opacity: 0, y: 20 },
     visible: {
-      x: 0,
       opacity: 1,
-      transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] },
+      y: 0,
+      transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] },
     },
   };
 
   return (
-    <section 
-      className="w-full min-h-screen bg-bg-warm text-plum flex items-center relative py-24 border-t border-plum/10" 
-      id="about"
-    >
-      <div className="w-full max-w-6xl mx-auto px-6 md:px-12 grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
-        
-        {/* Left Side: Bio */}
-        <motion.div 
-          className="lg:col-span-6 space-y-8"
-          initial={{ opacity: 0, x: -50 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-        >
-          <span className="font-serif text-sm italic text-plum/50 tracking-widest uppercase">04 • Profile</span>
-          <h2 className="text-5xl md:text-8xl font-serif leading-none tracking-tight text-plum">
-            Grounded in community, driven by engineering.
-          </h2>
-          <p className="text-lg text-ink/80 font-sans font-normal leading-relaxed max-w-md">
-            Beyond coding, I spend my time teaching piano, coaching volleyball, and organizing tech outreach activities at Santa Clara University. I believe that engineering is at its best when it connects and uplifts people.
-          </p>
-        </motion.div>
- 
-        {/* Right Side: Fun Facts Grid */}
-        <motion.div 
-          className="lg:col-span-6 grid grid-cols-1 sm:grid-cols-2 gap-6"
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.2 }}
-        >
-          {funFacts.map((fact) => (
-            <motion.div
-              key={fact.title}
-              className="p-6 md:p-8 rounded-3xl bg-coral/10 border border-plum/10 flex flex-col space-y-4 hover:border-plum"
-              variants={slideInVariants}
-              whileHover={{ 
-                scale: 1.025,
-                rotate: [0, 0.5, -0.5, 0],
-                transition: { duration: 0.3 }
-              }}
-            >
-              <div className="text-3xl">{fact.icon}</div>
-              <h3 className="text-xl font-serif text-plum">{fact.title}</h3>
-              <p className="text-xs md:text-sm text-ink/80 font-sans font-normal leading-relaxed">
-                {fact.text}
-              </p>
-            </motion.div>
-          ))}
-        </motion.div>
+    <div className="w-full flex flex-col bg-bg-warm">
+      
+      {/* SECTION 4: Beyond the Code */}
+      <section 
+        className="w-full py-24 border-t border-plum/10" 
+        id="about"
+      >
+        <div className="w-full max-w-6xl mx-auto px-6 md:px-12 flex flex-col justify-center space-y-12">
+          
+          {/* Section Header */}
+          <motion.div 
+            className="space-y-3 border-b border-plum/10 pb-8 text-left"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+          >
+            <h2 className="text-3xl md:text-5xl lg:text-6xl font-serif text-plum tracking-tight leading-none">
+              Beyond the Code
+            </h2>
+            <p className="text-base md:text-lg text-ink/80 font-sans font-normal max-w-xl">
+              A few snapshots of what fuels my creativity when I'm off the clock.
+            </p>
+          </motion.div>
 
-      </div>
-    </section>
+          {/* Interactive Photo Mosaic (Bento/Masonry Grid) */}
+          <motion.div 
+            className="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[250px] md:auto-rows-[280px]"
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.05 }}
+          >
+            {bentoItems.map((item) => (
+              <motion.div
+                key={item.id}
+                className={`group relative rounded-[2rem] border border-plum/10 overflow-hidden shadow-sm hover:shadow-lg transition-all duration-500 cursor-pointer ${item.className} ${item.fallbackBg}`}
+                variants={cardVariants}
+              >
+                {/* Image or Fallback background */}
+                {item.image ? (
+                  <img 
+                    src={item.image} 
+                    alt={item.title}
+                    className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105 filter grayscale-[15%] group-hover:grayscale-0"
+                  />
+                ) : (
+                  <div className="w-full h-full flex items-center justify-center relative bg-gradient-to-br from-coral-bright/10 to-ochre/15">
+                    {/* Volleyball SVG Icon inside colored block */}
+                    <svg className="w-16 h-16 text-plum/20 group-hover:text-coral-bright/40 transition-colors duration-500" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
+                    </svg>
+                  </div>
+                )}
+
+                {/* Hover Tint Overlay & Sliding Fact Caption */}
+                <div className="absolute inset-0 bg-plum/0 group-hover:bg-plum/85 transition-all duration-500 flex flex-col justify-end p-6 opacity-0 group-hover:opacity-100 z-10">
+                  <div className="transform translate-y-6 group-hover:translate-y-0 transition-transform duration-500 ease-out space-y-1.5 text-left">
+                    <span className="text-xs font-serif italic text-ochre tracking-widest uppercase block">
+                      {item.title}
+                    </span>
+                    <p className="text-sm font-sans text-bg-warm leading-relaxed">
+                      {item.text}
+                    </p>
+                  </div>
+                </div>
+
+              </motion.div>
+            ))}
+          </motion.div>
+        </div>
+      </section>
+
+      {/* CLOSING BANNER & FOOTER */}
+      <footer className="w-full bg-plum text-bg-warm relative pt-24 pb-8 border-t border-plum/20">
+        <div className="w-full max-w-6xl mx-auto px-6 md:px-12 flex flex-col items-center text-center space-y-16">
+          
+          {/* Main call to action heading */}
+          <div className="space-y-6 max-w-3xl">
+            <h2 className="text-3xl md:text-5xl lg:text-6xl font-serif text-bg-warm tracking-tight leading-tight">
+              Let's build something impactful together.
+            </h2>
+            
+            {/* Interactive Email Button */}
+            <div className="pt-4">
+              <a 
+                href="mailto:sbanwait@scu.edu" 
+                className="inline-flex items-center space-x-3 px-8 py-4 bg-ochre text-ink font-sans font-extrabold text-xs uppercase tracking-widest rounded-full shadow-lg hover:scale-105 active:scale-95 hover:bg-ochre/95 transition-all duration-300"
+              >
+                <span>Say Hello ✦</span>
+              </a>
+            </div>
+          </div>
+
+          {/* Bottom Bar: Copyright line and small social links */}
+          <div className="w-full pt-8 border-t border-bg-warm/10 flex flex-col md:flex-row justify-between items-center gap-4 text-xs font-sans text-bg-warm/40">
+            <span>
+              Designed & Engineered by Sunjana Banwait • Built with Astro & Tailwind CSS
+            </span>
+            
+            <div className="flex items-center space-x-6">
+              <a 
+                href="https://github.com/sunbanwait" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="hover:text-coral-bright transition-colors duration-300 flex items-center gap-1.5"
+              >
+                GitHub
+              </a>
+              <a 
+                href="https://www.linkedin.com/in/sunjana-banwait/" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="hover:text-coral-bright transition-colors duration-300 flex items-center gap-1.5"
+              >
+                LinkedIn
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </footer>
+
+    </div>
   );
 };
