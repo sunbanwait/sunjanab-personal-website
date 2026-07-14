@@ -114,17 +114,14 @@ export const Work: React.FC = () => {
         
         {/* Centered Section Header */}
         <motion.div 
-          className="text-center flex flex-col items-center space-y-3"
+          className="text-center flex flex-col items-center space-y-2"
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif text-bg-warm tracking-tight">Projects</h2>
-          <p className="text-sm md:text-base text-bg-warm/75 font-sans font-normal tracking-wide">
-            Building solutions that make a difference
-          </p>
-          <div className="w-12 h-1 bg-coral rounded-full mt-2" />
+          <div className="w-12 h-1 bg-coral rounded-full mt-1" />
         </motion.div>
 
         {/* 2-Column Grid Layout of Premium Cards */}

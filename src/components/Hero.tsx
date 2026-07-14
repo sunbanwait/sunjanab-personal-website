@@ -108,20 +108,6 @@ export const Hero: React.FC = () => {
           >
             I am a Computer Science and Engineering student at Santa Clara University. I am passionate about building impactful technology, from accessible tools to ethical AI, constantly exploring how software engineering can better serve our communities.
           </motion.p>
-
-          <motion.div
-            custom={2}
-            variants={elementVariants}
-            className="pt-4 flex gap-4"
-          >
-            <a
-              href="#work"
-              className="px-6 py-3 border border-plum text-plum bg-transparent font-sans font-medium text-xs tracking-widest uppercase hover:bg-plum hover:text-bg-warm transition-all duration-300 rounded-sm"
-              id="hero-btn-work"
-            >
-              Explore Portfolio
-            </a>
-          </motion.div>
         </motion.div>
 
         {/* Right Column (Image): Circular Portrait with border & parallax */}
