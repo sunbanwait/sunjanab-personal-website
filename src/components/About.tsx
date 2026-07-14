@@ -130,26 +130,26 @@ export const About: React.FC = () => {
       </section>
 
       {/* CLOSING BANNER & FOOTER */}
-      <footer className="w-full bg-plum text-bg-warm relative py-32 border-t border-plum/20 overflow-hidden">
+      <footer className="w-full bg-plum text-bg-warm relative py-16 border-t border-plum/20 overflow-hidden">
         
         {/* Large Opaque White Polka Dot Checkerboard Background Pattern */}
         <div 
           className="absolute inset-0 opacity-100 z-0 pointer-events-none"
           style={{
             backgroundImage: `
-              radial-gradient(rgba(255, 255, 255, 1) 22%, transparent 23%),
-              radial-gradient(rgba(255, 255, 255, 1) 22%, transparent 23%)
+              radial-gradient(rgba(255, 255, 255, 1) 15%, transparent 16%),
+              radial-gradient(rgba(255, 255, 255, 1) 15%, transparent 16%)
             `,
-            backgroundSize: '160px 160px',
-            backgroundPosition: '0 0, 80px 80px'
+            backgroundSize: '240px 240px',
+            backgroundPosition: '0 0, 120px 120px'
           }}
         />
 
         <div className="w-full max-w-6xl mx-auto px-6 md:px-12 flex flex-col items-center justify-center relative z-10">
           
           {/* Solid Linen Card for high text legibility over polka dots */}
-          <div className="p-10 md:p-16 rounded-[2.5rem] bg-bg-warm border border-plum/10 shadow-2xl max-w-3xl w-full text-center space-y-8">
-            <h2 className="text-3xl md:text-5xl lg:text-6xl font-serif text-plum tracking-tight leading-tight">
+          <div className="p-6 md:p-10 rounded-[2rem] bg-bg-warm border border-plum/10 shadow-2xl max-w-3xl w-full text-center space-y-6">
+            <h2 className="text-3xl md:text-5xl font-serif text-plum tracking-tight leading-tight">
               Let's build something impactful together.
             </h2>
             
