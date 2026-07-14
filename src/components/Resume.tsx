@@ -87,13 +87,13 @@ export const Resume: React.FC = () => {
         
         {/* Section Header */}
         <motion.div 
-          className="border-b border-plum/10 pb-6 text-left"
+          className="border-b border-bg-warm/15 pb-6 text-left"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          <h2 className="text-3xl md:text-5xl lg:text-6xl font-serif text-plum tracking-tight">
+          <h2 className="text-3xl md:text-5xl lg:text-6xl font-serif text-bg-warm tracking-tight">
             Experience & Education
           </h2>
         </motion.div>
