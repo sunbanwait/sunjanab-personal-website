@@ -132,16 +132,18 @@ export const About: React.FC = () => {
       {/* CLOSING BANNER & FOOTER */}
       <footer className="w-full bg-plum text-bg-warm relative py-32 border-t border-plum/20 overflow-hidden">
         
-        {/* Large White Polka Dot Checkerboard Background Pattern */}
+        {/* Large Opaque White Polka Dot Checkerboard Background Pattern (Masked Around Text) */}
         <div 
-          className="absolute inset-0 opacity-30 z-0 pointer-events-none"
+          className="absolute inset-0 opacity-100 z-0 pointer-events-none"
           style={{
             backgroundImage: `
-              radial-gradient(rgba(255, 255, 255, 0.85) 28%, transparent 29%),
-              radial-gradient(rgba(255, 255, 255, 0.85) 28%, transparent 29%)
+              radial-gradient(rgba(255, 255, 255, 1) 22%, transparent 23%),
+              radial-gradient(rgba(255, 255, 255, 1) 22%, transparent 23%)
             `,
-            backgroundSize: '100px 100px',
-            backgroundPosition: '0 0, 50px 50px'
+            backgroundSize: '160px 160px',
+            backgroundPosition: '0 0, 80px 80px',
+            maskImage: 'radial-gradient(ellipse at center, transparent 40%, black 85%)',
+            WebkitMaskImage: 'radial-gradient(ellipse at center, transparent 40%, black 85%)'
           }}
         />
 
