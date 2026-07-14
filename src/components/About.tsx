@@ -150,7 +150,7 @@ export const About: React.FC = () => {
           {/* Solid Linen Card for high text legibility over polka dots */}
           <div className="p-6 md:p-10 rounded-[2rem] bg-bg-warm border border-plum/10 shadow-2xl max-w-3xl w-full text-center space-y-6">
             <h2 className="text-3xl md:text-5xl font-serif text-plum tracking-tight leading-tight">
-              Let's build something impactful together.
+              Let's Connect
             </h2>
             
             {/* Interactive Email Button */}
