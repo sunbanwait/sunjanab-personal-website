@@ -170,24 +170,7 @@ export const Resume: React.FC = () => {
           </motion.div>
         </div>
 
-        {/* Action Button: Email Resume Request */}
-        <motion.div 
-          className="flex justify-center pt-6"
-          initial={{ opacity: 0, scale: 0.95 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-        >
-          <a 
-            href="mailto:sbanwait@scu.edu" 
-            className="inline-flex items-center space-x-3 px-8 py-4 bg-plum text-bg-warm font-sans font-medium text-xs tracking-widest uppercase rounded-full shadow-md hover:bg-plum/90 hover:scale-[1.02] active:scale-[0.98] transition-all duration-300"
-          >
-            <span>Request Full PDF CV</span>
-            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-            </svg>
-          </a>
-        </motion.div>
+
 
       </div>
     </section>
