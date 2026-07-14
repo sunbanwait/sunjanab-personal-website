@@ -6,8 +6,8 @@ export const Navigation: React.FC = () => {
 
   const sections = [
     { id: 'hero', label: 'Home', shortLabel: 'Hero' },
-    { id: 'resume', label: 'Resume', shortLabel: 'Resume' },
     { id: 'work', label: 'Work', shortLabel: 'Work' },
+    { id: 'resume', label: 'Resume', shortLabel: 'Resume' },
     { id: 'about', label: 'About', shortLabel: 'About' }
   ];
 

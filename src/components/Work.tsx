@@ -111,7 +111,7 @@ export const Work: React.FC = () => {
 
   return (
     <section 
-      className="w-full min-h-screen bg-bg-warm text-plum flex items-center relative py-20 border-b border-plum/10" 
+      className="w-full min-h-screen bg-plum text-bg-warm flex items-center relative py-20 border-y border-plum/20" 
       id="work"
     >
       <div className="w-full max-w-6xl mx-auto px-6 md:px-12 flex flex-col justify-center space-y-12">
@@ -124,7 +124,7 @@ export const Work: React.FC = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif text-plum tracking-tight">Featured Projects</h2>
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif text-bg-warm tracking-tight">Featured Projects</h2>
           <div className="w-12 h-1 bg-coral rounded-full mt-1" />
         </motion.div>
 
@@ -139,17 +139,17 @@ export const Work: React.FC = () => {
           {projects.map((project) => (
             <motion.div
               key={project.title}
-              className="group border rounded-[2rem] p-8 bg-plum text-bg-warm border-bg-warm/15 shadow-xl flex flex-col justify-between min-h-[440px]"
+              className="group border rounded-[2rem] p-8 bg-bg-warm text-plum border-plum/10 shadow-xl flex flex-col justify-between min-h-[440px]"
               variants={cardVariants}
               whileHover={{ 
                 y: -6, 
-                boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.25), 0 10px 10px -5px rgba(0, 0, 0, 0.25)",
+                boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.15), 0 10px 10px -5px rgba(0, 0, 0, 0.15)",
                 borderColor: project.accent,
                 transition: { duration: 0.3 }
               }}
             >
               {/* Card top: GitHub logo icon */}
-              <div className="flex justify-center items-center py-6 text-bg-warm/30 group-hover:text-coral transition-colors duration-300">
+              <div className="flex justify-center items-center py-6 text-plum/30 group-hover:text-coral transition-colors duration-300">
                 <svg className="w-12 h-12" fill="currentColor" viewBox="0 0 24 24">
                   <path fillRule="evenodd" clipRule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.9-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0012 2z" />
                 </svg>
@@ -158,7 +158,7 @@ export const Work: React.FC = () => {
               {/* Card middle: Text info */}
               <div className="space-y-3.5 flex-grow text-left">
                 <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1">
-                  <h3 className="text-2xl font-serif font-black text-bg-warm group-hover:text-coral transition-colors duration-300">
+                  <h3 className="text-2xl font-serif font-black text-plum group-hover:text-coral transition-colors duration-300">
                     {project.title}
                   </h3>
                   <span className="text-xs font-sans uppercase tracking-wider text-ochre font-semibold">
@@ -166,7 +166,7 @@ export const Work: React.FC = () => {
                   </span>
                 </div>
 
-                <p className="text-sm font-sans font-normal text-bg-warm/80 leading-relaxed">
+                <p className="text-sm font-sans font-normal text-ink/80 leading-relaxed">
                   {project.description}
                 </p>
 
@@ -175,7 +175,7 @@ export const Work: React.FC = () => {
                     {project.tech.map((t) => (
                       <span 
                         key={t}
-                        className="px-2.5 py-0.5 bg-bg-warm/10 text-bg-warm text-xs font-sans font-normal rounded-full border border-bg-warm/10"
+                        className="px-2.5 py-0.5 bg-plum/5 text-plum text-xs font-sans font-normal rounded-full border border-plum/5"
                       >
                         {t}
                       </span>
@@ -185,7 +185,7 @@ export const Work: React.FC = () => {
               </div>
 
               {/* Card bottom: Dynamic Link Buttons */}
-              <div className="mt-6 pt-4 border-t border-bg-warm/10">
+              <div className="mt-6 pt-4 border-t border-plum/5">
                 <div className={project.links.length === 2 ? "grid grid-cols-2 gap-3" : "w-full"}>
                   {project.links.map((link) => (
                     <a 
@@ -193,7 +193,7 @@ export const Work: React.FC = () => {
                       href={link.url} 
                       target="_blank" 
                       rel="noopener noreferrer"
-                      className="py-2.5 border border-bg-warm/20 rounded-xl hover:bg-bg-warm hover:text-plum transition-all duration-300 flex items-center justify-center space-x-2 text-sm font-sans font-semibold text-bg-warm bg-bg-warm/[0.02]"
+                      className="py-2.5 border border-plum/10 rounded-xl hover:bg-plum hover:text-bg-warm transition-all duration-300 flex items-center justify-center space-x-2 text-sm font-sans font-semibold text-plum bg-plum/[0.02]"
                     >
                       {renderIcon(link.type)}
                       <span>{link.label}</span>
@@ -207,8 +207,8 @@ export const Work: React.FC = () => {
         </motion.div>
 
         {/* Skills Section (with CSS Infinite Marquee Loop) */}
-        <div className="pt-10 border-t border-plum/15">
-          <h3 className="text-2xl md:text-3xl font-serif text-plum mb-6 text-center">Technical Toolkit</h3>
+        <div className="pt-10 border-t border-bg-warm/15">
+          <h3 className="text-2xl md:text-3xl font-serif text-bg-warm mb-6 text-center">Technical Toolkit</h3>
           
           <div className="w-full overflow-hidden py-4 relative">
             <div className="flex gap-6 animate-marquee flex-nowrap hover:[animation-play-state:paused] cursor-pointer w-max">
@@ -227,7 +227,7 @@ export const Work: React.FC = () => {
                         className="px-3 py-1 bg-plum/30 text-bg-warm text-xs rounded-full border border-bg-warm/10 hover:border-coral transition-colors duration-300 font-normal"
                       >
                         {item}
-                    </span>
+                      </span>
                     ))}
                   </div>
                 </div>
