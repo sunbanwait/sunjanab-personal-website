@@ -34,8 +34,8 @@ const work = [
     pills: ["Community Building", "Tech Outreach", "Public Speaking"]
   },
   {
-    role: "Private Piano Instructor",
-    company: "Self-Employed",
+    role: "Private Studio",
+    company: "Piano Instructor",
     period: "Jan 2021 – Present (5+ yrs)",
     category: "TEACHING",
     summary: "Operating a private studio providing individualized piano instruction to beginner students and children. Designing foundational music theory curriculum and tailoring lesson plans to individual student progress.",
