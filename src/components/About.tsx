@@ -58,7 +58,7 @@ export const About: React.FC = () => {
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
         >
-          <span className="font-serif text-sm italic text-plum/70 tracking-widest uppercase">02 • profile</span>
+          <span className="font-serif text-sm italic text-plum/70 tracking-widest uppercase">04 • Profile</span>
           <h2 className="text-5xl md:text-8xl font-serif leading-none tracking-tight text-plum">
             Grounded in community, driven by engineering.
           </h2>

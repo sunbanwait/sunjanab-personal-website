@@ -80,33 +80,33 @@ export const Resume: React.FC = () => {
 
   return (
     <section 
-      className="w-full min-h-screen bg-bg-warm text-plum flex items-center relative py-24 border-b border-plum/10" 
+      className="w-full min-h-screen bg-plum text-bg-warm flex items-center relative py-24 border-b border-plum/20" 
       id="resume"
     >
       <div className="w-full max-w-6xl mx-auto px-6 md:px-12 flex flex-col justify-center space-y-16">
         
         {/* Section Header */}
         <motion.div 
-          className="space-y-2 border-b border-plum/10 pb-8 text-left"
+          className="space-y-2 border-b border-bg-warm/15 pb-8 text-left"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          <span className="font-serif text-sm italic text-plum/50 tracking-widest uppercase">03 • Credentials</span>
-          <h2 className="text-4xl md:text-7xl lg:text-8xl font-serif text-plum tracking-tight leading-none">
+          <span className="font-serif text-sm italic text-bg-warm/50 tracking-widest uppercase">02 • Credentials</span>
+          <h2 className="text-4xl md:text-7xl lg:text-8xl font-serif text-bg-warm tracking-tight leading-none">
             Experience & Education
           </h2>
         </motion.div>
 
         {/* Education Timeline (Credential Cards) */}
         <div className="space-y-8 text-left">
-          <h3 className="text-2xl font-serif text-plum font-semibold tracking-tight border-b border-plum/5 pb-2">Education</h3>
+          <h3 className="text-2xl font-serif text-bg-warm font-semibold tracking-tight border-b border-bg-warm/15 pb-2">Education</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {education.map((edu) => (
               <motion.div 
                 key={edu.institution}
-                className="p-6 rounded-2xl bg-white/30 border border-plum/10 border-l-4 border-l-ochre space-y-3 shadow-sm hover:shadow-md transition-all duration-300"
+                className="p-6 rounded-2xl bg-bg-warm text-plum border border-plum/10 border-l-4 border-l-ochre space-y-3 shadow-sm hover:shadow-md transition-all duration-300 animate-fade-in"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -125,7 +125,7 @@ export const Resume: React.FC = () => {
 
         {/* Experience Timeline (Card Stack) */}
         <div className="space-y-8 text-left">
-          <h3 className="text-2xl font-serif text-plum font-semibold tracking-tight border-b border-plum/5 pb-2">Experience</h3>
+          <h3 className="text-2xl font-serif text-bg-warm font-semibold tracking-tight border-b border-bg-warm/15 pb-2">Experience</h3>
           
           <motion.div 
             className="flex flex-col gap-6"
@@ -137,7 +137,7 @@ export const Resume: React.FC = () => {
             {work.map((exp) => (
               <motion.div 
                 key={exp.role} 
-                className="p-6 rounded-2xl border border-plum/10 bg-white/30 flex flex-col justify-between hover:border-coral transition-all duration-300 hover:-translate-y-1 hover:shadow-md"
+                className="p-6 rounded-2xl border border-plum/10 bg-bg-warm text-plum flex flex-col justify-between hover:border-coral transition-all duration-300 hover:-translate-y-1 hover:shadow-md"
                 variants={itemVariants}
               >
                 <div className="flex justify-between items-center mb-3">
@@ -181,7 +181,7 @@ export const Resume: React.FC = () => {
         >
           <a 
             href="mailto:sbanwait@scu.edu" 
-            className="inline-flex items-center space-x-3 px-8 py-4 bg-plum text-bg-warm font-sans font-medium text-xs tracking-widest uppercase rounded-full shadow-md hover:bg-plum/90 hover:scale-[1.02] active:scale-[0.98] transition-all duration-300"
+            className="inline-flex items-center space-x-3 px-8 py-4 bg-bg-warm text-plum font-sans font-medium text-xs tracking-widest uppercase rounded-full shadow-md hover:bg-bg-warm/95 hover:scale-[1.02] active:scale-[0.98] transition-all duration-300"
           >
             <span>Request Full PDF CV</span>
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
