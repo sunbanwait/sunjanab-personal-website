@@ -80,7 +80,7 @@ export const Resume: React.FC = () => {
 
   return (
     <section 
-      className="w-full min-h-screen bg-bg-warm text-plum flex items-center relative py-24 border-b border-plum/10" 
+      className="w-full min-h-screen bg-coral text-plum flex items-center relative py-24 border-b border-plum/20" 
       id="resume"
     >
       <div className="w-full max-w-6xl mx-auto px-6 md:px-12 flex flex-col justify-center space-y-16">
@@ -105,18 +105,18 @@ export const Resume: React.FC = () => {
             {education.map((edu) => (
               <motion.div 
                 key={edu.institution}
-                className="p-6 rounded-2xl bg-plum text-bg-warm border border-plum/10 border-l-4 border-l-ochre space-y-3 shadow-md hover:shadow-lg transition-all duration-300"
+                className="p-6 rounded-2xl bg-bg-warm text-plum border border-plum/10 border-l-4 border-l-ochre space-y-3 shadow-md hover:shadow-lg transition-all duration-300"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
               >
                 <div className="flex flex-col sm:flex-row sm:justify-between sm:items-baseline gap-1">
-                  <h4 className="text-xl font-serif font-black text-bg-warm">{edu.institution}</h4>
-                  <span className="text-xs font-sans font-semibold text-bg-warm/60 whitespace-nowrap">{edu.period}</span>
+                  <h4 className="text-xl font-serif font-black text-plum">{edu.institution}</h4>
+                  <span className="text-xs font-sans font-semibold text-plum/60 whitespace-nowrap">{edu.period}</span>
                 </div>
-                <p className="text-sm font-sans font-bold text-bg-warm/95">{edu.degree}</p>
-                <p className="text-xs md:text-sm text-bg-warm/80 font-sans font-normal leading-relaxed">{edu.details}</p>
+                <p className="text-sm font-sans font-bold text-ink">{edu.degree}</p>
+                <p className="text-xs md:text-sm text-ink/80 font-sans font-normal leading-relaxed">{edu.details}</p>
               </motion.div>
             ))}
           </div>
@@ -136,30 +136,30 @@ export const Resume: React.FC = () => {
             {work.map((exp) => (
               <motion.div 
                 key={exp.role} 
-                className="p-6 rounded-2xl border border-plum/15 bg-plum text-bg-warm flex flex-col justify-between hover:border-coral transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
+                className="p-6 rounded-2xl border border-plum/10 bg-bg-warm text-plum flex flex-col justify-between hover:border-coral transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
                 variants={itemVariants}
               >
                 <div className="flex justify-between items-center mb-3">
-                  <span className="text-xs font-sans font-semibold text-bg-warm/60">{exp.period}</span>
+                  <span className="text-xs font-sans font-semibold text-plum/50">{exp.period}</span>
                   <span className="px-2 py-0.5 border border-ochre/30 text-ochre text-[10px] font-sans font-black tracking-wider rounded-full uppercase bg-ochre/5">
                     {exp.category}
                   </span>
                 </div>
 
                 <div className="space-y-1 mb-3">
-                  <h4 className="text-xl font-serif font-black text-bg-warm leading-tight">{exp.company}</h4>
-                  <p className="text-sm font-sans font-bold text-bg-warm/95">{exp.role}</p>
+                  <h4 className="text-xl font-serif font-black text-plum leading-tight">{exp.company}</h4>
+                  <p className="text-sm font-sans font-bold text-ink">{exp.role}</p>
                 </div>
 
-                <p className="text-xs md:text-sm text-bg-warm/80 font-sans font-normal leading-relaxed mb-4">
+                <p className="text-xs md:text-sm text-ink/80 font-sans font-normal leading-relaxed mb-4">
                   {exp.summary}
                 </p>
 
-                <div className="flex flex-wrap gap-1.5 pt-3 border-t border-bg-warm/10">
+                <div className="flex flex-wrap gap-1.5 pt-3 border-t border-plum/5">
                   {exp.pills.map((pill) => (
                     <span 
                       key={pill}
-                      className="px-2.5 py-0.5 bg-bg-warm/10 text-bg-warm text-[10px] md:text-xs font-sans rounded-full border border-bg-warm/10"
+                      className="px-2.5 py-0.5 bg-plum/5 text-plum text-[10px] md:text-xs font-sans rounded-full border border-plum/5"
                     >
                       {pill}
                     </span>
