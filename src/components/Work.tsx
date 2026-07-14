@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef, useEffect } from 'react';
 import { motion } from 'framer-motion';
 
 const projects = [
@@ -59,6 +59,47 @@ const skills = [
 ];
 
 export const Work: React.FC = () => {
+  const scrollRef = useRef<HTMLDivElement>(null);
+
+  // Autoplay auto-scroll effect for the Toolkit horizontal scroll container
+  useEffect(() => {
+    const container = scrollRef.current;
+    if (!container) return;
+
+    let timer: NodeJS.Timeout;
+
+    const startAutoScroll = () => {
+      timer = setInterval(() => {
+        const { scrollLeft, scrollWidth, clientWidth } = container;
+        
+        // Wrap back to the beginning if we reached the end
+        if (scrollLeft + clientWidth >= scrollWidth - 15) {
+          container.scrollTo({ left: 0, behavior: 'smooth' });
+        } else {
+          // Scroll right by the width of one card + the gap (24px)
+          const firstCard = container.firstElementChild as HTMLElement;
+          const cardWidth = firstCard ? firstCard.getBoundingClientRect().width : 340;
+          container.scrollTo({ left: scrollLeft + cardWidth + 24, behavior: 'smooth' });
+        }
+      }, 3500);
+    };
+
+    startAutoScroll();
+
+    // Pause scroll on hover, resume on leave
+    const handleMouseEnter = () => clearInterval(timer);
+    const handleMouseLeave = () => startAutoScroll();
+
+    container.addEventListener('mouseenter', handleMouseEnter);
+    container.addEventListener('mouseleave', handleMouseLeave);
+
+    return () => {
+      clearInterval(timer);
+      container.removeEventListener('mouseenter', handleMouseEnter);
+      container.removeEventListener('mouseleave', handleMouseLeave);
+    };
+  }, []);
+
   const containerVariants = {
     hidden: {},
     visible: {
@@ -208,6 +249,7 @@ export const Work: React.FC = () => {
           <h3 className="text-2xl md:text-3xl font-serif text-bg-warm mb-6 text-center">Technical Toolkit</h3>
           
           <motion.div 
+            ref={scrollRef}
             className="flex overflow-x-auto gap-6 pb-6 snap-x snap-mandatory no-scrollbar scroll-smooth w-full"
             variants={containerVariants}
             initial="hidden"
