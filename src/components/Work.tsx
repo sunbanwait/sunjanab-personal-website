@@ -120,7 +120,7 @@ export const Work: React.FC = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif text-bg-warm tracking-tight">Projects</h2>
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif text-bg-warm tracking-tight">Featured Projects</h2>
           <div className="w-12 h-1 bg-coral rounded-full mt-1" />
         </motion.div>
 
@@ -202,12 +202,12 @@ export const Work: React.FC = () => {
           ))}
         </motion.div>
 
-        {/* Skills Section */}
+        {/* Skills Section (with responsive horizontal scroll on mobile/tablet) */}
         <div className="pt-10 border-t border-bg-warm/15">
           <h3 className="text-2xl md:text-3xl font-serif text-bg-warm mb-6 text-center">Technical Toolkit</h3>
           
           <motion.div 
-            className="grid grid-cols-1 md:grid-cols-3 gap-6"
+            className="flex overflow-x-auto md:grid md:grid-cols-3 gap-6 pb-4 snap-x snap-mandatory no-scrollbar scroll-smooth"
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
@@ -216,7 +216,7 @@ export const Work: React.FC = () => {
             {skills.map((skillGroup) => (
               <motion.div 
                 key={skillGroup.category}
-                className="space-y-4 p-5 rounded-2xl bg-bg-warm/5 border border-bg-warm/10"
+                className="space-y-4 p-5 rounded-2xl bg-bg-warm/5 border border-bg-warm/10 flex-shrink-0 w-[290px] sm:w-[330px] md:w-auto snap-align-start hover:border-coral transition-colors duration-300"
                 variants={cardVariants}
               >
                 <h4 className="text-xs font-serif text-ochre uppercase tracking-widest font-semibold">
