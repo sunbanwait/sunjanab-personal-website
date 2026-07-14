@@ -12,7 +12,7 @@ const projects = [
       { label: "GitHub", url: "https://github.com/sunbanwait/Eco-scout", type: "github" },
       { label: "Devpost", url: "https://devpost.com/software/eco-scout", type: "external" }
     ],
-    accent: "rgba(242, 137, 114, 0.6)" // coral outline
+    accent: "rgba(242, 137, 114, 0.8)" // original coral outline
   },
   {
     title: "FaceNav",
@@ -24,7 +24,7 @@ const projects = [
       { label: "GitHub", url: "https://github.com/sunbanwait/ACM-Winter-Challenge2025", type: "github" },
       { label: "Video Demo", url: "https://www.youtube.com/watch?v=QPXTKLSdJy0", type: "youtube" }
     ],
-    accent: "rgba(209, 144, 36, 0.6)" // ochre outline
+    accent: "rgba(209, 144, 36, 0.8)" // ochre outline
   },
   {
     title: "InnerWeather",
@@ -35,7 +35,7 @@ const projects = [
     links: [
       { label: "Chrome Web Store", url: "https://chromewebstore.google.com/detail/innerweather/idemjjieojpapobgibfaabepklenafhg", type: "webstore" }
     ],
-    accent: "rgba(242, 137, 114, 0.6)"
+    accent: "rgba(242, 137, 114, 0.8)"
   },
   {
     title: "HighView Portal",
@@ -47,7 +47,7 @@ const projects = [
       { label: "GitHub", url: "https://github.com/sunbanwait/AWSxINRIX-Hack-2025", type: "github" },
       { label: "Devpost", url: "https://devpost.com/software/highview-portal", type: "external" }
     ],
-    accent: "rgba(242, 137, 114, 0.6)"
+    accent: "rgba(242, 137, 114, 0.8)"
   }
 ];
 
@@ -125,7 +125,7 @@ export const Work: React.FC = () => {
           transition={{ duration: 0.8 }}
         >
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif text-bg-warm tracking-tight">Featured Projects</h2>
-          <div className="w-12 h-1 bg-coral rounded-full mt-1" />
+          <div className="w-12 h-1 bg-coral-bright rounded-full mt-1" />
         </motion.div>
 
         {/* 2-Column Grid Layout of Premium Cards */}
@@ -149,7 +149,7 @@ export const Work: React.FC = () => {
               }}
             >
               {/* Card top: GitHub logo icon */}
-              <div className="flex justify-center items-center py-6 text-plum/30 group-hover:text-coral transition-colors duration-300">
+              <div className="flex justify-center items-center py-6 text-plum/30 group-hover:text-coral-bright transition-colors duration-300">
                 <svg className="w-12 h-12" fill="currentColor" viewBox="0 0 24 24">
                   <path fillRule="evenodd" clipRule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.9-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0012 2z" />
                 </svg>
@@ -158,7 +158,7 @@ export const Work: React.FC = () => {
               {/* Card middle: Text info */}
               <div className="space-y-3.5 flex-grow text-left">
                 <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1">
-                  <h3 className="text-2xl font-serif font-black text-plum group-hover:text-coral transition-colors duration-300">
+                  <h3 className="text-2xl font-serif font-black text-plum group-hover:text-coral-bright transition-colors duration-300">
                     {project.title}
                   </h3>
                   <span className="text-xs font-sans uppercase tracking-wider text-ochre font-semibold">
@@ -215,7 +215,7 @@ export const Work: React.FC = () => {
               {doubledSkills.map((skillGroup, idx) => (
                 <div 
                   key={`${skillGroup.category}-${idx}`}
-                  className="space-y-4 p-5 rounded-2xl bg-plum border border-bg-warm/15 flex-shrink-0 w-[280px] sm:w-[320px] md:w-[340px] transition-all duration-300 hover:border-coral hover:-translate-y-1.5 hover:shadow-2xl"
+                  className="space-y-4 p-5 rounded-2xl bg-plum border border-bg-warm/15 flex-shrink-0 w-[280px] sm:w-[320px] md:w-[340px] transition-all duration-300 hover:border-coral-bright hover:-translate-y-1.5 hover:shadow-2xl"
                 >
                   <h4 className="text-xs font-serif text-ochre uppercase tracking-widest font-semibold">
                     {skillGroup.category}
@@ -224,7 +224,7 @@ export const Work: React.FC = () => {
                     {skillGroup.items.map((item) => (
                       <span 
                         key={item}
-                        className="px-3 py-1 bg-plum/30 text-bg-warm text-xs rounded-full border border-bg-warm/10 hover:border-coral transition-colors duration-300 font-normal"
+                        className="px-3 py-1 bg-plum/30 text-bg-warm text-xs rounded-full border border-bg-warm/10 hover:border-coral-bright transition-colors duration-300 font-normal"
                       >
                         {item}
                       </span>

@@ -63,14 +63,14 @@ export const Navigation: React.FC = () => {
         <div className="text-center px-2">
           <a 
             href="#hero" 
-            className="font-serif text-[13px] font-extrabold tracking-tight text-plum hover:text-coral transition-colors duration-300 focus:outline-none lowercase leading-none block"
+            className="font-serif text-[13px] font-extrabold tracking-tight text-plum hover:text-coral-bright transition-colors duration-300 focus:outline-none lowercase leading-none block"
             id="nav-sidebar-logo"
           >
             sunjana<br/>
-            <span className="font-light italic text-coral">banwait</span>
+            <span className="font-light italic text-coral-bright">banwait</span>
           </a>
         </div>
-
+ 
         {/* Middle: Minimal vertical timeline (line and dots only, no text labels) */}
         <div className="relative flex flex-col items-center justify-center h-2/5 w-full">
           
@@ -78,11 +78,11 @@ export const Navigation: React.FC = () => {
           <div className="absolute top-2 bottom-2 w-[2px] bg-plum/15 z-0">
             {/* The progress fill indicator */}
             <div 
-              className="w-full bg-gradient-to-b from-coral to-ochre transition-all duration-100 origin-top"
+              className="w-full bg-gradient-to-b from-coral-bright to-ochre transition-all duration-100 origin-top"
               style={{ height: `${scrollProgress * 100}%` }}
             />
           </div>
-
+ 
           {/* Timeline Nodes (empty circles) */}
           <div className="flex flex-col justify-between h-full items-center z-10 py-1">
             {sections.map((sec) => {
@@ -99,7 +99,7 @@ export const Navigation: React.FC = () => {
                     className={`w-3.5 h-3.5 rounded-full border-2 border-plum transition-all duration-500 flex items-center justify-center ${
                       isActive 
                         ? 'bg-plum scale-125 shadow-md' 
-                        : 'bg-bg-warm hover:bg-coral/20'
+                        : 'bg-bg-warm hover:bg-coral-bright/20'
                     }`}
                   >
                     {isActive && (
