@@ -130,8 +130,18 @@ export const About: React.FC = () => {
       </section>
 
       {/* CLOSING BANNER & FOOTER */}
-      <footer className="w-full bg-plum text-bg-warm relative pt-24 pb-8 border-t border-plum/20">
-        <div className="w-full max-w-6xl mx-auto px-6 md:px-12 flex flex-col items-center text-center space-y-16">
+      <footer className="w-full bg-plum text-bg-warm relative py-32 border-t border-plum/20 overflow-hidden">
+        
+        {/* Subtle White Polka Dot Background Pattern */}
+        <div 
+          className="absolute inset-0 opacity-30 z-0 pointer-events-none"
+          style={{
+            backgroundImage: 'radial-gradient(rgba(255, 255, 255, 0.15) 1.5px, transparent 1.5px)',
+            backgroundSize: '24px 24px'
+          }}
+        />
+
+        <div className="w-full max-w-6xl mx-auto px-6 md:px-12 flex flex-col items-center text-center relative z-10">
           
           {/* Main call to action heading */}
           <div className="space-y-6 max-w-3xl">
@@ -146,32 +156,6 @@ export const About: React.FC = () => {
                 className="inline-flex items-center space-x-3 px-8 py-4 bg-ochre text-ink font-sans font-extrabold text-xs uppercase tracking-widest rounded-full shadow-lg hover:scale-105 active:scale-95 hover:bg-ochre/95 transition-all duration-300"
               >
                 <span>Say Hello ✦</span>
-              </a>
-            </div>
-          </div>
-
-          {/* Bottom Bar: Copyright line and small social links */}
-          <div className="w-full pt-8 border-t border-bg-warm/10 flex flex-col md:flex-row justify-between items-center gap-4 text-xs font-sans text-bg-warm/40">
-            <span>
-              Designed & Engineered by Sunjana Banwait • Built with Astro & Tailwind CSS
-            </span>
-            
-            <div className="flex items-center space-x-6">
-              <a 
-                href="https://github.com/sunbanwait" 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                className="hover:text-coral-bright transition-colors duration-300 flex items-center gap-1.5"
-              >
-                GitHub
-              </a>
-              <a 
-                href="https://www.linkedin.com/in/sunjana-banwait/" 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                className="hover:text-coral-bright transition-colors duration-300 flex items-center gap-1.5"
-              >
-                LinkedIn
               </a>
             </div>
           </div>
