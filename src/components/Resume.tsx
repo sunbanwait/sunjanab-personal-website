@@ -105,7 +105,7 @@ export const Resume: React.FC = () => {
             {education.map((edu) => (
               <motion.div 
                 key={edu.institution}
-                className="p-6 rounded-2xl bg-bg-warm text-plum border border-plum/10 border-l-4 border-l-ochre space-y-3 shadow-md hover:shadow-lg transition-all duration-300"
+                className="p-6 rounded-2xl bg-white text-plum border border-plum/10 border-l-4 border-l-ochre space-y-3 shadow-md hover:shadow-lg transition-all duration-300"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -136,7 +136,7 @@ export const Resume: React.FC = () => {
             {work.map((exp) => (
               <motion.div 
                 key={exp.role} 
-                className="p-6 rounded-2xl border border-plum/10 bg-bg-warm text-plum flex flex-col justify-between hover:border-coral transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
+                className="p-6 rounded-2xl border border-plum/10 bg-white text-plum flex flex-col justify-between hover:border-coral transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
                 variants={itemVariants}
               >
                 <div className="flex justify-between items-center mb-3">
