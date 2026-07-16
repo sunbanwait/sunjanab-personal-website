@@ -27,7 +27,7 @@ const bentoItems = [
   {
     id: "volunteering",
     title: "Community Impact",
-    text: "Whether leading SWE++ coding workshops or coordinating campus student outreach, I love connecting people with computing resources.",
+    text: "I love giving back to my community, and it is especially rewarding to introduce computing to kids.",
     image: "/assets/volunteering.jpg",
     video: null, // Insert video path here (e.g., "/assets/volunteering.mp4")
     className: "md:col-span-1 md:row-span-1",
@@ -37,7 +37,7 @@ const bentoItems = [
   {
     id: "pismo",
     title: "Coastal Wanderer",
-    text: "Sunset captures and beach walks along Pismo Beach are my favorite ways to disconnect and find fresh perspectives.",
+    text: "I love capturing snapshots from my trips to look back on later.",
     image: "/assets/pismo.jpg",
     video: null, // Insert video path here (e.g., "/assets/maker.mp4")
     className: "md:col-span-1 md:row-span-1",
@@ -47,20 +47,20 @@ const bentoItems = [
   {
     id: "kitty",
     title: "Friendly Felines",
-    text: "I have a habit of stopping to pet any friendly cat I come across while exploring my neighborhood.",
+    text: "I have a habit of stopping to pet any friendly cat I come across.",
     image: "/assets/kitty.jpg",
     video: null, // Insert video path here (e.g., "/assets/cat.mp4")
-    className: "md:col-span-1 md:row-span-1",
+    className: "md:col-span-2 md:row-span-1",
     fallbackBg: "bg-coral-bright/10",
-    objectPosition: "object-center"
+    objectPosition: "object-bottom" // <-- Aligns crop to the bottom to display the cat!
   },
   {
     id: "museum",
     title: "Curious Minds",
-    text: "I'm happiest when I'm learning something new, whether diving into science exhibitions or discovering history museums.",
+    text: "Diving into science exhibitions or discovering history museums is a favorite way to learn something new.",
     image: "/assets/museum.jpg",
     video: null, // Insert video path here (e.g., "/assets/exhibit.mp4")
-    className: "md:col-span-2 md:row-span-1",
+    className: "md:col-span-1 md:row-span-1", // <-- Square card layout allows portrait museum photo to render vertically
     fallbackBg: "bg-ochre/25",
     objectPosition: "object-center"
   }
