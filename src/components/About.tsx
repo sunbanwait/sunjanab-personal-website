@@ -8,8 +8,8 @@ const bentoItems = [
   {
     id: "music",
     title: "Classical Keys",
-    text: "I've been playing piano for years and love arranging duets and teaching beginner students.",
-    image: "/assets/music.jpg",
+    text: "I've been playing piano and singing for years, arranging duets and teaching beginner students.",
+    image: "/assets/singing.jpg",
     video: null, // Insert video path here if you want to use a video instead (e.g., "/assets/music.mp4")
     className: "md:col-span-2 md:row-span-1",
     fallbackBg: "bg-plum/10"
@@ -18,25 +18,25 @@ const bentoItems = [
     id: "trails",
     title: "Trail Seeker",
     text: "Always happiest outdoors exploring national parks, going on hikes, and finding new trails.",
-    image: "/assets/trails.jpg",
+    image: "/assets/sittinglog.jpg",
     video: null, // Insert video path here (e.g., "/assets/hiking.mp4")
     className: "md:col-span-1 md:row-span-2 h-full",
     fallbackBg: "bg-ochre/10"
   },
   {
-    id: "volleyball",
-    title: "On the Court",
-    text: "From varsity captain to intramural player and youth coach, volleyball is my go-to energy reset.",
-    image: null, // Insert image path here (e.g., "/assets/volleyball.jpg")
-    video: null, // Insert video path here (e.g., "/assets/volleyball.mp4")
+    id: "volunteering",
+    title: "Community Impact",
+    text: "Whether leading SWE++ coding workshops or coordinating campus student outreach, I love connecting people with computing resources.",
+    image: "/assets/volunteering.jpg",
+    video: null, // Insert video path here (e.g., "/assets/volunteering.mp4")
     className: "md:col-span-1 md:row-span-1",
     fallbackBg: "bg-coral-bright/20"
   },
   {
-    id: "maker",
-    title: "Maker Mindset",
-    text: "I love hands-on building, whether it's intricate Lego architecture or analogue radio setups.",
-    image: "/assets/maker.jpg",
+    id: "pismo",
+    title: "Coastal Wanderer",
+    text: "Sunset captures and beach walks along Pismo Beach are my favorite ways to disconnect and find fresh perspectives.",
+    image: "/assets/pismo.jpg",
     video: null, // Insert video path here (e.g., "/assets/maker.mp4")
     className: "md:col-span-1 md:row-span-1",
     fallbackBg: "bg-plum/20"
