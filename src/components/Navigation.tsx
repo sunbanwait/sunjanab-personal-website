@@ -9,7 +9,7 @@ export const Navigation: React.FC = () => {
     { id: 'work', label: 'Work', shortLabel: 'Work' },
     { id: 'resume', label: 'Resume', shortLabel: 'Resume' },
     { id: 'about', label: 'About', shortLabel: 'About' },
-    { id: 'featured', label: 'Featured', shortLabel: 'Featured' }
+    { id: 'featured', label: 'Highlights', shortLabel: 'Highlights' }
   ];
 
   // Track scroll progress of the viewport (0 to 1)
