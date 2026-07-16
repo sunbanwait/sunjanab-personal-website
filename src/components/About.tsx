@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
+// WHERE TO INSERT PHOTOS & VIDEOS:
 // Place your media files (images/videos) in the "public/assets/" directory of this project.
 // Update the paths below to match your filenames (e.g. "/assets/my-photo.jpg" or "/assets/my-video.mp4").
 const bentoItems = [
@@ -9,60 +10,70 @@ const bentoItems = [
     title: "Classical Keys",
     text: "I've been playing piano and singing for years, arranging duets and teaching beginner students.",
     image: "/assets/singing.jpg",
-    video: null, // Insert video path here if you want to use a video instead (e.g., "/assets/music.mp4")
-    className: "md:col-span-2 md:row-span-1",
+    video: null,
+    className: "md:col-span-1 md:row-span-1", // Changed to square to balance the grid
     fallbackBg: "bg-plum/10",
     objectPosition: "object-center"
-  },
-  {
-    id: "trails",
-    title: "Trail Seeker",
-    text: "Always happiest outdoors exploring national parks, going on hikes, and finding new trails.",
-    image: "/assets/sittinglog.jpg",
-    video: "/assets/joshuatree.mp4", // <-- Plays the Joshua Tree hiking video!
-    className: "md:col-span-1 md:row-span-2 h-full",
-    fallbackBg: "bg-ochre/10",
-    objectPosition: "object-top" // Crops from the top to ensure heads/faces are visible
   },
   {
     id: "volunteering",
     title: "Community Impact",
     text: "I love giving back to my community, and it is especially rewarding to introduce computing to kids.",
     image: "/assets/volunteering.jpg",
-    video: null, // Insert video path here (e.g., "/assets/volunteering.mp4")
-    className: "md:col-span-1 md:row-span-1", // <-- Square card layout
+    video: null,
+    className: "md:col-span-1 md:row-span-1", // Square layout
     fallbackBg: "bg-coral-bright/20",
     objectPosition: "object-center"
+  },
+  {
+    id: "trails",
+    title: "Trail Seeker",
+    text: "Always happiest outdoors exploring national parks, going on hikes, and finding new trails.",
+    image: "/assets/sittinglog.jpg", // Restored back to your favorite photo
+    video: null,
+    className: "md:col-span-1 md:row-span-2 h-full", // Vertical layout
+    fallbackBg: "bg-ochre/10",
+    objectPosition: "object-top" // Crops from the top to ensure heads/faces are visible
   },
   {
     id: "kitty",
     title: "Friendly Felines",
     text: "I have a habit of stopping to pet any friendly cat I come across.",
     image: "/assets/kitty.jpg",
-    video: null, // Insert video path here (e.g., "/assets/cat.mp4")
-    className: "md:col-span-1 md:row-span-1", // <-- Square card layout
+    video: null,
+    className: "md:col-span-1 md:row-span-1", // Square layout
     fallbackBg: "bg-coral-bright/10",
     objectPosition: "object-bottom" // Aligns crop to the bottom to display the cat
-  },
-  {
-    id: "pismo",
-    title: "Coastal Wanderer",
-    text: "I love capturing snapshots from my trips to look back on later.",
-    image: "/assets/pismo.jpg",
-    video: "/assets/walkingup.mp4", // <-- Plays the coastal walk video!
-    className: "md:col-span-2 md:row-span-1", // <-- Spans 2 columns (horizontal banner)
-    fallbackBg: "bg-plum/20",
-    objectPosition: "object-center"
   },
   {
     id: "museum",
     title: "Curious Minds",
     text: "Diving into science exhibitions or discovering history museums is a favorite way to learn something new.",
     image: "/assets/museum.jpg",
-    video: null, // Insert video path here (e.g., "/assets/museum.mp4")
-    className: "md:col-span-1 md:row-span-1", // <-- Square card layout
+    video: null,
+    className: "md:col-span-1 md:row-span-1", // Square layout
     fallbackBg: "bg-ochre/25",
     objectPosition: "object-top" // Crops from the top to display the high painting frames
+  },
+  {
+    id: "coastal",
+    title: "Coastal Wanderer",
+    text: "I love capturing snapshots from my trips to look back on later.",
+    image: null,
+    video: "/assets/walkingup.mp4", // Video added as its own card
+    className: "md:col-span-2 md:row-span-1", // Spans 2 columns (horizontal video card)
+    fallbackBg: "bg-plum/20",
+    objectPosition: "object-center"
+  },
+  {
+    id: "joshuatree",
+    title: "Desert Explorer",
+    text: "Exploring the unique desert trails and rock formations of Joshua Tree National Park.",
+    image: null,
+    video: "/assets/joshuatree.mp4", // Video added as its own card
+    className: "md:col-span-1 md:row-span-1", // Square video card
+    fallbackBg: "bg-ochre/20",
+    objectPosition: "object-center"
   }
 ];
 
