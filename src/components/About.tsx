@@ -1,12 +1,16 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 
+// WHERE TO INSERT PHOTOS & VIDEOS:
+// Place your media files (images/videos) in the "public/assets/" directory of this project.
+// Update the paths below to match your filenames (e.g. "/assets/my-photo.jpg" or "/assets/my-video.mp4").
 const bentoItems = [
   {
     id: "music",
     title: "Classical Keys",
     text: "I've been playing piano for years and love arranging duets and teaching beginner students.",
     image: "/assets/music.jpg",
+    video: null, // Insert video path here if you want to use a video instead (e.g., "/assets/music.mp4")
     className: "md:col-span-2 md:row-span-1",
     fallbackBg: "bg-plum/10"
   },
@@ -15,6 +19,7 @@ const bentoItems = [
     title: "Trail Seeker",
     text: "Always happiest outdoors exploring national parks, going on hikes, and finding new trails.",
     image: "/assets/trails.jpg",
+    video: null, // Insert video path here (e.g., "/assets/hiking.mp4")
     className: "md:col-span-1 md:row-span-2 h-full",
     fallbackBg: "bg-ochre/10"
   },
@@ -22,7 +27,8 @@ const bentoItems = [
     id: "volleyball",
     title: "On the Court",
     text: "From varsity captain to intramural player and youth coach, volleyball is my go-to energy reset.",
-    image: null, // Colored fallback block
+    image: null, // Insert image path here (e.g., "/assets/volleyball.jpg")
+    video: null, // Insert video path here (e.g., "/assets/volleyball.mp4")
     className: "md:col-span-1 md:row-span-1",
     fallbackBg: "bg-coral-bright/20"
   },
@@ -31,6 +37,7 @@ const bentoItems = [
     title: "Maker Mindset",
     text: "I love hands-on building, whether it's intricate Lego architecture or analogue radio setups.",
     image: "/assets/maker.jpg",
+    video: null, // Insert video path here (e.g., "/assets/maker.mp4")
     className: "md:col-span-1 md:row-span-1",
     fallbackBg: "bg-plum/20"
   }
@@ -58,7 +65,7 @@ export const About: React.FC = () => {
   return (
     <div className="w-full flex flex-col bg-bg-warm">
       
-      {/* SECTION 4: Beyond the Code */}
+      {/* SECTION 4: About Me */}
       <section 
         className="w-full py-24 border-t border-plum/10" 
         id="about"
@@ -74,7 +81,7 @@ export const About: React.FC = () => {
             transition={{ duration: 0.8 }}
           >
             <h2 className="text-3xl md:text-5xl lg:text-6xl font-serif text-plum tracking-tight leading-none">
-              Beyond the Code
+              About Me
             </h2>
             <p className="text-base md:text-lg text-ink/80 font-sans font-normal max-w-xl">
               A few snapshots of what fuels my creativity when I'm off the clock.
@@ -95,8 +102,17 @@ export const About: React.FC = () => {
                 className={`group relative rounded-[2rem] border border-plum/10 overflow-hidden shadow-sm hover:shadow-lg transition-all duration-500 cursor-pointer ${item.className} ${item.fallbackBg}`}
                 variants={cardVariants}
               >
-                {/* Image or Fallback background */}
-                {item.image ? (
+                {/* Video, Image, or Fallback rendering */}
+                {item.video ? (
+                  <video 
+                    src={item.video} 
+                    autoPlay 
+                    loop 
+                    muted 
+                    playsInline
+                    className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                  />
+                ) : item.image ? (
                   <img 
                     src={item.image} 
                     alt={item.title}
@@ -104,7 +120,7 @@ export const About: React.FC = () => {
                   />
                 ) : (
                   <div className="w-full h-full flex items-center justify-center relative bg-gradient-to-br from-coral-bright/10 to-ochre/15">
-                    {/* Volleyball SVG Icon inside colored block */}
+                    {/* Fallback Volleyball SVG icon */}
                     <svg className="w-16 h-16 text-plum/20 group-hover:text-coral-bright/40 transition-colors duration-500" fill="currentColor" viewBox="0 0 24 24">
                       <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
                     </svg>
