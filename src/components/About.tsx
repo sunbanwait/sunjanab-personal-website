@@ -11,9 +11,19 @@ const bentoItems = [
     text: "I've been playing piano and singing for years, arranging duets and teaching beginner students.",
     image: "/assets/singing.jpg",
     video: null,
-    className: "md:col-span-1 md:row-span-1", // Changed to square to balance the grid
+    className: "md:col-span-2 md:row-span-1",
     fallbackBg: "bg-plum/10",
     objectPosition: "object-center"
+  },
+  {
+    id: "trails",
+    title: "Trail Seeker",
+    text: "Always happiest outdoors exploring national parks, going on hikes, and finding new trails.",
+    image: "/assets/sittinglog.jpg",
+    video: null,
+    className: "md:col-span-1 md:row-span-2 h-full",
+    fallbackBg: "bg-ochre/10",
+    objectPosition: "object-top" // Keep top crop for sitting log to keep faces visible
   },
   {
     id: "volunteering",
@@ -21,19 +31,9 @@ const bentoItems = [
     text: "I love giving back to my community, and it is especially rewarding to introduce computing to kids.",
     image: "/assets/volunteering.jpg",
     video: null,
-    className: "md:col-span-1 md:row-span-1", // Square layout
+    className: "md:col-span-1 md:row-span-1",
     fallbackBg: "bg-coral-bright/20",
     objectPosition: "object-center"
-  },
-  {
-    id: "trails",
-    title: "Trail Seeker",
-    text: "Always happiest outdoors exploring national parks, going on hikes, and finding new trails.",
-    image: "/assets/sittinglog.jpg", // Restored back to your favorite photo
-    video: null,
-    className: "md:col-span-1 md:row-span-2 h-full", // Vertical layout
-    fallbackBg: "bg-ochre/10",
-    objectPosition: "object-top" // Crops from the top to ensure heads/faces are visible
   },
   {
     id: "kitty",
@@ -41,9 +41,19 @@ const bentoItems = [
     text: "I have a habit of stopping to pet any friendly cat I come across.",
     image: "/assets/kitty.jpg",
     video: null,
-    className: "md:col-span-1 md:row-span-1", // Square layout
+    className: "md:col-span-1 md:row-span-1",
     fallbackBg: "bg-coral-bright/10",
-    objectPosition: "object-bottom" // Aligns crop to the bottom to display the cat
+    objectPosition: "object-center" // Center crop to display petting hand and cat body
+  },
+  {
+    id: "coastal",
+    title: "Coastal Wanderer",
+    text: "I love capturing snapshots from my trips to look back on later.",
+    image: null,
+    video: "/assets/walkingup.mp4",
+    className: "md:col-span-2 md:row-span-1",
+    fallbackBg: "bg-plum/20",
+    objectPosition: "object-center"
   },
   {
     id: "museum",
@@ -51,29 +61,9 @@ const bentoItems = [
     text: "Diving into science exhibitions or discovering history museums is a favorite way to learn something new.",
     image: "/assets/museum.jpg",
     video: null,
-    className: "md:col-span-1 md:row-span-1", // Square layout
+    className: "md:col-span-1 md:row-span-1",
     fallbackBg: "bg-ochre/25",
-    objectPosition: "object-top" // Crops from the top to display the high painting frames
-  },
-  {
-    id: "coastal",
-    title: "Coastal Wanderer",
-    text: "I love capturing snapshots from my trips to look back on later.",
-    image: null,
-    video: "/assets/walkingup.mp4", // Video added as its own card
-    className: "md:col-span-2 md:row-span-1", // Spans 2 columns (horizontal video card)
-    fallbackBg: "bg-plum/20",
-    objectPosition: "object-center"
-  },
-  {
-    id: "joshuatree",
-    title: "Desert Explorer",
-    text: "Exploring the unique desert trails and rock formations of Joshua Tree National Park.",
-    image: null,
-    video: "/assets/joshuatree.mp4", // Video added as its own card
-    className: "md:col-span-1 md:row-span-1", // Square video card
-    fallbackBg: "bg-ochre/20",
-    objectPosition: "object-center"
+    objectPosition: "object-center" // Center crop to show paintings and back of head
   }
 ];
 
@@ -332,6 +322,19 @@ export const About: React.FC = () => {
           
           {/* Solid Linen Card for high text legibility over polka dots */}
           <div className="p-6 md:p-10 rounded-[2rem] bg-bg-warm border border-plum/10 shadow-2xl max-w-3xl w-full text-center space-y-6">
+            
+            {/* Waving Goodbye Loop Video Avatar */}
+            <div className="w-28 h-28 md:w-36 md:h-36 rounded-full overflow-hidden mx-auto border-4 border-plum/10 shadow-lg relative bg-bg-warm">
+              <video 
+                src="/assets/joshuatree.mp4"
+                autoPlay
+                loop
+                muted
+                playsInline
+                className="w-full h-full object-cover"
+              />
+            </div>
+
             <h2 className="text-3xl md:text-5xl font-serif text-plum tracking-tight leading-tight">
               Let's Connect!
             </h2>
