@@ -98,21 +98,17 @@ export const About: React.FC = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            {/* Left side: Section Title & Subtitle */}
-            <div className="lg:col-span-5 space-y-3">
-              <span className="font-serif text-xs italic text-plum/50 tracking-widest uppercase block">04 • Profile</span>
+            {/* Left side: Section Title */}
+            <div className="lg:col-span-5 flex items-center">
               <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif text-plum tracking-tight leading-none">
                 About Me
               </h2>
-              <p className="text-xs md:text-sm text-plum/60 font-sans font-normal tracking-wide uppercase">
-                A few snapshots of what fuels my creativity off the clock.
-              </p>
             </div>
             
             {/* Right side: Personalized Biography */}
             <div className="lg:col-span-7 flex items-center">
               <p className="text-base md:text-lg text-ink/90 font-sans font-normal leading-relaxed">
-                I am a computer science student, but a lot of my favorite things happen away from a screen. I've taught piano, coached volleyball, love being outdoors, and have a habit of stopping to pet any friendly cat I come across. I enjoy being involved with things that are both useful and meaningful for my community, and I’m happiest when I’m learning something new or helping someone else do the same.
+                I am a computer science student, but a lot of my favorite things happen away from a screen. I've taught piano, coached volleyball, love being outdoors, exploring museums, and have a habit of stopping to pet any friendly cat I come across. Casually vlogging, editing videos, and being involved with things that are useful and meaningful for my community are what fuel my creativity, and I’m happiest when I’m learning something new or helping someone else do the same.
               </p>
             </div>
           </motion.div>
@@ -158,10 +154,7 @@ export const About: React.FC = () => {
 
                 {/* Hover Tint Overlay & Sliding Fact Caption */}
                 <div className="absolute inset-0 bg-plum/0 group-hover:bg-plum/85 transition-all duration-500 flex flex-col justify-end p-6 opacity-0 group-hover:opacity-100 z-10">
-                  <div className="transform translate-y-6 group-hover:translate-y-0 transition-transform duration-500 ease-out space-y-1.5 text-left">
-                    <span className="text-xs font-serif italic text-ochre tracking-widest uppercase block">
-                      {item.title}
-                    </span>
+                  <div className="transform translate-y-6 group-hover:translate-y-0 transition-transform duration-500 ease-out text-left">
                     <p className="text-sm font-sans text-bg-warm leading-relaxed">
                       {item.text}
                     </p>
