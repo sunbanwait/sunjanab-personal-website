@@ -124,7 +124,7 @@ export const About: React.FC = () => {
       
       {/* SECTION 4: About Me */}
       <section 
-        className="w-full py-24 border-t border-plum/10" 
+        className="w-full pt-24 pb-36 border-t border-plum/10" 
         id="about"
       >
         <div className="w-full max-w-5xl mx-auto px-6 md:px-12 flex flex-col justify-center space-y-10">
@@ -154,7 +154,7 @@ export const About: React.FC = () => {
 
           {/* Interactive Photo Mosaic (Bento/Masonry Grid) */}
           <motion.div 
-            className="grid grid-cols-1 md:grid-cols-3 gap-4 auto-rows-[190px] md:auto-rows-[210px]"
+            className="grid grid-cols-1 md:grid-cols-3 gap-4 auto-rows-[190px] md:auto-rows-[210px] mb-8"
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
