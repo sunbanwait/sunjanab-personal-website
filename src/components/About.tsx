@@ -30,18 +30,8 @@ const bentoItems = [
     text: "I love giving back to my community, and it is especially rewarding to introduce computing to kids.",
     image: "/assets/volunteering.jpg",
     video: null, // Insert video path here (e.g., "/assets/volunteering.mp4")
-    className: "md:col-span-2 md:row-span-1",
+    className: "md:col-span-1 md:row-span-1", // <-- Square card layout
     fallbackBg: "bg-coral-bright/20",
-    objectPosition: "object-center"
-  },
-  {
-    id: "pismo",
-    title: "Coastal Wanderer",
-    text: "I love capturing snapshots from my trips to look back on later.",
-    image: "/assets/pismo.jpg",
-    video: null, // Insert video path here (e.g., "/assets/maker.mp4")
-    className: "md:col-span-1 md:row-span-1",
-    fallbackBg: "bg-plum/20",
     objectPosition: "object-center"
   },
   {
@@ -50,19 +40,29 @@ const bentoItems = [
     text: "I have a habit of stopping to pet any friendly cat I come across.",
     image: "/assets/kitty.jpg",
     video: null, // Insert video path here (e.g., "/assets/cat.mp4")
-    className: "md:col-span-1 md:row-span-1", // <-- Square card layout fits the vertical photo
+    className: "md:col-span-1 md:row-span-1", // <-- Square card layout
     fallbackBg: "bg-coral-bright/10",
-    objectPosition: "object-bottom" // <-- Aligns crop to the bottom to display the cat!
+    objectPosition: "object-bottom" // Aligns crop to the bottom to display the cat
+  },
+  {
+    id: "pismo",
+    title: "Coastal Wanderer",
+    text: "I love capturing snapshots from my trips to look back on later.",
+    image: "/assets/pismo.jpg",
+    video: null, // Insert video path here (e.g., "/assets/pismo.mp4")
+    className: "md:col-span-2 md:row-span-1", // <-- Spans 2 columns (horizontal banner)
+    fallbackBg: "bg-plum/20",
+    objectPosition: "object-center"
   },
   {
     id: "museum",
     title: "Curious Minds",
     text: "Diving into science exhibitions or discovering history museums is a favorite way to learn something new.",
     image: "/assets/museum.jpg",
-    video: null, // Insert video path here (e.g., "/assets/exhibit.mp4")
+    video: null, // Insert video path here (e.g., "/assets/museum.mp4")
     className: "md:col-span-1 md:row-span-1", // <-- Square card layout
     fallbackBg: "bg-ochre/25",
-    objectPosition: "object-top" // <-- Crops from the top to display the high painting frames!
+    objectPosition: "object-top" // Crops from the top to display the high painting frames
   }
 ];
 
