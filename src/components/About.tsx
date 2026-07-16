@@ -30,7 +30,7 @@ const bentoItems = [
     text: "I love giving back to my community, and it is especially rewarding to introduce computing to kids.",
     image: "/assets/volunteering.jpg",
     video: null, // Insert video path here (e.g., "/assets/volunteering.mp4")
-    className: "md:col-span-1 md:row-span-1",
+    className: "md:col-span-2 md:row-span-1",
     fallbackBg: "bg-coral-bright/20",
     objectPosition: "object-center"
   },
@@ -50,7 +50,7 @@ const bentoItems = [
     text: "I have a habit of stopping to pet any friendly cat I come across.",
     image: "/assets/kitty.jpg",
     video: null, // Insert video path here (e.g., "/assets/cat.mp4")
-    className: "md:col-span-2 md:row-span-1",
+    className: "md:col-span-1 md:row-span-1", // <-- Square card layout fits the vertical photo
     fallbackBg: "bg-coral-bright/10",
     objectPosition: "object-bottom" // <-- Aligns crop to the bottom to display the cat!
   },
@@ -60,9 +60,9 @@ const bentoItems = [
     text: "Diving into science exhibitions or discovering history museums is a favorite way to learn something new.",
     image: "/assets/museum.jpg",
     video: null, // Insert video path here (e.g., "/assets/exhibit.mp4")
-    className: "md:col-span-1 md:row-span-1", // <-- Square card layout allows portrait museum photo to render vertically
+    className: "md:col-span-1 md:row-span-1", // <-- Square card layout
     fallbackBg: "bg-ochre/25",
-    objectPosition: "object-center"
+    objectPosition: "object-top" // <-- Crops from the top to display the high painting frames!
   }
 ];
 
@@ -126,7 +126,7 @@ export const About: React.FC = () => {
         className="w-full py-24 border-t border-plum/10" 
         id="about"
       >
-        <div className="w-full max-w-6xl mx-auto px-6 md:px-12 flex flex-col justify-center space-y-12">
+        <div className="w-full max-w-5xl mx-auto px-6 md:px-12 flex flex-col justify-center space-y-10">
           
           {/* Section Header */}
           <motion.div 
@@ -153,7 +153,7 @@ export const About: React.FC = () => {
 
           {/* Interactive Photo Mosaic (Bento/Masonry Grid) */}
           <motion.div 
-            className="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[250px] md:auto-rows-[280px]"
+            className="grid grid-cols-1 md:grid-cols-3 gap-4 auto-rows-[190px] md:auto-rows-[210px]"
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
