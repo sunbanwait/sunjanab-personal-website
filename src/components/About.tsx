@@ -61,7 +61,7 @@ const bentoItems = [
     text: "I love capturing snapshots from my trips to look back on later.",
     image: null,
     video: "/assets/walkingup.mp4",
-    className: "md:col-span-3 md:row-span-1", // Changed to full-width (col-span-3) for cinematic walk
+    className: "md:col-span-3 md:row-span-2", // Changed to row-span-2 for a thicker banner
     fallbackBg: "bg-plum/20",
     objectPosition: "object-center"
   }
