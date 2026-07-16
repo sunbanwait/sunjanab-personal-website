@@ -19,7 +19,7 @@ const bentoItems = [
     title: "Trail Seeker",
     text: "Always happiest outdoors exploring national parks, going on hikes, and finding new trails.",
     image: "/assets/sittinglog.jpg",
-    video: null, // Insert video path here (e.g., "/assets/hiking.mp4")
+    video: "/assets/joshuatree.mp4", // <-- Plays the Joshua Tree hiking video!
     className: "md:col-span-1 md:row-span-2 h-full",
     fallbackBg: "bg-ochre/10",
     objectPosition: "object-top" // Crops from the top to ensure heads/faces are visible
@@ -49,7 +49,7 @@ const bentoItems = [
     title: "Coastal Wanderer",
     text: "I love capturing snapshots from my trips to look back on later.",
     image: "/assets/pismo.jpg",
-    video: null, // Insert video path here (e.g., "/assets/pismo.mp4")
+    video: "/assets/walkingup.mp4", // <-- Plays the coastal walk video!
     className: "md:col-span-2 md:row-span-1", // <-- Spans 2 columns (horizontal banner)
     fallbackBg: "bg-plum/20",
     objectPosition: "object-center"
