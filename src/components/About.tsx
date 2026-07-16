@@ -12,7 +12,8 @@ const bentoItems = [
     image: "/assets/singing.jpg",
     video: null, // Insert video path here if you want to use a video instead (e.g., "/assets/music.mp4")
     className: "md:col-span-2 md:row-span-1",
-    fallbackBg: "bg-plum/10"
+    fallbackBg: "bg-plum/10",
+    objectPosition: "object-center"
   },
   {
     id: "trails",
@@ -21,7 +22,8 @@ const bentoItems = [
     image: "/assets/sittinglog.jpg",
     video: null, // Insert video path here (e.g., "/assets/hiking.mp4")
     className: "md:col-span-1 md:row-span-2 h-full",
-    fallbackBg: "bg-ochre/10"
+    fallbackBg: "bg-ochre/10",
+    objectPosition: "object-top" // <-- Crops from the top to ensure heads/faces are visible!
   },
   {
     id: "volunteering",
@@ -30,7 +32,8 @@ const bentoItems = [
     image: "/assets/volunteering.jpg",
     video: null, // Insert video path here (e.g., "/assets/volunteering.mp4")
     className: "md:col-span-1 md:row-span-1",
-    fallbackBg: "bg-coral-bright/20"
+    fallbackBg: "bg-coral-bright/20",
+    objectPosition: "object-center"
   },
   {
     id: "pismo",
@@ -39,7 +42,8 @@ const bentoItems = [
     image: "/assets/pismo.jpg",
     video: null, // Insert video path here (e.g., "/assets/maker.mp4")
     className: "md:col-span-1 md:row-span-1",
-    fallbackBg: "bg-plum/20"
+    fallbackBg: "bg-plum/20",
+    objectPosition: "object-center"
   },
   {
     id: "kitty",
@@ -48,7 +52,8 @@ const bentoItems = [
     image: "/assets/kitty.jpg",
     video: null, // Insert video path here (e.g., "/assets/cat.mp4")
     className: "md:col-span-1 md:row-span-1",
-    fallbackBg: "bg-coral-bright/10"
+    fallbackBg: "bg-coral-bright/10",
+    objectPosition: "object-center"
   },
   {
     id: "museum",
@@ -57,7 +62,8 @@ const bentoItems = [
     image: "/assets/museum.jpg",
     video: null, // Insert video path here (e.g., "/assets/exhibit.mp4")
     className: "md:col-span-2 md:row-span-1",
-    fallbackBg: "bg-ochre/25"
+    fallbackBg: "bg-ochre/25",
+    objectPosition: "object-center"
   }
 ];
 
@@ -141,7 +147,7 @@ export const About: React.FC = () => {
                   <img 
                     src={item.image} 
                     alt={item.title}
-                    className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105 filter grayscale-[15%] group-hover:grayscale-0"
+                    className={`w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105 filter grayscale-[15%] group-hover:grayscale-0 ${item.objectPosition || 'object-center'}`}
                   />
                 ) : (
                   <div className="w-full h-full flex items-center justify-center relative bg-gradient-to-br from-coral-bright/10 to-ochre/15">
