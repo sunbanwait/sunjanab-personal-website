@@ -48,7 +48,7 @@ const bentoItems = [
   {
     id: "volunteering",
     title: "Community Impact",
-    text: "I love giving back to my community, and it is especially rewarding to introduce computing to kids.",
+    text: "I value giving back to my community, and it is especially rewarding to introduce computing to kids.",
     image: "/assets/volunteering.jpg",
     video: null,
     className: "md:col-span-1 md:row-span-1", // Square
