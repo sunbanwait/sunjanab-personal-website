@@ -8,7 +8,8 @@ export const Navigation: React.FC = () => {
     { id: 'hero', label: 'Home', shortLabel: 'Hero' },
     { id: 'work', label: 'Work', shortLabel: 'Work' },
     { id: 'resume', label: 'Resume', shortLabel: 'Resume' },
-    { id: 'about', label: 'About', shortLabel: 'About' }
+    { id: 'about', label: 'About', shortLabel: 'About' },
+    { id: 'featured', label: 'Featured', shortLabel: 'Featured' }
   ];
 
   // Track scroll progress of the viewport (0 to 1)
@@ -159,7 +160,7 @@ export const Navigation: React.FC = () => {
           </div>
 
           {/* Nodes */}
-          <div className="w-full grid grid-cols-4 relative z-10">
+          <div className="w-full grid grid-cols-5 relative z-10">
             {sections.map((sec, index) => {
               const isActive = activeSection === sec.id;
               return (

@@ -303,6 +303,129 @@ export const About: React.FC = () => {
         )}
       </AnimatePresence>
 
+      {/* SECTION 5: Featured Experiences */}
+      <section 
+        className="w-full pt-24 pb-36 border-t border-plum/10 bg-bg-warm" 
+        id="featured"
+      >
+        <div className="w-full max-w-5xl mx-auto px-6 md:px-12 flex flex-col justify-center space-y-12">
+          
+          {/* Section Header */}
+          <motion.div 
+            className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 border-b border-plum/10 pb-8 text-left"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+          >
+            {/* Left side: Section Title */}
+            <div className="lg:col-span-5 flex items-center">
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif text-plum tracking-tight leading-none">
+                Featured Experiences
+              </h2>
+            </div>
+            
+            {/* Right side: Subtext */}
+            <div className="lg:col-span-7 flex items-center">
+              <p className="text-base md:text-lg text-ink/90 font-sans font-normal leading-relaxed">
+                Highlights of outreach, public speaking, and community leadership from my academic and extracurricular journey.
+              </p>
+            </div>
+          </motion.div>
+
+          {/* Cards Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {/* Item 1: Scholar Spotlight */}
+            <motion.div 
+              className="flex flex-col p-8 rounded-[2rem] border border-plum/10 bg-bg-warm hover:shadow-lg transition-all duration-500 text-left space-y-4"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+            >
+              <div className="text-[10px] font-sans font-extrabold uppercase tracking-widest text-coral-bright bg-coral-bright/10 px-3 py-1 rounded-full self-start">
+                Scholar Spotlight
+              </div>
+              <h3 className="text-xl md:text-2xl font-serif text-plum leading-snug">
+                Ciocca Center Mindset Scholar
+              </h3>
+              <p className="text-sm text-ink/80 leading-relaxed font-sans flex-grow">
+                Featured on Santa Clara University's Instagram page sharing a day in the life of a computer science student and Mindset Scholar, highlighting innovation and entrepreneurship on campus.
+              </p>
+              <div className="pt-4">
+                <a 
+                  href="https://www.instagram.com/reel/DZ0ooz0H-8y/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="border-b border-plum text-plum hover:text-coral-bright hover:border-coral-bright transition-all duration-300 font-sans text-xs uppercase tracking-widest inline-flex items-center space-x-1.5 font-bold"
+                >
+                  <span>Watch Reel ↗</span>
+                </a>
+              </div>
+            </motion.div>
+
+            {/* Item 2: Space Station Radio MC */}
+            <motion.div 
+              className="flex flex-col p-8 rounded-[2rem] border border-plum/10 bg-bg-warm hover:shadow-lg transition-all duration-500 text-left space-y-4"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+            >
+              <div className="text-[10px] font-sans font-extrabold uppercase tracking-widest text-ochre bg-ochre/15 px-3 py-1 rounded-full self-start">
+                Live Broadcast MC
+              </div>
+              <h3 className="text-xl md:text-2xl font-serif text-plum leading-snug">
+                ARISS Space Station Contact
+              </h3>
+              <p className="text-sm text-ink/80 leading-relaxed font-sans flex-grow">
+                Served as Master of Ceremonies for a live International Space Station radio contact event with 1,000+ attendees. Prepared the live scripting and adapted in real time to strict communication windows.
+              </p>
+              <div className="pt-4">
+                <a 
+                  href="https://www.youtube.com/watch?v=ZNogF8E87Ic&t=967s" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="border-b border-plum text-plum hover:text-coral-bright hover:border-coral-bright transition-all duration-300 font-sans text-xs uppercase tracking-widest inline-flex items-center space-x-1.5 font-bold"
+                >
+                  <span>Watch Broadcast ↗</span>
+                </a>
+              </div>
+            </motion.div>
+
+            {/* Item 3: Girls Who Code Founder */}
+            <motion.div 
+              className="flex flex-col p-8 rounded-[2rem] border border-plum/10 bg-bg-warm hover:shadow-lg transition-all duration-500 text-left space-y-4"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+            >
+              <div className="text-[10px] font-sans font-extrabold uppercase tracking-widest text-plum bg-plum/10 px-3 py-1 rounded-full self-start">
+                YMCA Partnership
+              </div>
+              <h3 className="text-xl md:text-2xl font-serif text-plum leading-snug">
+                Coding Stars Program Founder
+              </h3>
+              <p className="text-sm text-ink/80 leading-relaxed font-sans flex-grow">
+                Founded and led Oakwood's Girls Who Code club Coding Stars outreach program. Developed curriculum and taught computing fundamentals, typing, and safety to underserved elementary school students.
+              </p>
+              <div className="pt-4">
+                <a 
+                  href="https://www.oakwoodway.org/community/news/details/~board/news/post/oakwoods-girls-who-code-club-starts-the-coding-stars-summer-program-at-local-elementary-schools" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="border-b border-plum text-plum hover:text-coral-bright hover:border-coral-bright transition-all duration-300 font-sans text-xs uppercase tracking-widest inline-flex items-center space-x-1.5 font-bold"
+                >
+                  <span>Read Article ↗</span>
+                </a>
+              </div>
+            </motion.div>
+          </div>
+
+        </div>
+      </section>
+
       {/* CLOSING BANNER & FOOTER */}
       <footer className="w-full bg-plum text-bg-warm relative py-16 border-t border-plum/20 overflow-hidden">
         
