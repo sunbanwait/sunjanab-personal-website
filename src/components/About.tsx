@@ -40,6 +40,24 @@ const bentoItems = [
     video: null, // Insert video path here (e.g., "/assets/maker.mp4")
     className: "md:col-span-1 md:row-span-1",
     fallbackBg: "bg-plum/20"
+  },
+  {
+    id: "kitty",
+    title: "Friendly Felines",
+    text: "I have a habit of stopping to pet any friendly cat I come across while exploring my neighborhood.",
+    image: "/assets/kitty.jpg",
+    video: null, // Insert video path here (e.g., "/assets/cat.mp4")
+    className: "md:col-span-1 md:row-span-1",
+    fallbackBg: "bg-coral-bright/10"
+  },
+  {
+    id: "museum",
+    title: "Curious Minds",
+    text: "I'm happiest when I'm learning something new, whether diving into science exhibitions or discovering history museums.",
+    image: "/assets/museum.jpg",
+    video: null, // Insert video path here (e.g., "/assets/exhibit.mp4")
+    className: "md:col-span-2 md:row-span-1",
+    fallbackBg: "bg-ochre/25"
   }
 ];
 
@@ -74,18 +92,29 @@ export const About: React.FC = () => {
           
           {/* Section Header */}
           <motion.div 
-            className="space-y-3 border-b border-plum/10 pb-8 text-left"
+            className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 border-b border-plum/10 pb-8 text-left"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-3xl md:text-5xl lg:text-6xl font-serif text-plum tracking-tight leading-none">
-              About Me
-            </h2>
-            <p className="text-base md:text-lg text-ink/80 font-sans font-normal max-w-xl">
-              A few snapshots of what fuels my creativity when I'm off the clock.
-            </p>
+            {/* Left side: Section Title & Subtitle */}
+            <div className="lg:col-span-5 space-y-3">
+              <span className="font-serif text-xs italic text-plum/50 tracking-widest uppercase block">04 • Profile</span>
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif text-plum tracking-tight leading-none">
+                About Me
+              </h2>
+              <p className="text-xs md:text-sm text-plum/60 font-sans font-normal tracking-wide uppercase">
+                A few snapshots of what fuels my creativity off the clock.
+              </p>
+            </div>
+            
+            {/* Right side: Personalized Biography */}
+            <div className="lg:col-span-7 flex items-center">
+              <p className="text-base md:text-lg text-ink/90 font-sans font-normal leading-relaxed">
+                I am a computer science student, but a lot of my favorite things happen away from a screen. I've taught piano, coached volleyball, love being outdoors, and have a habit of stopping to pet any friendly cat I come across. I enjoy being involved with things that are both useful and meaningful for my community, and I’m happiest when I’m learning something new or helping someone else do the same.
+              </p>
+            </div>
           </motion.div>
 
           {/* Interactive Photo Mosaic (Bento/Masonry Grid) */}
