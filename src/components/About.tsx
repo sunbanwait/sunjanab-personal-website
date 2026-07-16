@@ -324,17 +324,7 @@ export const About: React.FC = () => {
           {/* Solid Linen Card for high text legibility over polka dots */}
           <div className="p-6 md:p-10 rounded-[2rem] bg-bg-warm border border-plum/10 shadow-2xl max-w-3xl w-full text-center space-y-6">
             
-            {/* Waving Goodbye Portrait Rectangle Video Card */}
-            <div className="w-48 h-64 md:w-56 md:h-72 rounded-[1.5rem] overflow-hidden mx-auto border-4 border-plum/10 shadow-lg relative bg-bg-warm mb-2">
-              <video 
-                src="/assets/joshuatree.mp4"
-                autoPlay
-                loop
-                muted
-                playsInline
-                className="w-full h-full object-cover"
-              />
-            </div>
+
 
             <h2 className="text-3xl md:text-5xl font-serif text-plum tracking-tight leading-tight">
               Let's Connect!
