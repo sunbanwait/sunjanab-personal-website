@@ -6,13 +6,18 @@ const education = [
     institution: "Santa Clara University (Santa Clara, CA)",
     degree: "Bachelor of Science: Computer Science and Engineering",
     period: "2025 – 2029",
-    details: "Honors/Activities: Grand Challenges Scholar, Mindset Scholar (Ciocca Center for Innovation & Entrepreneurship), Association of Computing Machinery Outreach Coordinator, Society of Women Engineers Public Relations Chair, Activity Coordinator for SWE++, SCU Product Launch, AI Collaborate"
+    details: [
+      "Honors/Activities: Grand Challenges Scholars Program, Mindset Scholar (Ciocca Center for Innovation & Entrepreneurship), Board Member for Association of Computing Machinery, Society of Women Engineers, and SWE++"
+    ]
   },
   {
     institution: "Oakwood School (Morgan Hill, CA)",
     degree: "High School Diploma",
     period: "2021 – 2025",
-    details: "Relevant Coursework: Honors Advanced CS: Data Structures & Algorithms, Honors Data Science and Machine Learning, AP CSA, AP Chemistry, AP Calculus AB | Honors: Student Council President '25, Commencement Speaker '25, Varsity Volleyball Captain '25"
+    details: [
+      "Relevant Coursework: Honors Advanced CS: Data Structures & Algorithms, Honors Data Science and Machine Learning, AP CSA, AP Chemistry, AP Calculus AB",
+      "Honors: Student Council President '25, Commencement Speaker '25, Varsity Volleyball Captain '25"
+    ]
   }
 ];
 
@@ -117,7 +122,13 @@ export const Resume: React.FC = () => {
                   <span className="text-xs font-sans font-semibold text-plum/60 whitespace-nowrap">{edu.period}</span>
                 </div>
                 <p className="text-sm font-sans font-bold text-ink">{edu.degree}</p>
-                <p className="text-xs md:text-sm text-ink/80 font-sans font-normal leading-relaxed">{edu.details}</p>
+                <div className="space-y-1">
+                  {edu.details.map((detail, idx) => (
+                    <p key={idx} className="text-xs md:text-sm text-ink/80 font-sans font-normal leading-relaxed">
+                      {detail}
+                    </p>
+                  ))}
+                </div>
               </motion.div>
             ))}
           </div>
