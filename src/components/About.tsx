@@ -90,7 +90,7 @@ const highlightItems = [
     id: "coding-stars",
     category: "YMCA Partnership",
     title: "Coding Stars Program Founder",
-    text: "Founded and led Oakwood's Girls Who Code club Coding Stars outreach program. Developed curriculum and taught computing fundamentals, typing, and safety to underserved elementary school students.",
+    text: "Founded and led Oakwood's Girls Who Code club Coding Stars outreach program. Developed curriculum and taught computer fundamentals, typing, and safety to local elementary school students.",
     link: "https://www.oakwoodway.org/community/news/details/~board/news/post/oakwoods-girls-who-code-club-starts-the-coding-stars-summer-program-at-local-elementary-schools",
     actionLabel: "Read Article",
     colorTag: "text-plum bg-plum/10"
@@ -405,7 +405,7 @@ export const About: React.FC = () => {
               {highlightItems.map((item) => (
                 <div 
                   key={item.id}
-                  className="flex flex-col p-6 md:p-7 rounded-[2rem] border border-plum/10 bg-bg-warm flex-shrink-0 w-[290px] sm:w-[320px] md:w-[360px] h-[290px] md:h-[320px] transition-all duration-300 hover:border-coral-bright hover:-translate-y-1 hover:shadow-lg text-left snap-start"
+                  className="flex flex-col p-6 md:p-7 rounded-[2rem] border border-plum/10 bg-bg-warm flex-shrink-0 w-[290px] sm:w-[320px] md:w-[360px] h-[310px] md:h-[340px] transition-all duration-300 hover:border-coral-bright hover:-translate-y-1 hover:shadow-lg text-left snap-start"
                 >
                   <div className={`text-[10px] font-sans font-extrabold uppercase tracking-widest px-3 py-1 rounded-full self-start ${item.colorTag}`}>
                     {item.category}
@@ -419,7 +419,7 @@ export const About: React.FC = () => {
                     {item.text}
                   </p>
                   
-                  <div className="pt-4">
+                  <div className="pt-4 mt-auto">
                     <a 
                       href={item.link} 
                       target="_blank" 
