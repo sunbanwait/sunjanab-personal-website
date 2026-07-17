@@ -42,7 +42,7 @@ const projects = [
   },
   {
     title: "HighView Portal",
-    image: "/assets/highviewportal.jpg",
+    image: "/assets/highview2.png",
     award: "AWS INRIX Hackathon 2025",
     description: "A collaborative web platform for non-profits to track and manage student engagement. Led front-end development, optimizing the admin dashboard layout.",
     tech: ["React", "JavaScript", "HTML5"],
