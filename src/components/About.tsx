@@ -197,7 +197,7 @@ export const About: React.FC = () => {
             {/* Right side: Personalized Biography */}
             <div className="lg:col-span-7 flex items-center">
               <p className="text-base md:text-lg text-ink/90 font-sans font-normal leading-relaxed">
-                I’m a computer science student, but many of my favorite moments happen away from a screen. I’ve taught piano, coached volleyball, and love spending time outdoors, exploring museums, and stopping to pet every friendly cat I come across. I also enjoy casually vlogging and editing videos as creative outlets. Whether I’m building something or getting involved in projects that make a positive impact on my community, I’m happiest when I’m learning something new or helping someone else do the same.
+                Many of my favorite moments happen away from a screen. I’ve taught piano/volleyball, love spending time outdoors, exploring museums, and stopping to pet every friendly cat I come across. I also enjoy casually vlogging and editing videos as creative outlets. Whether I’m building something or getting involved in projects within my community, I’m happiest when I’m learning something new or helping someone else do the same.
               </p>
             </div>
           </motion.div>
