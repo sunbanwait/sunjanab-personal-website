@@ -143,7 +143,7 @@ export const Work: React.FC = () => {
           {projects.map((project) => (
             <motion.div
               key={project.title}
-              className="group border rounded-[2rem] p-6 md:p-8 bg-bg-warm text-plum border-plum/10 shadow-xl flex flex-col justify-between min-h-[520px] md:min-h-[550px]"
+              className="group border rounded-[2rem] p-5 md:p-6 bg-bg-warm text-plum border-plum/10 shadow-xl flex flex-col justify-between min-h-[440px] md:min-h-[465px]"
               variants={cardVariants}
               whileHover={{ 
                 y: -6, 
@@ -153,7 +153,7 @@ export const Work: React.FC = () => {
               }}
             >
               {/* Card top: Photo Icon Banner */}
-              <div className="w-full h-44 rounded-2xl overflow-hidden mb-6 relative border border-plum/5">
+              <div className="w-full h-32 rounded-2xl overflow-hidden mb-4 relative border border-plum/5">
                 <img 
                   src={project.image} 
                   alt={project.title}
@@ -162,9 +162,9 @@ export const Work: React.FC = () => {
               </div>
 
               {/* Card middle: Text info */}
-              <div className="space-y-3.5 flex-grow text-left">
+              <div className="space-y-2.5 flex-grow text-left">
                 <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1">
-                  <h3 className="text-2xl font-serif font-black text-plum group-hover:text-coral-bright transition-colors duration-300">
+                  <h3 className="text-xl md:text-2xl font-serif font-black text-plum group-hover:text-coral-bright transition-colors duration-300">
                     {project.title}
                   </h3>
                   <span className="text-xs font-sans uppercase tracking-wider text-ochre font-semibold">
@@ -176,7 +176,7 @@ export const Work: React.FC = () => {
                   {project.description}
                 </p>
 
-                <div className="pt-2">
+                <div className="pt-1">
                   <div className="flex flex-wrap gap-1.5">
                     {project.tech.map((t) => (
                       <span 
@@ -191,7 +191,7 @@ export const Work: React.FC = () => {
               </div>
 
               {/* Card bottom: Dynamic Link Buttons */}
-              <div className="mt-6 pt-4 border-t border-plum/5">
+              <div className="mt-4 pt-3 border-t border-plum/5">
                 <div className={project.links.length === 2 ? "grid grid-cols-2 gap-3" : "w-full"}>
                   {project.links.map((link) => (
                     <a 
