@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 const projects = [
   {
     title: "EcoScout",
+    image: "/assets/ecoscout.jpg",
     award: "Hack for Humanity 2026",
     description: "A full-stack Chrome extension that detects fast-fashion websites in real-time and recommends sustainable, eco-friendly clothing alternatives using a unique database to create a matching system.",
     tech: ["React", "Python", "Firebase", "JavaScript", "Chrome Extension"],
@@ -16,6 +17,7 @@ const projects = [
   },
   {
     title: "FaceNav",
+    image: "/assets/facenav.jpg",
     award: "ACM Winter Challenge – 2nd Place",
     description: "A hands-free mouse control interface using computer vision to assist students with motor impairments in navigating Camino, Santa Clara University's portal.",
     tech: ["Python", "Computer Vision", "UI Navigation", "OpenCV"],
@@ -28,6 +30,7 @@ const projects = [
   },
   {
     title: "InnerWeather",
+    image: "/assets/innerweather.jpg",
     award: "Published Web Store Extension",
     description: "A cozy, privacy-first mood-tracking and mini-journaling Chrome extension built on front-end architectures featuring custom calendar grids and mood cycle logs.",
     tech: ["React", "JavaScript", "CSS Custom Properties", "Chrome Extension API"],
@@ -39,6 +42,7 @@ const projects = [
   },
   {
     title: "HighView Portal",
+    image: "/assets/highviewportal.jpg",
     award: "AWS INRIX Hackathon 2025",
     description: "A collaborative web platform for non-profits to track and manage student engagement. Led front-end development, optimizing the admin dashboard layout.",
     tech: ["React", "JavaScript", "HTML5"],
@@ -139,7 +143,7 @@ export const Work: React.FC = () => {
           {projects.map((project) => (
             <motion.div
               key={project.title}
-              className="group border rounded-[2rem] p-8 bg-bg-warm text-plum border-plum/10 shadow-xl flex flex-col justify-between min-h-[440px]"
+              className="group border rounded-[2rem] p-6 md:p-8 bg-bg-warm text-plum border-plum/10 shadow-xl flex flex-col justify-between min-h-[520px] md:min-h-[550px]"
               variants={cardVariants}
               whileHover={{ 
                 y: -6, 
@@ -148,11 +152,13 @@ export const Work: React.FC = () => {
                 transition: { duration: 0.3 }
               }}
             >
-              {/* Card top: GitHub logo icon */}
-              <div className="flex justify-center items-center py-6 text-plum/30 group-hover:text-coral-bright transition-colors duration-300">
-                <svg className="w-12 h-12" fill="currentColor" viewBox="0 0 24 24">
-                  <path fillRule="evenodd" clipRule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.9-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0012 2z" />
-                </svg>
+              {/* Card top: Photo Icon Banner */}
+              <div className="w-full h-44 rounded-2xl overflow-hidden mb-6 relative border border-plum/5">
+                <img 
+                  src={project.image} 
+                  alt={project.title}
+                  className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                />
               </div>
 
               {/* Card middle: Text info */}
