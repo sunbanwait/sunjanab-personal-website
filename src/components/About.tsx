@@ -355,7 +355,7 @@ export const About: React.FC = () => {
 
       {/* SECTION 5: Highlights */}
       <section 
-        className="w-full pt-16 pb-20 border-t border-plum/10 bg-bg-warm" 
+        className="w-full pt-16 pb-20 border-t border-plum/10 bg-coral text-plum" 
         id="featured"
       >
         <div className="w-full max-w-5xl mx-auto px-6 md:px-12 flex flex-col justify-center space-y-8">
