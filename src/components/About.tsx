@@ -355,10 +355,10 @@ export const About: React.FC = () => {
 
       {/* SECTION 5: Highlights */}
       <section 
-        className="w-full pt-24 pb-36 border-t border-plum/10 bg-bg-warm" 
+        className="w-full pt-16 pb-20 border-t border-plum/10 bg-bg-warm" 
         id="featured"
       >
-        <div className="w-full max-w-4xl mx-auto px-6 md:px-12 flex flex-col justify-center space-y-12">
+        <div className="w-full max-w-5xl mx-auto px-6 md:px-12 flex flex-col justify-center space-y-8">
           
           {/* Section Header (No description, title and arrow navigation controls) */}
           <motion.div 
