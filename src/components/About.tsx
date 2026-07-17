@@ -362,13 +362,13 @@ export const About: React.FC = () => {
           
           {/* Section Header (No description, title and arrow navigation controls) */}
           <motion.div 
-            className="border-b border-plum/10 pb-8 flex justify-between items-end text-left"
+            className="border-b border-bg-warm/15 pb-8 flex justify-between items-end text-left"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif text-plum tracking-tight leading-none">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif text-bg-warm tracking-tight leading-none">
               Recent Highlights
             </h2>
             
