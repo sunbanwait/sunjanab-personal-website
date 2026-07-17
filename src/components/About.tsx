@@ -188,14 +188,14 @@ export const About: React.FC = () => {
             transition={{ duration: 0.8 }}
           >
             {/* Left side: Section Title */}
-            <div className="lg:col-span-3 flex items-center">
+            <div className="lg:col-span-4 flex items-center">
               <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif text-plum tracking-tight leading-none">
                 About Me
               </h2>
             </div>
             
             {/* Right side: Personalized Biography */}
-            <div className="lg:col-span-9 flex items-center">
+            <div className="lg:col-span-8 flex items-center">
               <p className="text-base md:text-lg text-ink/90 font-sans font-normal leading-relaxed">
                 Many of my favorite moments happen away from a screen. I’ve taught piano/volleyball, love spending time outdoors, exploring museums, and stopping to pet every friendly cat I come across. I also enjoy casually vlogging and editing videos as creative outlets. Whether I’m building something or getting involved in projects within my community, I’m happiest when I’m learning something new or helping someone else do the same.
               </p>
