@@ -57,12 +57,12 @@ const work = [
     link: "https://surrasa.com/"
   },
   {
-    role: "Coding Camp Instructor & Curriculum Developer",
-    company: "YMCA of the USA",
-    period: "Jun 2024 – Sep 2024",
-    category: "TEACHING",
-    summary: "Developed interactive coding curriculum and led twice-weekly computer literacy, internet safety, and basic programming classes for over 25 students.",
-    pills: ["Curriculum Development", "Computer Literacy", "Teaching", "Leadership"]
+    role: "Volleyball Coach",
+    company: "North Coast Volleyball Club (Morgan Hill, CA)",
+    period: "2023 – 2025",
+    category: "COACHING",
+    summary: "Coached summer camps and youth training programs for 40+ players across multiple age groups. Served as Assistant Coach for the 12U team during the Spring season, supporting practices and tournaments.",
+    pills: ["Coaching", "Youth Training", "Mentorship", "Leadership"]
   }
 ];
 
