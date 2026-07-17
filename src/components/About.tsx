@@ -358,7 +358,7 @@ export const About: React.FC = () => {
         className="w-full pt-24 pb-36 border-t border-plum/10 bg-bg-warm" 
         id="featured"
       >
-        <div className="w-full max-w-5xl mx-auto px-6 md:px-12 flex flex-col justify-center space-y-12">
+        <div className="w-full max-w-4xl mx-auto px-6 md:px-12 flex flex-col justify-center space-y-12">
           
           {/* Section Header (No description, title and arrow navigation controls) */}
           <motion.div 
