@@ -28,7 +28,8 @@ const work = [
     period: "Apr 2026 – Present",
     category: "LEADERSHIP",
     summary: "Leading chapter public relations and marketing initiatives. Coordinating weekly SWE++ coding outreach activities and curriculum for middle school girls.",
-    pills: ["Leadership", "Public Relations", "Event Coordination", "Outreach"]
+    pills: ["Leadership", "Public Relations", "Event Coordination", "Outreach"],
+    link: "https://www.instagram.com/scuswe/"
   },
   {
     role: "Outreach Coordinator",
