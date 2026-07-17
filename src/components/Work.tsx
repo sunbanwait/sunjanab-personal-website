@@ -63,6 +63,16 @@ const skills = [
 ];
 
 export const Work: React.FC = () => {
+  const projectsCarouselRef = React.useRef<HTMLDivElement>(null);
+  
+  const scrollProjects = (direction: 'left' | 'right') => {
+    const container = projectsCarouselRef.current;
+    if (container) {
+      const scrollAmount = direction === 'left' ? -350 : 350;
+      container.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+    }
+  };
+
   const containerVariants = {
     hidden: {},
     visible: {
@@ -132,85 +142,111 @@ export const Work: React.FC = () => {
           <div className="w-12 h-1 bg-coral-bright rounded-full mt-1" />
         </motion.div>
 
-        {/* 2-Column Grid Layout of Premium Cards */}
-        <motion.div 
-          className="grid grid-cols-1 md:grid-cols-2 gap-8"
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.05 }}
-        >
-          {projects.map((project) => (
-            <motion.div
-              key={project.title}
-              className="group border rounded-[2rem] p-5 md:p-6 bg-bg-warm text-plum border-plum/10 shadow-xl flex flex-col justify-between min-h-[440px] md:min-h-[465px]"
-              variants={cardVariants}
-              whileHover={{ 
-                y: -6, 
-                boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.15), 0 10px 10px -5px rgba(0, 0, 0, 0.15)",
-                borderColor: project.accent,
-                transition: { duration: 0.3 }
-              }}
-            >
-              {/* Card top: Photo Icon Banner */}
-              <div className="w-full h-32 md:h-36 rounded-2xl overflow-hidden mb-4 relative border border-plum/5">
-                <img 
-                  src={project.image} 
-                  alt={project.title}
-                  className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-                />
-              </div>
+        {/* User-Controlled Projects Carousel */}
+        <div className="relative w-full">
+          {/* Arrow Left */}
+          <button 
+            onClick={() => scrollProjects('left')}
+            className="absolute -left-4 md:-left-6 top-1/2 -translate-y-1/2 w-10 h-10 md:w-12 md:h-12 rounded-full border border-plum/10 bg-bg-warm text-plum hover:text-coral-bright flex items-center justify-center transition-all duration-300 hover:scale-105 active:scale-95 focus:outline-none shadow-lg z-20"
+            aria-label="Scroll projects left"
+          >
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M15 19l-7-7 7-7" />
+            </svg>
+          </button>
+          
+          {/* Arrow Right */}
+          <button 
+            onClick={() => scrollProjects('right')}
+            className="absolute -right-4 md:-right-6 top-1/2 -translate-y-1/2 w-10 h-10 md:w-12 md:h-12 rounded-full border border-plum/10 bg-bg-warm text-plum hover:text-coral-bright flex items-center justify-center transition-all duration-300 hover:scale-105 active:scale-95 focus:outline-none shadow-lg z-20"
+            aria-label="Scroll projects right"
+          >
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M9 5l7 7-7 7" />
+            </svg>
+          </button>
 
-              {/* Card middle: Text info */}
-              <div className="space-y-2.5 flex-grow text-left">
-                <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1">
-                  <h3 className="text-xl md:text-2xl font-serif font-black text-plum group-hover:text-coral-bright transition-colors duration-300">
-                    {project.title}
-                  </h3>
-                  <span className="text-xs font-sans uppercase tracking-wider text-ochre font-semibold">
-                    {project.award}
-                  </span>
+          <motion.div 
+            ref={projectsCarouselRef}
+            className="w-full flex gap-6 overflow-x-auto no-scrollbar py-4 px-2 scroll-smooth snap-x snap-mandatory"
+            style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.05 }}
+          >
+            {projects.map((project) => (
+              <motion.div
+                key={project.title}
+                className="group border rounded-[2rem] p-5 md:p-6 bg-bg-warm text-plum border-plum/10 shadow-xl flex flex-col justify-between flex-shrink-0 w-[290px] sm:w-[320px] md:w-[360px] h-[440px] md:h-[465px] text-left snap-start"
+                variants={cardVariants}
+                whileHover={{ 
+                  y: -6, 
+                  boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.15), 0 10px 10px -5px rgba(0, 0, 0, 0.15)",
+                  borderColor: project.accent,
+                  transition: { duration: 0.3 }
+                }}
+              >
+                {/* Card top: Photo Icon Banner */}
+                <div className="w-full h-32 md:h-36 rounded-2xl overflow-hidden mb-4 relative border border-plum/5">
+                  <img 
+                    src={project.image} 
+                    alt={project.title}
+                    className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                  />
                 </div>
 
-                <p className="text-sm font-sans font-normal text-ink/80 leading-relaxed">
-                  {project.description}
-                </p>
+                {/* Card middle: Text info */}
+                <div className="space-y-2.5 flex-grow text-left">
+                  <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1">
+                    <h3 className="text-xl md:text-2xl font-serif font-black text-plum group-hover:text-coral-bright transition-colors duration-300">
+                      {project.title}
+                    </h3>
+                    <span className="text-xs font-sans uppercase tracking-wider text-ochre font-semibold">
+                      {project.award}
+                    </span>
+                  </div>
 
-                <div className="pt-1">
-                  <div className="flex flex-wrap gap-1.5">
-                    {project.tech.map((t) => (
-                      <span 
-                        key={t}
-                        className="px-2.5 py-0.5 bg-plum/5 text-plum text-xs font-sans font-normal rounded-full border border-plum/5"
+                  <p className="text-sm font-sans font-normal text-ink/80 leading-relaxed">
+                    {project.description}
+                  </p>
+
+                  <div className="pt-1">
+                    <div className="flex flex-wrap gap-1.5">
+                      {project.tech.map((t) => (
+                        <span 
+                          key={t}
+                          className="px-2.5 py-0.5 bg-plum/5 text-plum text-xs font-sans font-normal rounded-full border border-plum/5"
+                        >
+                          {t}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+
+                {/* Card bottom: Dynamic Link Buttons */}
+                <div className="mt-4 pt-3 border-t border-plum/5">
+                  <div className={project.links.length === 2 ? "grid grid-cols-2 gap-3" : "w-full"}>
+                    {project.links.map((link) => (
+                      <a 
+                        key={link.label}
+                        href={link.url} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="py-2.5 border border-plum/10 rounded-xl hover:bg-plum hover:text-bg-warm transition-all duration-300 flex items-center justify-center space-x-2 text-sm font-sans font-semibold text-plum bg-plum/[0.02]"
                       >
-                        {t}
-                      </span>
+                        {renderIcon(link.type)}
+                        <span>{link.label}</span>
+                      </a>
                     ))}
                   </div>
                 </div>
-              </div>
 
-              {/* Card bottom: Dynamic Link Buttons */}
-              <div className="mt-4 pt-3 border-t border-plum/5">
-                <div className={project.links.length === 2 ? "grid grid-cols-2 gap-3" : "w-full"}>
-                  {project.links.map((link) => (
-                    <a 
-                      key={link.label}
-                      href={link.url} 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="py-2.5 border border-plum/10 rounded-xl hover:bg-plum hover:text-bg-warm transition-all duration-300 flex items-center justify-center space-x-2 text-sm font-sans font-semibold text-plum bg-plum/[0.02]"
-                    >
-                      {renderIcon(link.type)}
-                      <span>{link.label}</span>
-                    </a>
-                  ))}
-                </div>
-              </div>
-
-            </motion.div>
-          ))}
-        </motion.div>
+              </motion.div>
+            ))}
+          </motion.div>
+        </div>
 
         {/* Skills Section (with CSS Infinite Marquee Loop) */}
         <div className="pt-10 border-t border-bg-warm/15">
