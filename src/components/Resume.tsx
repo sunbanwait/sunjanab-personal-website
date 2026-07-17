@@ -81,10 +81,10 @@ export const Resume: React.FC = () => {
 
   return (
     <section 
-      className="w-full min-h-screen bg-coral text-plum flex items-center relative py-24 border-b border-plum/20" 
+      className="w-full min-h-screen bg-coral text-plum flex items-center relative pt-16 pb-20 border-b border-plum/20" 
       id="resume"
     >
-      <div className="w-full max-w-6xl mx-auto px-6 md:px-12 flex flex-col justify-center space-y-16">
+      <div className="w-full max-w-6xl mx-auto px-6 md:px-12 flex flex-col justify-center space-y-10">
         
         {/* Section Header */}
         <motion.div 
