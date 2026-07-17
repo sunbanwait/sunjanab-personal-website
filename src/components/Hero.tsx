@@ -108,6 +108,38 @@ export const Hero: React.FC = () => {
           >
             I am a Computer Science and Engineering student at Santa Clara University. I am passionate about building impactful technology, from accessible tools to ethical AI, constantly exploring how software engineering can better serve our communities.
           </motion.p>
+
+          {/* Quick Navigation Pills */}
+          <motion.div
+            custom={2}
+            variants={elementVariants}
+            className="flex flex-wrap gap-2.5 pt-4"
+          >
+            <a 
+              href="#work"
+              className="px-5 py-2.5 text-[10px] md:text-xs font-sans font-extrabold uppercase tracking-widest bg-plum text-bg-warm rounded-full shadow-sm hover:scale-105 hover:bg-plum/95 active:scale-95 transition-all duration-300 border border-plum/10"
+            >
+              Work
+            </a>
+            <a 
+              href="#resume"
+              className="px-5 py-2.5 text-[10px] md:text-xs font-sans font-extrabold uppercase tracking-widest bg-bg-warm text-plum rounded-full shadow-sm hover:scale-105 hover:bg-plum/5 active:scale-95 transition-all duration-300 border border-plum/15"
+            >
+              Resume
+            </a>
+            <a 
+              href="#about"
+              className="px-5 py-2.5 text-[10px] md:text-xs font-sans font-extrabold uppercase tracking-widest bg-bg-warm text-plum rounded-full shadow-sm hover:scale-105 hover:bg-plum/5 active:scale-95 transition-all duration-300 border border-plum/15"
+            >
+              About
+            </a>
+            <a 
+              href="#featured"
+              className="px-5 py-2.5 text-[10px] md:text-xs font-sans font-extrabold uppercase tracking-widest bg-bg-warm text-plum rounded-full shadow-sm hover:scale-105 hover:bg-plum/5 active:scale-95 transition-all duration-300 border border-plum/15"
+            >
+              Highlights
+            </a>
+          </motion.div>
         </motion.div>
 
         {/* Right Column (Image): Circular Portrait with border & parallax */}
