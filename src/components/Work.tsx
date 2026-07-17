@@ -118,7 +118,7 @@ export const Work: React.FC = () => {
       className="w-full min-h-screen bg-plum text-bg-warm flex items-center relative py-20 border-y border-plum/20" 
       id="work"
     >
-      <div className="w-full max-w-6xl mx-auto px-6 md:px-12 flex flex-col justify-center space-y-12">
+      <div className="w-full max-w-4xl mx-auto px-6 md:px-12 flex flex-col justify-center space-y-12">
         
         {/* Centered Section Header */}
         <motion.div 
@@ -153,7 +153,7 @@ export const Work: React.FC = () => {
               }}
             >
               {/* Card top: Photo Icon Banner */}
-              <div className="w-full h-32 rounded-2xl overflow-hidden mb-4 relative border border-plum/5">
+              <div className="w-full h-32 md:h-36 rounded-2xl overflow-hidden mb-4 relative border border-plum/5">
                 <img 
                   src={project.image} 
                   alt={project.title}
