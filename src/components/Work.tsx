@@ -30,7 +30,7 @@ const projects = [
   },
   {
     title: "InnerWeather",
-    image: "/assets/innerweather.jpg",
+    image: "/assets/innerweather2.png",
     award: "Published Web Store Extension",
     description: "A cozy, privacy-first mood-tracking and mini-journaling Chrome extension built on front-end architectures featuring custom calendar grids and mood cycle logs.",
     tech: ["React", "JavaScript", "CSS Custom Properties", "Chrome Extension API"],
