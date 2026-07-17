@@ -94,6 +94,15 @@ const highlightItems = [
     link: "https://www.oakwoodway.org/community/news/details/~board/news/post/oakwoods-girls-who-code-club-starts-the-coding-stars-summer-program-at-local-elementary-schools",
     actionLabel: "Read Article",
     colorTag: "text-plum bg-plum/10"
+  },
+  {
+    id: "legacy-award",
+    category: "Legacy Award Recipient",
+    title: "Oakwood Legacy Award",
+    text: "Awarded the prestigious Oakwood School Legacy Award as the graduating senior best exemplifying the school standard of achievement in academics, intellectual maturity, self-confidence, and character.",
+    link: "https://www.oakwoodway.org/community/news/details/~board/news/post/oakwood-honors-high-school-achievements-at-awards-assembly-1749076632096",
+    actionLabel: "Read Article",
+    colorTag: "text-coral-bright bg-coral-bright/10"
   }
 ];
 
