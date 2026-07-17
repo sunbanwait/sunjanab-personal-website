@@ -106,7 +106,7 @@ export const Hero: React.FC = () => {
             variants={elementVariants}
             className="text-base md:text-lg lg:text-xl font-sans font-normal text-ink leading-relaxed max-w-xl"
           >
-            I am a Computer Science and Engineering student at Santa Clara University. I am passionate about building impactful technology, from accessible tools to ethical AI, constantly exploring how software engineering can better serve our communities.
+            I am a Computer Science and Engineering student at Santa Clara University. I am passionate about building impactful technology, from accessible tools to responsible AI systems, constantly exploring how software engineering can better serve our communities.
           </motion.p>
 
           {/* Quick Navigation Pills */}
