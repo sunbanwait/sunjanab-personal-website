@@ -13,7 +13,7 @@ const bentoItems = [
     video: null,
     className: "md:col-span-2 md:row-span-1", // Horizontal
     fallbackBg: "bg-plum/10",
-    objectPosition: "object-center"
+    objectPosition: "object-[center_30%]"
   },
   {
     id: "trails",
@@ -53,7 +53,7 @@ const bentoItems = [
     video: null,
     className: "md:col-span-1 md:row-span-1", // Square
     fallbackBg: "bg-coral-bright/20",
-    objectPosition: "object-[center_30%]"
+    objectPosition: "object-center"
   },
   {
     id: "coastal",
