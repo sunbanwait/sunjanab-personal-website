@@ -55,7 +55,7 @@ const skills = [
   { category: "Languages", items: ["Python", "Java", "JavaScript", "C", "HTML", "CSS", "PHP"] },
   { category: "Applications & Tech", items: ["React.js", "Node.js", "Pandas", "TensorFlow", "GitHub", "VS Code"] },
   { category: "Operating Systems", items: ["macOS", "Linux"] },
-  { category: "Soft Skills", items: ["Leadership", "Public Speaking", "Mentorship", "Cross-functional Collaboration"] }
+  { category: "Soft Skills", items: ["Leadership", "Communication", "Collaboration", "Community Oriented"] }
 ];
 
 export const Work: React.FC = () => {
