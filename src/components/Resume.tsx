@@ -62,7 +62,7 @@ const work = [
     period: "2023 – 2025",
     category: "COACHING",
     summary: "Coached summer camps and youth training programs for 40+ players across multiple age groups. Served as Assistant Coach for the 12U team during the Spring season, supporting practices and tournaments.",
-    pills: ["Coaching", "Youth Training", "Mentorship", "Leadership"]
+    pills: ["Coaching", "Youth Training", "Communication", "Leadership"]
   }
 ];
 
