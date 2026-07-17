@@ -3,16 +3,16 @@ import { motion } from 'framer-motion';
 
 const education = [
   {
-    institution: "Santa Clara University",
-    degree: "B.S. in Computer Science & Engineering",
+    institution: "Santa Clara University (Santa Clara, CA)",
+    degree: "Bachelor of Science: Computer Science and Engineering",
     period: "2025 – 2029",
-    details: "Mindset Scholar (Ciocca Center), Grand Challenges Scholars Program, SWE PR Chair & Activity Coordinator, ACM Outreach Coordinator, AI Collaborate, IM Volleyball."
+    details: "Honors/Activities: Grand Challenges Scholar, Mindset Scholar (Ciocca Center for Innovation & Entrepreneurship), Association of Computing Machinery Outreach Coordinator, Society of Women Engineers Public Relations Chair, Activity Coordinator for SWE++, SCU Product Launch, AI Collaborate"
   },
   {
-    institution: "Oakwood School, Morgan Hill",
+    institution: "Oakwood School (Morgan Hill, CA)",
     degree: "High School Diploma",
     period: "2021 – 2025",
-    details: "Student Council President '25, Varsity Volleyball Captain, Legacy Award Recipient '25, Earth Club Founder/Co-President, Girls Who Code President, SASA Co-President."
+    details: "Relevant Coursework: Honors Advanced CS: Data Structures & Algorithms, Honors Data Science and Machine Learning, AP CSA, AP Chemistry, AP Calculus AB | Honors: Student Council President '25, Commencement Speaker '25, Varsity Volleyball Captain '25"
   }
 ];
 
