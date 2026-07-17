@@ -106,10 +106,19 @@ const highlightItems = [
   }
 ];
 
-const doubledHighlights = [...highlightItems, ...highlightItems];
-
 export const About: React.FC = () => {
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
+  const carouselRef = React.useRef<HTMLDivElement>(null);
+
+  const scrollCarousel = (direction: 'left' | 'right') => {
+    if (carouselRef.current) {
+      const scrollAmount = 350 + 24; // Card width + gap
+      carouselRef.current.scrollBy({
+        left: direction === 'left' ? -scrollAmount : scrollAmount,
+        behavior: 'smooth'
+      });
+    }
+  };
 
   const containerVariants = {
     hidden: {},
@@ -351,9 +360,9 @@ export const About: React.FC = () => {
       >
         <div className="w-full max-w-5xl mx-auto px-6 md:px-12 flex flex-col justify-center space-y-12">
           
-          {/* Section Header (No description, title only) */}
+          {/* Section Header (No description, title and arrow navigation controls) */}
           <motion.div 
-            className="border-b border-plum/10 pb-8 text-left"
+            className="border-b border-plum/10 pb-8 flex justify-between items-end text-left"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -362,15 +371,41 @@ export const About: React.FC = () => {
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif text-plum tracking-tight leading-none">
               Highlights
             </h2>
+            
+            {/* Carousel Control Buttons */}
+            <div className="flex space-x-3 pb-1">
+              <button 
+                onClick={() => scrollCarousel('left')}
+                className="w-10 h-10 md:w-12 md:h-12 rounded-full border border-plum/10 bg-bg-warm text-plum hover:text-coral-bright flex items-center justify-center transition-all duration-300 hover:scale-105 active:scale-95 focus:outline-none shadow-sm"
+                aria-label="Scroll highlights left"
+              >
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M15 19l-7-7 7-7" />
+                </svg>
+              </button>
+              <button 
+                onClick={() => scrollCarousel('right')}
+                className="w-10 h-10 md:w-12 md:h-12 rounded-full border border-plum/10 bg-bg-warm text-plum hover:text-coral-bright flex items-center justify-center transition-all duration-300 hover:scale-105 active:scale-95 focus:outline-none shadow-sm"
+                aria-label="Scroll highlights right"
+              >
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M9 5l7 7-7 7" />
+                </svg>
+              </button>
+            </div>
           </motion.div>
 
-          {/* Infinite Marquee Loop (horizontal scrolling track) */}
-          <div className="w-full overflow-hidden py-4 relative">
-            <div className="flex gap-6 animate-marquee flex-nowrap hover:[animation-play-state:paused] cursor-pointer w-max">
-              {doubledHighlights.map((item, idx) => (
+          {/* User-Controlled Carousel (horizontal scrolling track) */}
+          <div className="relative w-full">
+            <div 
+              ref={carouselRef}
+              className="w-full flex gap-6 overflow-x-auto no-scrollbar py-4 px-2 scroll-smooth snap-x snap-mandatory"
+              style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+            >
+              {highlightItems.map((item) => (
                 <div 
-                  key={`${item.id}-${idx}`}
-                  className="flex flex-col p-6 md:p-8 rounded-[2rem] border border-plum/10 bg-bg-warm flex-shrink-0 w-[300px] sm:w-[340px] md:w-[380px] h-[260px] md:h-[290px] transition-all duration-300 hover:border-coral-bright hover:-translate-y-1 hover:shadow-lg text-left"
+                  key={item.id}
+                  className="flex flex-col p-6 md:p-8 rounded-[2rem] border border-plum/10 bg-bg-warm flex-shrink-0 w-[290px] sm:w-[320px] md:w-[360px] h-[260px] md:h-[285px] transition-all duration-300 hover:border-coral-bright hover:-translate-y-1 hover:shadow-lg text-left snap-start"
                 >
                   <div className={`text-[10px] font-sans font-extrabold uppercase tracking-widest px-3 py-1 rounded-full self-start ${item.colorTag}`}>
                     {item.category}
