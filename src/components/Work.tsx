@@ -56,7 +56,7 @@ const projects = [
 ];
 
 const skills = [
-  { category: "Languages", items: ["Python", "Java", "JavaScript", "C", "HTML", "CSS", "PHP"] },
+  { category: "Languages", items: ["Python", "Java", "JavaScript", "C", "HTML", "CSS"] },
   { category: "Applications & Tech", items: ["React.js", "Node.js", "Pandas", "TensorFlow", "GitHub", "VS Code"] },
   { category: "Operating Systems", items: ["macOS", "Linux"] },
   { category: "Soft Skills", items: ["Leadership", "Communication", "Collaboration", "Community Oriented"] }
