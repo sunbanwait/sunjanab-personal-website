@@ -49,7 +49,7 @@ const bentoItems = [
     id: "volunteering",
     title: "Community Impact",
     text: "I value giving back to my community, and it is especially rewarding to introduce computing to kids.",
-    image: "/assets/volunteering.jpg",
+    image: "/assets/volunteering2.jpg",
     video: null,
     className: "md:col-span-1 md:row-span-1", // Square
     fallbackBg: "bg-coral-bright/20",
@@ -242,9 +242,9 @@ export const About: React.FC = () => {
                 )}
 
                 {/* Hover Tint Overlay & Sliding Caption */}
-                <div className="absolute inset-0 bg-plum/0 group-hover:bg-plum/85 transition-all duration-500 flex flex-col justify-end p-6 opacity-0 group-hover:opacity-100 z-10">
+                <div className="absolute inset-0 bg-plum/0 group-hover:bg-plum/85 transition-all duration-500 flex flex-col justify-end p-5 md:p-6 opacity-0 group-hover:opacity-100 z-10">
                   <div className="transform translate-y-6 group-hover:translate-y-0 transition-transform duration-500 ease-out text-left">
-                    <p className="text-sm font-sans text-bg-warm leading-relaxed">
+                    <p className="text-xs md:text-sm font-sans text-bg-warm leading-relaxed">
                       {item.text}
                     </p>
                   </div>
@@ -369,7 +369,7 @@ export const About: React.FC = () => {
             transition={{ duration: 0.8 }}
           >
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif text-plum tracking-tight leading-none">
-              Highlights
+              Recent Highlights
             </h2>
             
             {/* Carousel Control Buttons */}
@@ -405,7 +405,7 @@ export const About: React.FC = () => {
               {highlightItems.map((item) => (
                 <div 
                   key={item.id}
-                  className="flex flex-col p-6 md:p-8 rounded-[2rem] border border-plum/10 bg-bg-warm flex-shrink-0 w-[290px] sm:w-[320px] md:w-[360px] h-[260px] md:h-[285px] transition-all duration-300 hover:border-coral-bright hover:-translate-y-1 hover:shadow-lg text-left snap-start"
+                  className="flex flex-col p-6 md:p-7 rounded-[2rem] border border-plum/10 bg-bg-warm flex-shrink-0 w-[290px] sm:w-[320px] md:w-[360px] h-[290px] md:h-[320px] transition-all duration-300 hover:border-coral-bright hover:-translate-y-1 hover:shadow-lg text-left snap-start"
                 >
                   <div className={`text-[10px] font-sans font-extrabold uppercase tracking-widest px-3 py-1 rounded-full self-start ${item.colorTag}`}>
                     {item.category}
@@ -415,7 +415,7 @@ export const About: React.FC = () => {
                     {item.title}
                   </h3>
                   
-                  <p className="text-xs md:text-sm text-ink/80 leading-relaxed font-sans mt-2 flex-grow overflow-hidden">
+                  <p className="text-xs md:text-sm text-ink/80 leading-relaxed font-sans mt-2 flex-grow">
                     {item.text}
                   </p>
                   
