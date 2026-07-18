@@ -233,7 +233,7 @@ export const About: React.FC = () => {
                     src={item.video} 
                     autoPlay 
                     loop 
-                    muted 
+                    muted={true} 
                     playsInline
                     className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                   />
@@ -318,7 +318,8 @@ export const About: React.FC = () => {
                     controls
                     autoPlay
                     loop
-                    muted // <-- Muted in the lightbox popup as well
+                    muted={true} // <-- Muted in the lightbox popup as well
+                    playsInline
                     className="max-w-full max-h-[65vh] object-contain rounded-2xl shadow-2xl border border-white/10"
                   />
                 ) : bentoItems[lightboxIndex].image ? (
