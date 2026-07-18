@@ -251,14 +251,7 @@ export const About: React.FC = () => {
                   </div>
                 )}
 
-                {/* Hover Tint Overlay & Sliding Caption */}
-                <div className="absolute inset-0 bg-plum/0 group-hover:bg-plum/85 transition-all duration-500 flex flex-col justify-end p-5 md:p-6 opacity-0 group-hover:opacity-100 z-10">
-                  <div className="transform translate-y-6 group-hover:translate-y-0 transition-transform duration-500 ease-out text-left">
-                    <p className="text-xs md:text-sm font-sans text-bg-warm leading-relaxed">
-                      {item.text}
-                    </p>
-                  </div>
-                </div>
+
 
               </motion.div>
             ))}
@@ -350,11 +343,8 @@ export const About: React.FC = () => {
 
             </div>
 
-            {/* Bottom Bar: Cute Description Caption & Index Tracker */}
+            {/* Bottom Bar: Index Tracker */}
             <div className="w-full max-w-3xl text-center space-y-2 mb-4">
-              <p className="text-bg-warm/95 font-sans text-sm md:text-base max-w-xl mx-auto leading-relaxed px-4">
-                {bentoItems[lightboxIndex].text}
-              </p>
               <div className="text-bg-warm/40 font-sans text-xs font-semibold tracking-widest uppercase">
                 {lightboxIndex + 1} of {bentoItems.length}
               </div>
