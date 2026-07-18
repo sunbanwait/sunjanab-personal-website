@@ -58,7 +58,7 @@ const work = [
   },
   {
     role: "Volleyball Coach",
-    company: "North Coast Volleyball Club (Morgan Hill, CA)",
+    company: "North Coast Volleyball Club",
     period: "2023 – 2025",
     category: "COACHING",
     summary: "Coached summer camps and youth training programs for 40+ players across multiple age groups. Served as Assistant Coach for the 12U team during the Spring season, supporting practices and tournaments.",

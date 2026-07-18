@@ -11,7 +11,7 @@ const bentoItems = [
     text: "I've been playing piano and singing for years, arranging duets and teaching beginner students.",
     image: "/assets/singing.jpg",
     video: null,
-    className: "md:col-span-2 md:row-span-1", // Horizontal
+    className: "md:col-span-4 md:row-span-1", // Horizontal
     fallbackBg: "bg-plum/10",
     objectPosition: "object-[center_45%]"
   },
@@ -21,7 +21,7 @@ const bentoItems = [
     text: "Always happiest outdoors exploring national parks, going on hikes, and finding new trails.",
     image: "/assets/sittinglog.jpg",
     video: null,
-    className: "md:col-span-1 md:row-span-2 h-full", // Vertical
+    className: "md:col-span-2 md:row-span-2 h-full", // Vertical
     fallbackBg: "bg-ochre/10",
     objectPosition: "object-top" // Keep top crop for sitting log to keep faces visible
   },
@@ -31,7 +31,7 @@ const bentoItems = [
     text: "I have a habit of stopping to pet any friendly cat I come across.",
     image: "/assets/kitty.jpg",
     video: null,
-    className: "md:col-span-1 md:row-span-2 h-full", // Changed to vertical (row-span-2) to prevent cropping
+    className: "md:col-span-2 md:row-span-2 h-full", // Changed to vertical (row-span-2) to prevent cropping
     fallbackBg: "bg-coral-bright/10",
     objectPosition: "object-center"
   },
@@ -41,7 +41,7 @@ const bentoItems = [
     text: "Diving into science exhibitions or discovering history museums is a favorite way to learn something new.",
     image: "/assets/museum.jpg",
     video: null,
-    className: "md:col-span-1 md:row-span-2 h-full", // Changed to vertical (row-span-2) to prevent cropping
+    className: "md:col-span-2 md:row-span-2 h-full", // Changed to vertical (row-span-2) to prevent cropping
     fallbackBg: "bg-ochre/25",
     objectPosition: "object-center"
   },
@@ -51,7 +51,7 @@ const bentoItems = [
     text: "I value giving back to my community, and it is especially rewarding to introduce STEM to kids.",
     image: "/assets/volunteering2.jpg",
     video: null,
-    className: "md:col-span-1 md:row-span-1", // Square
+    className: "md:col-span-2 md:row-span-1", // Square
     fallbackBg: "bg-coral-bright/20",
     objectPosition: "object-center"
   },
@@ -61,8 +61,18 @@ const bentoItems = [
     text: "I love capturing snapshots from my trips to look back on later.",
     image: null,
     video: "/assets/walkingup.mp4",
-    className: "md:col-span-3 h-[260px] md:h-[300px]", // Custom height for balanced banner proportion
+    className: "md:col-span-3 h-[260px] md:h-[300px]", // Half width banner
     fallbackBg: "bg-plum/20",
+    objectPosition: "object-center"
+  },
+  {
+    id: "scenic",
+    title: "Scenic Views",
+    text: "Enjoying the beautiful scenery and peaceful moments.",
+    image: null,
+    video: "/assets/scenic.mp4",
+    className: "md:col-span-3 h-[260px] md:h-[300px]", // Half width banner
+    fallbackBg: "bg-ochre/20",
     objectPosition: "object-center"
   }
 ];
@@ -204,7 +214,7 @@ export const About: React.FC = () => {
 
           {/* Interactive Photo Mosaic (Bento/Masonry Grid) */}
           <motion.div 
-            className="grid grid-cols-1 md:grid-cols-3 gap-4 auto-rows-[190px] md:auto-rows-[210px] mb-8"
+            className="grid grid-cols-1 md:grid-cols-6 gap-4 auto-rows-[190px] md:auto-rows-[210px] mb-8"
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
