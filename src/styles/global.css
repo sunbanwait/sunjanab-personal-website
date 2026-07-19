@@ -51,7 +51,7 @@
 @layer base {
   html {
     scroll-behavior: smooth;
-    scroll-padding-top: 80px; /* Offset for the sticky header */
+    scroll-padding-top: 80px;
   }
 
   html, body {
@@ -71,13 +71,13 @@
     font-weight: 700;
   }
 
-  /* Custom styling for focus ring to match theme color */
+
   a:focus-visible, button:focus-visible {
     outline: 2px solid var(--color-plum);
     outline-offset: 4px;
   }
 
-  /* Custom scrollbar matching editorial plum & coral theme */
+
   ::-webkit-scrollbar {
     width: 8px;
   }

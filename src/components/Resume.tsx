@@ -92,7 +92,7 @@ export const Resume: React.FC = () => {
     >
       <div className="w-full max-w-6xl mx-auto px-6 md:px-12 flex flex-col justify-center space-y-10">
         
-        {/* Section Header */}
+
         <motion.div 
           className="border-b border-bg-warm/15 pb-6 text-left"
           initial={{ opacity: 0, y: 30 }}
@@ -105,7 +105,7 @@ export const Resume: React.FC = () => {
           </h2>
         </motion.div>
 
-        {/* Education Timeline (Credential Cards) */}
+
         <div className="space-y-8 text-left">
           <h3 className="text-2xl font-serif text-plum font-semibold tracking-tight border-b border-plum/5 pb-2">Education</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -135,7 +135,7 @@ export const Resume: React.FC = () => {
           </div>
         </div>
 
-        {/* Experience Timeline (Card Stack) */}
+
         <div className="space-y-8 text-left">
           <h3 className="text-2xl font-serif text-plum font-semibold tracking-tight border-b border-plum/5 pb-2">Experience</h3>
           

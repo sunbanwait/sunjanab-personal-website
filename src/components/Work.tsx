@@ -120,7 +120,7 @@ export const Work: React.FC = () => {
     }
   };
 
-  // Duplicate the skills array for a seamless infinite loop in the marquee DOM
+
   const doubledSkills = [...skills, ...skills];
 
   return (
@@ -130,7 +130,7 @@ export const Work: React.FC = () => {
     >
       <div className="w-full max-w-6xl mx-auto px-6 md:px-12 flex flex-col justify-center space-y-12">
         
-        {/* Centered Section Header */}
+
         <motion.div 
           className="text-center flex flex-col items-center space-y-2"
           initial={{ opacity: 0, y: -20 }}
@@ -142,9 +142,9 @@ export const Work: React.FC = () => {
           <div className="w-12 h-1 bg-coral-bright rounded-full mt-1" />
         </motion.div>
 
-        {/* User-Controlled Projects Carousel */}
+
         <div className="relative w-full">
-          {/* Arrow Left */}
+
           <button 
             onClick={() => scrollProjects('left')}
             className="absolute -left-4 md:-left-6 top-1/2 -translate-y-1/2 w-10 h-10 md:w-12 md:h-12 rounded-full border border-plum/10 bg-bg-warm text-plum hover:text-coral-bright flex items-center justify-center transition-all duration-300 hover:scale-105 active:scale-95 focus:outline-none shadow-lg z-20"
@@ -155,7 +155,7 @@ export const Work: React.FC = () => {
             </svg>
           </button>
           
-          {/* Arrow Right */}
+
           <button 
             onClick={() => scrollProjects('right')}
             className="absolute -right-4 md:-right-6 top-1/2 -translate-y-1/2 w-10 h-10 md:w-12 md:h-12 rounded-full border border-plum/10 bg-bg-warm text-plum hover:text-coral-bright flex items-center justify-center transition-all duration-300 hover:scale-105 active:scale-95 focus:outline-none shadow-lg z-20"
@@ -187,7 +187,7 @@ export const Work: React.FC = () => {
                   transition: { duration: 0.3 }
                 }}
               >
-                {/* Card top: Photo Icon Banner */}
+
                 <div className="w-full h-44 rounded-2xl overflow-hidden mb-6 relative border border-plum/5">
                   <img 
                     src={project.image} 
@@ -196,7 +196,7 @@ export const Work: React.FC = () => {
                   />
                 </div>
 
-                {/* Card middle: Text info */}
+
                 <div className="space-y-3.5 flex-grow text-left">
                   <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1">
                     <h3 className="text-2xl font-serif font-black text-plum group-hover:text-coral-bright transition-colors duration-300">
@@ -225,7 +225,7 @@ export const Work: React.FC = () => {
                   </div>
                 </div>
 
-                {/* Card bottom: Dynamic Link Buttons */}
+
                 <div className="mt-6 pt-4 border-t border-plum/5">
                   <div className={project.links.length === 2 ? "grid grid-cols-2 gap-3" : "w-full"}>
                     {project.links.map((link) => (
@@ -248,7 +248,7 @@ export const Work: React.FC = () => {
           </motion.div>
         </div>
 
-        {/* Skills Section (with CSS Infinite Marquee Loop) */}
+
         <div className="pt-10 border-t border-bg-warm/15">
           <h3 className="text-2xl md:text-3xl font-serif text-bg-warm mb-6 text-center">Technical Toolkit</h3>
           

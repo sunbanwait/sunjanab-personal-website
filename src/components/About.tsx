@@ -1,9 +1,7 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
-// WHERE TO INSERT PHOTOS & VIDEOS:
-// Place your media files (images/videos) in the "public/assets/" directory of this project.
-// Update the paths below to match your filenames (e.g. "/assets/my-photo.jpg" or "/assets/my-video.mp4").
+
 const bentoItems = [
   {
     id: "music",
@@ -11,7 +9,7 @@ const bentoItems = [
     text: "I've been playing piano and singing for years, arranging duets and teaching beginner students.",
     image: "/assets/singing.jpg",
     video: null,
-    className: "md:col-span-4 md:row-span-1", // Horizontal
+    className: "md:col-span-4 md:row-span-1",
     fallbackBg: "bg-plum/10",
     objectPosition: "object-[center_45%]"
   },
@@ -21,9 +19,9 @@ const bentoItems = [
     text: "Always happiest outdoors exploring national parks, going on hikes, and finding new trails.",
     image: "/assets/sittinglog.jpg",
     video: null,
-    className: "md:col-span-2 md:row-span-2 h-full", // Vertical
+    className: "md:col-span-2 md:row-span-2 h-full",
     fallbackBg: "bg-ochre/10",
-    objectPosition: "object-top" // Keep top crop for sitting log to keep faces visible
+    objectPosition: "object-top"
   },
   {
     id: "kitty",
@@ -31,7 +29,7 @@ const bentoItems = [
     text: "I have a habit of stopping to pet any friendly cat I come across.",
     image: "/assets/kitty.jpg",
     video: null,
-    className: "md:col-span-2 md:row-span-2 h-full", // Changed to vertical (row-span-2) to prevent cropping
+    className: "md:col-span-2 md:row-span-2 h-full",
     fallbackBg: "bg-coral-bright/10",
     objectPosition: "object-center"
   },
@@ -41,7 +39,7 @@ const bentoItems = [
     text: "Diving into science exhibitions or discovering history museums is a favorite way to learn something new.",
     image: "/assets/museum.jpg",
     video: null,
-    className: "md:col-span-2 md:row-span-2 h-full", // Changed to vertical (row-span-2) to prevent cropping
+    className: "md:col-span-2 md:row-span-2 h-full",
     fallbackBg: "bg-ochre/25",
     objectPosition: "object-center"
   },
@@ -51,7 +49,7 @@ const bentoItems = [
     text: "I value giving back to my community, and it is especially rewarding to introduce STEM to kids.",
     image: "/assets/volunteering2.jpg",
     video: null,
-    className: "md:col-span-2 md:row-span-1", // Square
+    className: "md:col-span-2 md:row-span-1",
     fallbackBg: "bg-coral-bright/20",
     objectPosition: "object-center"
   },
@@ -61,7 +59,7 @@ const bentoItems = [
     text: "I love capturing snapshots from my trips to look back on later.",
     image: null,
     video: "/assets/walkingup.mp4",
-    className: "md:col-span-3 h-[260px] md:h-[300px]", // Half width banner
+    className: "md:col-span-3 h-[260px] md:h-[300px]",
     fallbackBg: "bg-plum/20",
     objectPosition: "object-center"
   },
@@ -71,7 +69,7 @@ const bentoItems = [
     text: "Enjoying the beautiful scenery and peaceful moments.",
     image: null,
     video: "/assets/scenic.mp4",
-    className: "md:col-span-3 h-[260px] md:h-[300px]", // Half width banner
+    className: "md:col-span-3 h-[260px] md:h-[300px]",
     fallbackBg: "bg-ochre/20",
     objectPosition: "object-center"
   }
@@ -167,7 +165,7 @@ export const About: React.FC = () => {
     }
   }, [lightboxIndex]);
 
-  // Keyboard navigation event listeners
+
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (lightboxIndex === null) return;
@@ -182,14 +180,14 @@ export const About: React.FC = () => {
   return (
     <div className="w-full flex flex-col bg-bg-warm">
       
-      {/* SECTION 4: About Me */}
+      /* --- About Me --- */
       <section 
         className="w-full pt-24 pb-36 border-t border-plum/10" 
         id="about"
       >
         <div className="w-full max-w-6xl mx-auto px-6 md:px-12 flex flex-col justify-center space-y-10">
           
-          {/* Section Header */}
+
           <motion.div 
             className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 border-b border-plum/10 pb-8 text-left"
             initial={{ opacity: 0, y: 30 }}
@@ -197,14 +195,14 @@ export const About: React.FC = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            {/* Left side: Section Title */}
+
             <div className="lg:col-span-4 flex items-center">
               <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif text-plum tracking-tight leading-none">
                 About Me
               </h2>
             </div>
             
-            {/* Right side: Personalized Biography */}
+
             <div className="lg:col-span-8 flex items-center">
               <p className="text-base md:text-lg text-ink/90 font-sans font-normal leading-relaxed">
                 Many of my favorite moments happen away from a screen. I’ve taught piano/volleyball, love spending time outdoors, exploring museums, and stopping to pet every friendly cat I come across. I also enjoy casually vlogging and editing videos as creative outlets. Whether I’m building something or getting involved in projects within my community, I’m happiest when I’m learning something new or helping someone else do the same.
@@ -212,7 +210,7 @@ export const About: React.FC = () => {
             </div>
           </motion.div>
 
-          {/* Interactive Photo Mosaic (Bento/Masonry Grid) */}
+
           <motion.div 
             className="grid grid-cols-1 md:grid-cols-6 gap-4 auto-rows-[190px] md:auto-rows-[210px] mb-8"
             variants={containerVariants}
@@ -227,7 +225,7 @@ export const About: React.FC = () => {
                 variants={cardVariants}
                 onClick={() => openLightbox(index)}
               >
-                {/* Video, Image, or Fallback rendering */}
+
                 {item.video ? (
                   <video 
                     src={item.video} 
@@ -259,7 +257,7 @@ export const About: React.FC = () => {
         </div>
       </section>
 
-      {/* LIGHTBOX POPUP GALLERY */}
+      /* --- Lightbox Gallery --- */
       <AnimatePresence>
         {lightboxIndex !== null && (
           <motion.div 
@@ -269,7 +267,7 @@ export const About: React.FC = () => {
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3 }}
           >
-            {/* Top Bar: Close Button */}
+
             <div className="w-full flex justify-end max-w-6xl">
               <button 
                 onClick={closeLightbox}
@@ -282,10 +280,10 @@ export const About: React.FC = () => {
               </button>
             </div>
 
-            {/* Middle: Media display with navigation arrows */}
+
             <div className="w-full max-w-5xl h-[65vh] flex items-center justify-center relative">
               
-              {/* Left Arrow */}
+
               <button 
                 onClick={() => navigateLightbox('prev')}
                 className="absolute left-0 md:left-4 z-20 text-bg-warm/75 hover:text-coral-bright transition-all duration-300 w-12 h-12 flex items-center justify-center rounded-full bg-white/5 hover:bg-white/15 focus:outline-none"
@@ -296,7 +294,7 @@ export const About: React.FC = () => {
                 </svg>
               </button>
 
-              {/* Media Element */}
+
               <motion.div 
                 key={lightboxIndex}
                 className="max-w-full max-h-full flex items-center justify-center"
@@ -311,7 +309,7 @@ export const About: React.FC = () => {
                     controls
                     autoPlay
                     loop
-                    muted={true} // <-- Muted in the lightbox popup as well
+                    muted={true}
                     playsInline
                     className="max-w-full max-h-[65vh] object-contain rounded-2xl shadow-2xl border border-white/10"
                   />
@@ -330,7 +328,7 @@ export const About: React.FC = () => {
                 )}
               </motion.div>
 
-              {/* Right Arrow */}
+
               <button 
                 onClick={() => navigateLightbox('next')}
                 className="absolute right-0 md:right-4 z-20 text-bg-warm/75 hover:text-coral-bright transition-all duration-300 w-12 h-12 flex items-center justify-center rounded-full bg-white/5 hover:bg-white/15 focus:outline-none"
@@ -343,7 +341,7 @@ export const About: React.FC = () => {
 
             </div>
 
-            {/* Bottom Bar: Index Tracker */}
+
             <div className="w-full max-w-3xl text-center space-y-2 mb-4">
               <div className="text-bg-warm/40 font-sans text-xs font-semibold tracking-widest uppercase">
                 {lightboxIndex + 1} of {bentoItems.length}
@@ -354,14 +352,14 @@ export const About: React.FC = () => {
         )}
       </AnimatePresence>
 
-      {/* SECTION 5: Highlights */}
+      /* --- Highlights --- */
       <section 
         className="w-full pt-16 pb-20 border-t border-plum/10 bg-coral text-plum" 
         id="featured"
       >
         <div className="w-full max-w-5xl mx-auto px-6 md:px-12 flex flex-col justify-center space-y-8">
           
-          {/* Section Header (No description, title and arrow navigation controls) */}
+
           <motion.div 
             className="border-b border-bg-warm/15 pb-8 flex justify-between items-end text-left"
             initial={{ opacity: 0, y: 30 }}
@@ -373,7 +371,7 @@ export const About: React.FC = () => {
               Recent Highlights
             </h2>
             
-            {/* Carousel Control Buttons */}
+
             <div className="flex space-x-3 pb-1">
               <button 
                 onClick={() => scrollCarousel('left')}
@@ -396,7 +394,7 @@ export const About: React.FC = () => {
             </div>
           </motion.div>
 
-          {/* User-Controlled Carousel (horizontal scrolling track) */}
+
           <div className="relative w-full">
             <div 
               ref={carouselRef}
@@ -438,10 +436,10 @@ export const About: React.FC = () => {
         </div>
       </section>
 
-      {/* CLOSING BANNER & FOOTER */}
+      /* --- Footer --- */
       <footer className="w-full bg-plum text-bg-warm relative py-16 border-t border-plum/20 overflow-hidden">
         
-        {/* Large Opaque White Polka Dot Checkerboard Background Pattern */}
+
         <div 
           className="absolute inset-0 opacity-100 z-0 pointer-events-none"
           style={{
@@ -456,7 +454,7 @@ export const About: React.FC = () => {
 
         <div className="w-full max-w-6xl mx-auto px-6 md:px-12 flex flex-col items-center justify-center relative z-10">
           
-          {/* Solid Linen Card for high text legibility over polka dots */}
+
           <div className="p-6 md:p-10 rounded-[2rem] bg-bg-warm border border-plum/10 shadow-2xl max-w-3xl w-full text-center space-y-6">
             
 
@@ -465,7 +463,7 @@ export const About: React.FC = () => {
               Let's Connect!
             </h2>
             
-            {/* Interactive Email Button */}
+
             <div className="pt-2">
               <a 
                 href="mailto:sbanwait@scu.edu" 

@@ -22,21 +22,21 @@ const currentYear = new Date().getFullYear();
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
-    <!-- Favicon & Icons -->
+
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="icon" href="/favicon.ico" />
     
-    <!-- Meta tags for SEO -->
+
     <title>{title}</title>
     <meta name="description" content={description} />
     <meta name="generator" content={Astro.generator} />
     
-    <!-- Google Fonts Preconnect and Links -->
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet" />
 
-    <!-- Open Graph / Social sharing (SEO best practice) -->
+
     <meta property="og:type" content="website" />
     <meta property="og:url" content={Astro.url} />
     <meta property="og:title" content={title} />
@@ -44,22 +44,22 @@ const currentYear = new Date().getFullYear();
   </head>
   <body class="bg-warm text-ink min-h-screen flex flex-col antialiased selection:bg-coral/30 selection:text-plum pb-32 md:pb-0">
     
-    <!-- Timeline Navigation (Thinned Sidebar on Desktop, Horizontal Bottom Dock on Mobile) -->
+
     <Navigation client:load currentPath={currentPath} />
 
-    {/* Right-Side Page Container (Offset on desktop for thinned sidebar width) */}
+
     <div class="flex-grow w-full md:pl-[90px] flex flex-col">
       
-      {/* Main Content Area */}
+
       <main class="flex-grow w-full focus:outline-none" id="main-content">
         <slot />
       </main>
 
-      {/* Botanical-themed Minimalist Footer */}
+      /* --- Footer --- */
       <footer class="w-full border-t border-plum/10 py-12 px-6 md:px-12 mt-auto bg-bg-warm z-10">
         <div class="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
           
-          <!-- Left: Branding & Message -->
+
           <div class="flex flex-col items-center md:items-start text-center md:text-left">
             <a 
               href="#hero" 
@@ -70,7 +70,7 @@ const currentYear = new Date().getFullYear();
             </a>
           </div>
 
-          {/* Middle: Links */}
+
           <div class="flex items-center space-x-6 text-sm text-ink/75 font-medium">
             <a href="#hero" class="hover:text-plum transition-colors duration-300">Home</a>
             <a href="#work" class="hover:text-plum transition-colors duration-300">Work</a>
@@ -78,7 +78,7 @@ const currentYear = new Date().getFullYear();
             <a href="#resume" class="hover:text-plum transition-colors duration-300">Resume</a>
           </div>
 
-          <!-- Right: Copyright & Year -->
+
           <div class="text-center md:text-right">
             <p class="text-xs text-ink/50">
               &copy; {currentYear} Sunjana Banwait. All rights reserved.

@@ -3,7 +3,7 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import portrait from '../assets/sunjanab.png';
 
 export const Hero: React.FC = () => {
-  // Typewriter effect state
+
   const [line1, setLine1] = useState("");
   const [line2, setLine2] = useState("");
   const [showCursor, setShowCursor] = useState(true);
@@ -28,7 +28,7 @@ export const Hero: React.FC = () => {
     return () => clearInterval(timer);
   }, []);
 
-  // Blinking cursor
+
   useEffect(() => {
     const cursorTimer = setInterval(() => {
       setShowCursor((prev) => !prev);
@@ -36,15 +36,15 @@ export const Hero: React.FC = () => {
     return () => clearInterval(cursorTimer);
   }, []);
 
-  // Resolve image source safely (handles string or object imports)
+
   const portraitSrc = typeof portrait === 'string' ? portrait : (portrait as any).src;
 
-  // Parallax scroll transforms
+
   const { scrollY } = useScroll();
   const yText = useTransform(scrollY, [0, 500], [0, 60]);
   const yImage = useTransform(scrollY, [0, 500], [0, -30]);
 
-  // Initial load transition variants (used for elements other than typed H1)
+
   const elementVariants = {
     hidden: { opacity: 0, y: 20 },
     visible: (custom: number) => ({
@@ -65,7 +65,7 @@ export const Hero: React.FC = () => {
     >
       <div className="w-full max-w-6xl mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-10 items-center flex-grow z-10">
 
-        {/* Left Column (Text): Large, Bold Serif Bio in Plum */}
+
         <motion.div
           className="md:col-span-8 space-y-6 text-left"
           style={{ y: yText }}
@@ -109,7 +109,7 @@ export const Hero: React.FC = () => {
             I am a Computer Science and Engineering student at Santa Clara University. I am passionate about building impactful technology, from accessible tools to responsible AI systems, constantly exploring how software engineering can better serve our communities.
           </motion.p>
 
-          {/* Quick Navigation Pills */}
+
           <motion.div
             custom={2}
             variants={elementVariants}
@@ -142,7 +142,7 @@ export const Hero: React.FC = () => {
           </motion.div>
         </motion.div>
 
-        {/* Right Column (Image): Circular Portrait with border & parallax */}
+
         <motion.div
           className="md:col-span-4 flex justify-center items-center"
           style={{ y: yImage }}
@@ -162,7 +162,7 @@ export const Hero: React.FC = () => {
 
       </div>
 
-      {/* Bottom Center: Bouncing Scroll Prompts Arrow */}
+
       <motion.div
         className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center space-y-2 pointer-events-none z-10"
         initial={{ opacity: 0 }}

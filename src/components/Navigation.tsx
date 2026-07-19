@@ -12,7 +12,7 @@ export const Navigation: React.FC = () => {
     { id: 'featured', label: 'Highlights', shortLabel: 'Highlights' }
   ];
 
-  // Track scroll progress of the viewport (0 to 1)
+
   useEffect(() => {
     const handleScroll = () => {
       const totalScroll = document.documentElement.scrollHeight - window.innerHeight;
@@ -27,7 +27,7 @@ export const Navigation: React.FC = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Intersection Observer Scroll Spy to track active section
+
   useEffect(() => {
     const observerOptions = {
       root: null,
@@ -55,12 +55,10 @@ export const Navigation: React.FC = () => {
 
   return (
     <>
-      {/* ========================================================================= */}
-      {/* DESKTOP THINNED VERTICAL TIMELINE SIDEBAR (md and up)                      */}
-      {/* ========================================================================= */}
+      /* --- Desktop Sidebar --- */
       <aside className="hidden md:flex flex-col justify-between items-center w-[90px] h-screen fixed top-0 left-0 bg-bg-warm/50 border-r border-plum/10 py-12 z-40 select-none">
         
-        {/* Top: Lowcase Brand Logo Name */}
+
         <div className="text-center px-2">
           <a 
             href="#hero" 
@@ -72,19 +70,19 @@ export const Navigation: React.FC = () => {
           </a>
         </div>
  
-        {/* Middle: Minimal vertical timeline (line and dots only, no text labels) */}
+
         <div className="relative flex flex-col items-center justify-center h-2/5 w-full">
           
-          {/* Vertical progress line */}
+
           <div className="absolute top-2 bottom-2 w-[2px] bg-plum/15 z-0">
-            {/* The progress fill indicator */}
+
             <div 
               className="w-full bg-gradient-to-b from-coral-bright to-ochre transition-all duration-100 origin-top"
               style={{ height: `${scrollProgress * 100}%` }}
             />
           </div>
  
-          {/* Timeline Nodes (empty circles) */}
+
           <div className="flex flex-col justify-between h-full items-center z-10 py-1">
             {sections.map((sec) => {
               const isActive = activeSection === sec.id;
@@ -114,7 +112,7 @@ export const Navigation: React.FC = () => {
 
         </div>
 
-        {/* Bottom: Social links stacked vertically */}
+
         <div className="flex flex-col items-center space-y-5 text-ink/75 pt-6 w-full">
           <a 
             href="https://github.com/sunbanwait" 
@@ -145,13 +143,11 @@ export const Navigation: React.FC = () => {
 
       </aside>
 
-      {/* ========================================================================= */}
-      {/* MOBILE COMPACT HORIZONTAL TIMELINE DOCK (md down)                          */}
-      {/* ========================================================================= */}
+      /* --- Mobile Dock --- */
       <nav className="md:hidden fixed bottom-0 left-0 w-full z-50 bg-bg-warm/95 border-t border-plum/10 py-5 px-4 backdrop-blur-md shadow-2xl">
         <div className="max-w-md mx-auto relative flex flex-col items-center">
           
-          {/* Horizontal line */}
+
           <div className="absolute left-[12.5%] right-[12.5%] top-[14px] h-[3px] bg-plum/15 z-0">
             <div 
               className="h-full bg-gradient-to-r from-coral to-ochre transition-all duration-100 origin-left"
@@ -159,14 +155,14 @@ export const Navigation: React.FC = () => {
             />
           </div>
 
-          {/* Nodes */}
+
           <div className="w-full grid grid-cols-5 relative z-10">
             {sections.map((sec, index) => {
               const isActive = activeSection === sec.id;
               return (
                 <div key={sec.id} className="flex flex-col items-center">
                   
-                  {/* Circle */}
+
                   <a
                     href={`#${sec.id}`}
                     className="flex items-center justify-center focus:outline-none"
@@ -181,7 +177,7 @@ export const Navigation: React.FC = () => {
                     </div>
                   </a>
 
-                  {/* Label */}
+
                   <a
                     href={`#${sec.id}`}
                     className={`mt-2 font-serif text-xs transition-all duration-300 ${
