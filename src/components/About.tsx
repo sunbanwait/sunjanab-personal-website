@@ -180,7 +180,7 @@ export const About: React.FC = () => {
   return (
     <div className="w-full flex flex-col bg-bg-warm">
       
-      /* --- About Me --- */
+      {/* --- About Me --- */}
       <section 
         className="w-full pt-24 pb-36 border-t border-plum/10" 
         id="about"
@@ -257,7 +257,7 @@ export const About: React.FC = () => {
         </div>
       </section>
 
-      /* --- Lightbox Gallery --- */
+      {/* --- Lightbox Gallery --- */}
       <AnimatePresence>
         {lightboxIndex !== null && (
           <motion.div 
@@ -352,7 +352,7 @@ export const About: React.FC = () => {
         )}
       </AnimatePresence>
 
-      /* --- Highlights --- */
+      {/* --- Highlights --- */}
       <section 
         className="w-full pt-16 pb-20 border-t border-plum/10 bg-coral text-plum" 
         id="featured"
@@ -436,7 +436,7 @@ export const About: React.FC = () => {
         </div>
       </section>
 
-      /* --- Footer --- */
+      {/* --- Footer --- */}
       <footer className="w-full bg-plum text-bg-warm relative py-16 border-t border-plum/20 overflow-hidden">
         
 

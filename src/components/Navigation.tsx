@@ -55,7 +55,7 @@ export const Navigation: React.FC = () => {
 
   return (
     <>
-      /* --- Desktop Sidebar --- */
+      {/* --- Desktop Sidebar --- */}
       <aside className="hidden md:flex flex-col justify-between items-center w-[90px] h-screen fixed top-0 left-0 bg-bg-warm/50 border-r border-plum/10 py-12 z-40 select-none">
         
 
@@ -143,7 +143,7 @@ export const Navigation: React.FC = () => {
 
       </aside>
 
-      /* --- Mobile Dock --- */
+      {/* --- Mobile Dock --- */}
       <nav className="md:hidden fixed bottom-0 left-0 w-full z-50 bg-bg-warm/95 border-t border-plum/10 py-5 px-4 backdrop-blur-md shadow-2xl">
         <div className="max-w-md mx-auto relative flex flex-col items-center">
           
@@ -177,15 +177,6 @@ export const Navigation: React.FC = () => {
                     </div>
                   </a>
 
-
-                  <a
-                    href={`#${sec.id}`}
-                    className={`mt-2 font-serif text-xs transition-all duration-300 ${
-                      isActive ? 'text-plum font-bold' : 'text-ink/60'
-                    }`}
-                  >
-                    {index + 1}. {sec.shortLabel}
-                  </a>
 
                 </div>
               );
