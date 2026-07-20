@@ -182,7 +182,7 @@ export const About: React.FC = () => {
       
       {/* --- About Me --- */}
       <section 
-        className="w-full pt-24 pb-36 border-t border-plum/10" 
+        className="w-full pt-24 pb-16 md:pb-36 border-t border-plum/10" 
         id="about"
       >
         <div className="w-full max-w-6xl mx-auto px-6 md:px-12 flex flex-col justify-center space-y-10">
