@@ -19,9 +19,9 @@ const bentoItems = [
     text: "Always happiest outdoors exploring national parks, going on hikes, and finding new trails.",
     image: "/assets/sittinglog.jpg",
     video: null,
-    className: "md:col-span-2 md:row-span-2 h-full",
+    className: "row-span-2 md:col-span-2 md:row-span-2 h-full",
     fallbackBg: "bg-ochre/10",
-    objectPosition: "object-top"
+    objectPosition: "object-bottom"
   },
   {
     id: "kitty",
@@ -29,7 +29,7 @@ const bentoItems = [
     text: "I have a habit of stopping to pet any friendly cat I come across.",
     image: "/assets/kitty.jpg",
     video: null,
-    className: "md:col-span-2 md:row-span-2 h-full",
+    className: "row-span-2 md:col-span-2 md:row-span-2 h-full",
     fallbackBg: "bg-coral-bright/10",
     objectPosition: "object-center"
   },
@@ -39,7 +39,7 @@ const bentoItems = [
     text: "Diving into science exhibitions or discovering history museums is a favorite way to learn something new.",
     image: "/assets/museum.jpg",
     video: null,
-    className: "md:col-span-2 md:row-span-2 h-full",
+    className: "row-span-2 md:col-span-2 md:row-span-2 h-full",
     fallbackBg: "bg-ochre/25",
     objectPosition: "object-center"
   },
@@ -59,7 +59,7 @@ const bentoItems = [
     text: "I love capturing snapshots from my trips to look back on later.",
     image: null,
     video: "/assets/walkingup.mp4",
-    className: "md:col-span-3 h-[260px] md:h-[300px]",
+    className: "md:col-span-3",
     fallbackBg: "bg-plum/20",
     objectPosition: "object-center"
   },
@@ -69,7 +69,7 @@ const bentoItems = [
     text: "Enjoying the beautiful scenery and peaceful moments.",
     image: null,
     video: "/assets/scenic.mp4",
-    className: "md:col-span-3 h-[260px] md:h-[300px]",
+    className: "md:col-span-3",
     fallbackBg: "bg-ochre/20",
     objectPosition: "object-center"
   }
