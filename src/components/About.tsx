@@ -182,7 +182,7 @@ export const About: React.FC = () => {
       
       {/* --- About Me --- */}
       <section 
-        className="w-full pt-24 pb-0 md:pb-12 border-t border-plum/10" 
+        className="w-full pt-24 pb-8 md:pb-16 border-t border-plum/10" 
         id="about"
       >
         <div className="w-full max-w-6xl mx-auto px-6 md:px-12 flex flex-col justify-center space-y-10">
@@ -354,7 +354,7 @@ export const About: React.FC = () => {
 
       {/* --- Highlights --- */}
       <section 
-        className="w-full pt-6 md:pt-12 pb-20 border-t border-plum/10 bg-coral text-plum" 
+        className="w-full pt-10 md:pt-16 pb-20 border-t border-plum/10 bg-coral text-plum" 
         id="featured"
       >
         <div className="w-full max-w-5xl mx-auto px-6 md:px-12 flex flex-col justify-center space-y-8">
