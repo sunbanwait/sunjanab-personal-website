@@ -469,7 +469,7 @@ export const About: React.FC = () => {
                 href="mailto:sbanwait@scu.edu" 
                 className="inline-flex items-center space-x-3 px-8 py-4 bg-ochre text-ink font-sans font-extrabold text-xs uppercase tracking-widest rounded-full shadow-lg hover:scale-105 active:scale-95 hover:bg-ochre/95 transition-all duration-300"
               >
-                <span>Say Hello ✦</span>
+                <span>Say Hello</span>
               </a>
             </div>
           </div>
