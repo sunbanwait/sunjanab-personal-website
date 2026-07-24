@@ -63,15 +63,7 @@ const skills = [
 ];
 
 export const Work: React.FC = () => {
-  const projectsCarouselRef = React.useRef<HTMLDivElement>(null);
-  
-  const scrollProjects = (direction: 'left' | 'right') => {
-    const container = projectsCarouselRef.current;
-    if (container) {
-      const scrollAmount = direction === 'left' ? -600 : 600;
-      container.scrollBy({ left: scrollAmount, behavior: 'smooth' });
-    }
-  };
+
 
   const containerVariants = {
     hidden: {},
@@ -145,31 +137,8 @@ export const Work: React.FC = () => {
 
         <div className="relative w-full">
 
-          <button 
-            onClick={() => scrollProjects('left')}
-            className="absolute -left-4 md:-left-6 top-1/2 -translate-y-1/2 w-10 h-10 md:w-12 md:h-12 rounded-full border border-plum/10 bg-bg-warm text-plum hover:text-coral-bright flex items-center justify-center transition-all duration-300 hover:scale-105 active:scale-95 focus:outline-none shadow-lg z-20"
-            aria-label="Scroll projects left"
-          >
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M15 19l-7-7 7-7" />
-            </svg>
-          </button>
-          
-
-          <button 
-            onClick={() => scrollProjects('right')}
-            className="absolute -right-4 md:-right-6 top-1/2 -translate-y-1/2 w-10 h-10 md:w-12 md:h-12 rounded-full border border-plum/10 bg-bg-warm text-plum hover:text-coral-bright flex items-center justify-center transition-all duration-300 hover:scale-105 active:scale-95 focus:outline-none shadow-lg z-20"
-            aria-label="Scroll projects right"
-          >
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M9 5l7 7-7 7" />
-            </svg>
-          </button>
-
           <motion.div 
-            ref={projectsCarouselRef}
-            className="w-full flex gap-8 overflow-x-auto no-scrollbar py-8 px-2 scroll-smooth snap-x snap-mandatory"
-            style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+            className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 py-8 w-full"
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
@@ -178,7 +147,7 @@ export const Work: React.FC = () => {
             {projects.map((project) => (
               <motion.div
                 key={project.title}
-                className="group border rounded-[2rem] p-6 md:p-8 bg-bg-warm text-plum border-plum/10 shadow-xl flex flex-col justify-between flex-shrink-0 w-[85vw] sm:w-[500px] md:w-[560px] min-h-[520px] md:min-h-[550px] text-left snap-start"
+                className="group border rounded-[2rem] p-6 md:p-8 bg-bg-warm text-plum border-plum/10 shadow-xl flex flex-col justify-between w-full min-h-[520px] md:min-h-[550px] text-left"
                 variants={cardVariants}
                 whileHover={{ 
                   y: -6, 
