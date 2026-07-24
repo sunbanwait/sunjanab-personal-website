@@ -147,7 +147,7 @@ export const Work: React.FC = () => {
             {projects.map((project) => (
               <motion.div
                 key={project.title}
-                className="group border rounded-[2rem] p-6 md:p-8 bg-bg-warm text-plum border-plum/10 shadow-xl flex flex-col justify-between w-full min-h-[520px] md:min-h-[550px] text-left"
+                className="group border rounded-[1.5rem] p-4 md:p-5 bg-bg-warm text-plum border-plum/10 shadow-xl flex flex-col justify-between w-full text-left"
                 variants={cardVariants}
                 whileHover={{ 
                   y: -6, 
@@ -157,7 +157,7 @@ export const Work: React.FC = () => {
                 }}
               >
 
-                <div className="w-full h-44 rounded-2xl overflow-hidden mb-6 relative border border-plum/5">
+                <div className="w-full h-28 md:h-32 rounded-xl overflow-hidden mb-3 relative border border-plum/5">
                   <img 
                     src={project.image} 
                     alt={project.title}
@@ -166,17 +166,17 @@ export const Work: React.FC = () => {
                 </div>
 
 
-                <div className="space-y-3.5 flex-grow text-left">
+                <div className="space-y-1.5 flex-grow text-left">
                   <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1">
-                    <h3 className="text-2xl font-serif font-black text-plum group-hover:text-coral-bright transition-colors duration-300">
+                    <h3 className="text-lg md:text-xl font-serif font-black text-plum group-hover:text-coral-bright transition-colors duration-300">
                       {project.title}
                     </h3>
-                    <span className="text-xs font-sans uppercase tracking-wider text-ochre font-semibold">
+                    <span className="text-[10px] font-sans uppercase tracking-wider text-ochre font-semibold">
                       {project.award}
                     </span>
                   </div>
 
-                  <p className="text-sm font-sans font-normal text-ink/80 leading-relaxed">
+                  <p className="text-xs font-sans font-normal text-ink/80 leading-relaxed">
                     {project.description}
                   </p>
 
@@ -185,7 +185,7 @@ export const Work: React.FC = () => {
                       {project.tech.map((t) => (
                         <span 
                           key={t}
-                          className="px-2.5 py-0.5 bg-plum/5 text-plum text-xs font-sans font-normal rounded-full border border-plum/5"
+                          className="px-2 py-0.5 bg-plum/5 text-plum text-[10px] font-sans font-normal rounded-full border border-plum/5"
                         >
                           {t}
                         </span>
@@ -195,15 +195,15 @@ export const Work: React.FC = () => {
                 </div>
 
 
-                <div className="mt-6 pt-4 border-t border-plum/5">
-                  <div className={project.links.length === 2 ? "grid grid-cols-2 gap-3" : "w-full"}>
+                <div className="mt-3 pt-3 border-t border-plum/5">
+                  <div className={project.links.length === 2 ? "grid grid-cols-2 gap-2" : "w-full"}>
                     {project.links.map((link) => (
                       <a 
                         key={link.label}
                         href={link.url} 
                         target="_blank" 
                         rel="noopener noreferrer"
-                        className="py-2.5 border border-plum/10 rounded-xl hover:bg-plum hover:text-bg-warm transition-all duration-300 flex items-center justify-center space-x-2 text-sm font-sans font-semibold text-plum bg-plum/[0.02]"
+                        className="py-1.5 border border-plum/10 rounded-lg hover:bg-plum hover:text-bg-warm transition-all duration-300 flex items-center justify-center space-x-1.5 text-[11px] uppercase tracking-wider font-sans font-bold text-plum bg-plum/[0.02]"
                       >
                         {renderIcon(link.type)}
                         <span>{link.label}</span>
