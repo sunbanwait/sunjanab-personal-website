@@ -29,7 +29,7 @@ const work = [
     category: "LEADERSHIP",
     summary: "Leading chapter public relations and marketing initiatives. Coordinating weekly SWE++ coding outreach activities and curriculum for middle school girls.",
     pills: ["Leadership", "Public Relations", "Event Coordination", "Outreach"],
-    link: "https://www.instagram.com/scuswe/"
+    link: "https://scuswe.com"
   },
   {
     role: "Outreach Coordinator",

@@ -3,6 +3,30 @@ import { motion } from 'framer-motion';
 
 const projects = [
   {
+    title: "SCU SWE Website",
+    image: "",
+    award: "Website Redesign & Rebuild",
+    description: "Redesigned and rebuilt the official SCU SWE website, improving navigation, visual design, and accessibility. Managed website content and branding to better showcase events, resources, and opportunities for the SWE community.",
+    tech: ["React", "Vercel", "Web Design", "UI/UX"],
+    tag: "Web Development",
+    links: [
+      { label: "Website", url: "https://scuswe.com", type: "external" }
+    ],
+    accent: "rgba(242, 137, 114, 0.8)"
+  },
+  {
+    title: "Personal Portfolio Site",
+    image: "",
+    award: "Ongoing (You're looking at it!)",
+    description: "My personal portfolio showcasing my projects, experience, and technical skills with a focus on clean UI/UX and smooth animations.",
+    tech: ["React", "Vercel", "Astro"],
+    tag: "Web Development",
+    links: [
+      { label: "GitHub", url: "https://github.com/sunbanwait/sunjanab-personal-website", type: "github" }
+    ],
+    accent: "rgba(209, 144, 36, 0.8)"
+  },
+  {
     title: "EcoScout",
     image: "/assets/ecoscout.jpg",
     award: "Hack for Humanity 2026",
@@ -120,7 +144,7 @@ export const Work: React.FC = () => {
       className="w-full min-h-screen bg-plum text-bg-warm flex items-center relative py-20 border-y border-plum/20" 
       id="work"
     >
-      <div className="w-full max-w-6xl mx-auto px-6 md:px-12 flex flex-col justify-center space-y-12">
+      <div className="w-full max-w-7xl mx-auto px-8 md:px-12 lg:px-16 flex flex-col justify-center space-y-12">
         
 
         <motion.div 
@@ -138,7 +162,7 @@ export const Work: React.FC = () => {
         <div className="relative w-full">
 
           <motion.div 
-            className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 py-8 w-full"
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 py-8 w-full"
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
@@ -157,21 +181,14 @@ export const Work: React.FC = () => {
                 }}
               >
 
-                <div className="w-full h-36 md:h-40 rounded-xl overflow-hidden mb-4 relative border border-plum/5">
-                  <img 
-                    src={project.image} 
-                    alt={project.title}
-                    className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-                  />
-                </div>
 
 
                 <div className="space-y-2 flex-grow text-left">
-                  <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1">
-                    <h3 className="text-xl md:text-2xl font-serif font-black text-plum group-hover:text-coral-bright transition-colors duration-300">
+                  <div className="flex flex-col gap-1.5 mb-1">
+                    <h3 className="text-lg md:text-xl font-serif font-black text-plum group-hover:text-coral-bright transition-colors duration-300">
                       {project.title}
                     </h3>
-                    <span className="text-xs font-sans uppercase tracking-wider text-ochre font-semibold">
+                    <span className="text-[10px] md:text-xs font-sans uppercase tracking-wider text-ochre font-bold">
                       {project.award}
                     </span>
                   </div>

@@ -179,16 +179,16 @@ export const About: React.FC = () => {
 
   return (
     <div className="w-full flex flex-col bg-bg-warm">
-      
+
       {/* --- About Me --- */}
-      <section 
-        className="w-full pt-24 pb-8 md:pb-16 border-t border-plum/10" 
+      <section
+        className="w-full pt-24 pb-8 md:pb-16 border-t border-plum/10"
         id="about"
       >
         <div className="w-full max-w-6xl mx-auto px-6 md:px-12 flex flex-col justify-center space-y-10">
-          
 
-          <motion.div 
+
+          <motion.div
             className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 border-b border-plum/10 pb-8 text-left"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -201,7 +201,7 @@ export const About: React.FC = () => {
                 About Me
               </h2>
             </div>
-            
+
 
             <div className="lg:col-span-8 flex items-center">
               <p className="text-base md:text-lg text-ink/90 font-sans font-normal leading-relaxed">
@@ -211,7 +211,7 @@ export const About: React.FC = () => {
           </motion.div>
 
 
-          <motion.div 
+          <motion.div
             className="grid grid-cols-1 md:grid-cols-6 gap-4 auto-rows-[190px] md:auto-rows-[210px] mb-0"
             variants={containerVariants}
             initial="hidden"
@@ -227,24 +227,24 @@ export const About: React.FC = () => {
               >
 
                 {item.video ? (
-                  <video 
-                    src={item.video} 
-                    autoPlay 
-                    loop 
-                    muted={true} 
+                  <video
+                    src={item.video}
+                    autoPlay
+                    loop
+                    muted={true}
                     playsInline
                     className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                   />
                 ) : item.image ? (
-                  <img 
-                    src={item.image} 
+                  <img
+                    src={item.image}
                     alt={item.title}
                     className={`w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105 filter grayscale-[15%] group-hover:grayscale-0 ${item.objectPosition || 'object-center'}`}
                   />
                 ) : (
                   <div className="w-full h-full flex items-center justify-center relative bg-gradient-to-br from-coral-bright/10 to-ochre/15">
                     <svg className="w-16 h-16 text-plum/20 group-hover:text-coral-bright/40 transition-colors duration-500" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
+                      <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z" />
                     </svg>
                   </div>
                 )}
@@ -260,7 +260,7 @@ export const About: React.FC = () => {
       {/* --- Lightbox Gallery --- */}
       <AnimatePresence>
         {lightboxIndex !== null && (
-          <motion.div 
+          <motion.div
             className="fixed inset-0 z-50 bg-plum/95 backdrop-blur-md flex flex-col justify-between items-center py-8 px-4 select-none"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -269,7 +269,7 @@ export const About: React.FC = () => {
           >
 
             <div className="w-full flex justify-end max-w-6xl">
-              <button 
+              <button
                 onClick={closeLightbox}
                 className="text-bg-warm/75 hover:text-coral-bright transition-colors duration-300 w-12 h-12 flex items-center justify-center rounded-full hover:bg-white/10 focus:outline-none"
                 aria-label="Close Gallery"
@@ -282,9 +282,9 @@ export const About: React.FC = () => {
 
 
             <div className="w-full max-w-5xl h-[65vh] flex items-center justify-center relative">
-              
 
-              <button 
+
+              <button
                 onClick={() => navigateLightbox('prev')}
                 className="absolute left-0 md:left-4 z-20 text-bg-warm/75 hover:text-coral-bright transition-all duration-300 w-12 h-12 flex items-center justify-center rounded-full bg-white/5 hover:bg-white/15 focus:outline-none"
                 aria-label="Previous Image"
@@ -295,7 +295,7 @@ export const About: React.FC = () => {
               </button>
 
 
-              <motion.div 
+              <motion.div
                 key={lightboxIndex}
                 className="max-w-full max-h-full flex items-center justify-center"
                 initial={{ scale: 0.95, opacity: 0 }}
@@ -304,8 +304,8 @@ export const About: React.FC = () => {
                 transition={{ duration: 0.3, ease: 'easeOut' }}
               >
                 {bentoItems[lightboxIndex].video ? (
-                  <video 
-                    src={bentoItems[lightboxIndex].video} 
+                  <video
+                    src={bentoItems[lightboxIndex].video}
                     controls
                     autoPlay
                     loop
@@ -314,22 +314,22 @@ export const About: React.FC = () => {
                     className="max-w-full max-h-[65vh] object-contain rounded-2xl shadow-2xl border border-white/10"
                   />
                 ) : bentoItems[lightboxIndex].image ? (
-                  <img 
-                    src={bentoItems[lightboxIndex].image} 
+                  <img
+                    src={bentoItems[lightboxIndex].image}
                     alt={bentoItems[lightboxIndex].title}
                     className="max-w-full max-h-[65vh] object-contain rounded-2xl shadow-2xl border border-white/10"
                   />
                 ) : (
                   <div className="w-80 h-80 rounded-2xl bg-gradient-to-br from-coral-bright/10 to-ochre/15 flex items-center justify-center border border-white/10">
                     <svg className="w-20 h-20 text-bg-warm/20" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
+                      <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z" />
                     </svg>
                   </div>
                 )}
               </motion.div>
 
 
-              <button 
+              <button
                 onClick={() => navigateLightbox('next')}
                 className="absolute right-0 md:right-4 z-20 text-bg-warm/75 hover:text-coral-bright transition-all duration-300 w-12 h-12 flex items-center justify-center rounded-full bg-white/5 hover:bg-white/15 focus:outline-none"
                 aria-label="Next Image"
@@ -353,14 +353,14 @@ export const About: React.FC = () => {
       </AnimatePresence>
 
       {/* --- Highlights --- */}
-      <section 
-        className="w-full pt-10 md:pt-16 pb-20 border-t border-plum/10 bg-coral text-plum" 
+      <section
+        className="w-full pt-10 md:pt-16 pb-20 border-t border-plum/10 bg-coral text-plum"
         id="featured"
       >
         <div className="w-full max-w-5xl mx-auto px-6 md:px-12 flex flex-col justify-center space-y-8">
-          
 
-          <motion.div 
+
+          <motion.div
             className="border-b border-bg-warm/15 pb-8 flex justify-between items-end text-left"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -370,10 +370,10 @@ export const About: React.FC = () => {
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif text-bg-warm tracking-tight leading-none">
               Recent Highlights
             </h2>
-            
+
 
             <div className="flex space-x-3 pb-1">
-              <button 
+              <button
                 onClick={() => scrollCarousel('left')}
                 className="w-10 h-10 md:w-12 md:h-12 rounded-full border border-plum/10 bg-bg-warm text-plum hover:text-coral-bright flex items-center justify-center transition-all duration-300 hover:scale-105 active:scale-95 focus:outline-none shadow-sm"
                 aria-label="Scroll highlights left"
@@ -382,7 +382,7 @@ export const About: React.FC = () => {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M15 19l-7-7 7-7" />
                 </svg>
               </button>
-              <button 
+              <button
                 onClick={() => scrollCarousel('right')}
                 className="w-10 h-10 md:w-12 md:h-12 rounded-full border border-plum/10 bg-bg-warm text-plum hover:text-coral-bright flex items-center justify-center transition-all duration-300 hover:scale-105 active:scale-95 focus:outline-none shadow-sm"
                 aria-label="Scroll highlights right"
@@ -396,32 +396,32 @@ export const About: React.FC = () => {
 
 
           <div className="relative w-full">
-            <div 
+            <div
               ref={carouselRef}
               className="w-full flex gap-6 overflow-x-auto no-scrollbar py-4 px-2 scroll-smooth snap-x snap-mandatory"
               style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
             >
               {highlightItems.map((item) => (
-                <div 
+                <div
                   key={item.id}
                   className="flex flex-col p-6 md:p-7 rounded-[2rem] border border-plum/10 bg-bg-warm flex-shrink-0 w-[290px] sm:w-[320px] md:w-[360px] h-[310px] md:h-[340px] transition-all duration-300 hover:border-coral-bright hover:-translate-y-1 hover:shadow-lg text-left snap-start"
                 >
                   <div className={`text-[10px] font-sans font-extrabold uppercase tracking-widest px-3 py-1 rounded-full self-start ${item.colorTag}`}>
                     {item.category}
                   </div>
-                  
+
                   <h3 className="text-lg md:text-xl font-serif text-plum leading-snug mt-3">
                     {item.title}
                   </h3>
-                  
+
                   <p className="text-xs md:text-sm text-ink/80 leading-relaxed font-sans mt-2 flex-grow">
                     {item.text}
                   </p>
-                  
+
                   <div className="pt-4 mt-auto">
-                    <a 
-                      href={item.link} 
-                      target="_blank" 
+                    <a
+                      href={item.link}
+                      target="_blank"
                       rel="noopener noreferrer"
                       className="border-b border-plum text-plum hover:text-coral-bright hover:border-coral-bright transition-all duration-300 font-sans text-xs uppercase tracking-widest inline-flex items-center space-x-1.5 font-bold"
                     >
@@ -438,9 +438,9 @@ export const About: React.FC = () => {
 
       {/* --- Footer --- */}
       <footer className="w-full bg-plum text-bg-warm relative py-16 border-t border-plum/20 overflow-hidden">
-        
 
-        <div 
+
+        <div
           className="absolute inset-0 opacity-100 z-0 pointer-events-none"
           style={{
             backgroundImage: `
@@ -453,20 +453,20 @@ export const About: React.FC = () => {
         />
 
         <div className="w-full max-w-6xl mx-auto px-6 md:px-12 flex flex-col items-center justify-center relative z-10">
-          
+
 
           <div className="p-6 md:p-10 rounded-[2rem] bg-bg-warm border border-plum/10 shadow-2xl max-w-3xl w-full text-center space-y-6">
-            
+
 
 
             <h2 className="text-3xl md:text-5xl font-serif text-plum tracking-tight leading-tight">
               Let's Connect!
             </h2>
-            
+
 
             <div className="pt-2">
-              <a 
-                href="mailto:sbanwait@scu.edu" 
+              <a
+                href="mailto:sbanwait@scu.edu"
                 className="inline-flex items-center space-x-3 px-8 py-4 bg-ochre text-ink font-sans font-extrabold text-xs uppercase tracking-widest rounded-full shadow-lg hover:scale-105 active:scale-95 hover:bg-ochre/95 transition-all duration-300"
               >
                 <span>Say Hello</span>
