@@ -78,7 +78,7 @@ const highlightItems = [
     id: "coding-stars",
     category: "YMCA Partnership",
     title: "Coding Stars Program Founder",
-    text: "Founded and led Oakwood's Girls Who Code club Coding Stars outreach program. Developed curriculum and taught computer fundamentals, typing, and safety to local elementary school students.",
+    text: "Led Oakwood's Girls Who Code club Coding Stars outreach program. Developed curriculum and taught computer fundamentals, typing, and safety to local elementary school students.",
     link: "https://www.oakwoodway.org/community/news/details/~board/news/post/oakwoods-girls-who-code-club-starts-the-coding-stars-summer-program-at-local-elementary-schools",
     actionLabel: "Read Article",
     colorTag: "text-plum bg-plum/10"
@@ -87,7 +87,7 @@ const highlightItems = [
     id: "legacy-award",
     category: "Legacy Award Recipient",
     title: "Oakwood Legacy Award",
-    text: "Awarded the prestigious Oakwood School Legacy Award as the graduating senior best exemplifying the school standard of achievement in academics, intellectual maturity, self-confidence, and character.",
+    text: "Awarded the Oakwood School Legacy Award as the graduating senior best exemplifying the school standard of achievement in academics, intellectual maturity, self-confidence, and character.",
     link: "https://www.oakwoodway.org/community/news/details/~board/news/post/oakwood-honors-high-school-achievements-at-awards-assembly-1749076632096",
     actionLabel: "Read Article",
     colorTag: "text-coral-bright bg-coral-bright/10"
