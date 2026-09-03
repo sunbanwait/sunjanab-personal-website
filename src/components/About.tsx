@@ -52,26 +52,6 @@ const bentoItems = [
     className: "md:col-span-2 md:row-span-1",
     fallbackBg: "bg-coral-bright/20",
     objectPosition: "object-center"
-  },
-  {
-    id: "coastal",
-    title: "Coastal Wanderer",
-    text: "I love capturing snapshots from my trips to look back on later.",
-    image: null,
-    video: "/assets/walkingup.mp4",
-    className: "md:col-span-3",
-    fallbackBg: "bg-plum/20",
-    objectPosition: "object-center"
-  },
-  {
-    id: "scenic",
-    title: "Scenic Views",
-    text: "Enjoying the beautiful scenery and peaceful moments.",
-    image: null,
-    video: "/assets/scenic.mp4",
-    className: "md:col-span-3",
-    fallbackBg: "bg-ochre/20",
-    objectPosition: "object-center"
   }
 ];
 
